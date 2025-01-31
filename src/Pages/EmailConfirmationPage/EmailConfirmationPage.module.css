@@ -1,0 +1,374 @@
+.vectorIcon {
+    width: 120px;
+    position: relative;
+    height: 18px;
+}
+.logoSvg {
+    height: 36px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.text {
+    position: relative;
+    line-height: 24px;
+    font-weight: 600;
+}
+.buttonBase {
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.textButton {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.buttonBase1 {
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.textButtonParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.landingPageHeader {
+    width: 1440px;
+    background-color: #121212;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.image1Icon {
+    width: 74px;
+    position: relative;
+    border-radius: 20px;
+    height: 74px;
+    object-fit: cover;
+}
+.text2 {
+    align-self: stretch;
+    position: relative;
+    line-height: 38px;
+    font-weight: 600;
+}
+.textAndSupportingText {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.header {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    text-align: center;
+    font-size: 30px;
+    color: #fafafa;
+}
+.emailAdresinizeKod {
+    position: relative;
+    line-height: 130%;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    transition: color 0.3s;
+}
+/* Opsiyonel: Son 10 saniyede kırmızı renk */
+.emailAdresinizeKod[data-time-low="true"] {
+    color: #ef4444;
+}
+.tableHeader {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 16px 4px;
+}
+.div {
+    flex: 1;
+    position: relative;
+    line-height: 32px;
+    font-weight: 500;
+}
+.digitInput10 {
+    width: 80px;
+    box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #dddedf;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px 8px;
+}
+.digits {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.digitInput {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.486);
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    outline: none;
+}
+.digitInput:focus {
+    border-color: rgb(37, 99, 235);
+}
+/* Sayısal input için ok butonlarını gizle */
+.digitInput::-webkit-outer-spin-button,
+.digitInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.tableHeader1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px;
+}
+.tableTitleEmphasized1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.signUpWithEmail {
+    width: 393px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.text4 {
+    position: relative;
+    line-height: 20px;
+}
+.text5 {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.buttonBase3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 16px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1437px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+}
+.dorulama {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.loginHeaderButton {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.2s;
+}
+.loginHeaderButton:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+.signupHeaderButton {
+    background: rgb(37, 99, 235);
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+.signupHeaderButton:hover {
+    background: rgb(29, 78, 216);
+}
+.verifyButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.verifyButton:hover {
+    background: rgb(29, 78, 216);
+}
+.verifyButton:disabled {
+    background: rgba(37, 99, 235, 0.5);
+    cursor: not-allowed;
+}
+.resendButton {
+    background: transparent;
+    border: none;
+    color: rgb(50, 95, 235);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+.resendButton:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+

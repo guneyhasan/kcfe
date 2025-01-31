@@ -1,0 +1,1372 @@
+.contentIcon {
+    width: 64px;
+    position: relative;
+    border-radius: 8px;
+    height: 64px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.logomark {
+    position: absolute;
+    height: 100%;
+    width: 23.02%;
+    top: 0%;
+    right: 76.98%;
+    bottom: 0%;
+    left: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.logotypeIcon {
+    position: absolute;
+    height: 100%;
+    width: 69.78%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 30.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.logoWrap {
+    width: 139px;
+    position: relative;
+    height: 32px;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.text {
+    position: relative;
+    line-height: 24px;
+    font-weight: 600;
+}
+.buttonBase {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    box-sizing: border-box;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.buttonBase1 {
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    border: 1px solid #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.button1 {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #fff;
+}
+.navigationActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+}
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+.headerLogo {
+    height: 25px;
+    width: auto;
+    margin-left: 20px;
+}
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dropdownHeaderNavigation {
+    align-self: stretch;
+    position: relative;
+    background-color: #121212;
+    border-bottom: 1px solid #f5f5f5;
+    box-sizing: border-box;
+    height: 80px;
+    text-align: left;
+    font-size: 16px;
+    color: #f5f5f5;
+}
+.contentIcon1 {
+    width: 74px;
+    position: relative;
+    border-radius: 12px;
+    height: 74px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.text2 {
+    align-self: stretch;
+    position: relative;
+    line-height: 38px;
+    font-weight: 600;
+}
+.supportingText {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 24px;
+    color: #717680;
+}
+.textAndSupportingText {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.header1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    text-align: center;
+    font-size: 30px;
+    color: #fafafa;
+}
+.label {
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+}
+.text3 {
+    flex: 1;
+    position: relative;
+    line-height: 24px;
+}
+.content3 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.input {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #252b37;
+    border: 1px solid #414651;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    font-size: 16px;
+    color: white;
+}
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputWithLabel {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+}
+.inputField {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.form {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.checkboxBase {
+    width: 16px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    box-sizing: border-box;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.checkbox1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.text6 {
+    position: relative;
+    text-decoration: underline;
+    line-height: 20px;
+    font-weight: 600;
+}
+.button2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttonBase3 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    border: 1px solid #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.button3 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.socialButtonGroups {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.actions {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #fff;
+}
+.content2 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.text9 {
+    position: relative;
+    line-height: 20px;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+}
+.content1 {
+    width: 521px;
+    margin: 0 !important;
+    position: absolute;
+    top: 126px;
+    left: 782px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+    z-index: 0;
+}
+.oyunYetenekIdir {
+    margin-block-start: 0;
+    margin-block-end: 16px;
+}
+.blankLine {
+    margin: 0;
+}
+.oyunYetenekIdirContainer {
+    width: 521px;
+    position: absolute;
+    margin: 0 !important;
+    top: 130px;
+    left: 96px;
+    font-size: 64px;
+    line-height: 120%;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+    z-index: 1;
+}
+.logIn {
+    align-self: stretch;
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 96px 32px 48px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 32px;
+    background-image: url('../../images/LandingBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.heading {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 60px;
+    font-weight: 600;
+}
+.konsolunuSeOyununu {
+    margin-block-start: 0;
+    margin-block-end: 20px;
+}
+.supportingText1 {
+    width: 768px;
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    color: #8b8b8b;
+    display: inline-block;
+}
+.headingAndSupportingText {
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.content5 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.container1 {
+    width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 32px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 48px;
+    color: #fdfdfd;
+}
+.ps5white1Icon {
+    width: 217.1px;
+    position: relative;
+    height: 47.3px;
+    object-fit: cover;
+}
+.ps4white2Icon {
+    width: 217.1px;
+    position: relative;
+    height: 45.4px;
+    object-fit: cover;
+}
+.xboxOneWhite1 {
+    width: 217.1px;
+    position: relative;
+    height: 43.3px;
+    object-fit: cover;
+}
+.xboxSeriesXSLogoWhite1 {
+    width: 122px;
+    position: relative;
+    height: 102px;
+    object-fit: cover;
+}
+.image10Icon {
+    width: 101.4px;
+    position: relative;
+    height: 101.4px;
+    object-fit: cover;
+}
+.component2 {
+    align-self: stretch;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    gap: 56px;
+}
+.image13Icon {
+    width: 217px;
+    position: relative;
+    height: 51.5px;
+    object-fit: cover;
+}
+.image12Icon {
+    width: 217px;
+    position: relative;
+    height: 55.8px;
+    object-fit: cover;
+}
+.image15Icon {
+    width: 217px;
+    position: relative;
+    height: 46.1px;
+    object-fit: cover;
+}
+.maxresdefault11 {
+    width: 217px;
+    position: relative;
+    height: 31.5px;
+    object-fit: cover;
+}
+.component1variant3 {
+    width: 1308px;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    box-sizing: border-box;
+    gap: 92px;
+}
+.headerSection {
+    align-self: stretch;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px 96px;
+    gap: 56px;
+    text-align: left;
+    font-size: 14px;
+    color: #717680;
+}
+.naslAlr {
+    align-self: stretch;
+    position: relative;
+    line-height: 52px;
+    font-weight: 600;
+}
+.maIlanlarOluturun {
+    align-self: stretch;
+    position: relative;
+    font-size: 20px;
+    line-height: 26px;
+    color: #8b8b8b;
+}
+.data01 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.b {
+    position: relative;
+    line-height: 46px;
+}
+.wrapper {
+    border-radius: 9999px;
+    background-color: #e0e7ff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+}
+.frameChild {
+    flex: 1;
+    position: relative;
+    border-top: 1px solid #325feb;
+    box-sizing: border-box;
+    height: 1px;
+}
+.frame {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.sitemizeYeOlun {
+    align-self: stretch;
+    position: relative;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+    font-family: Inter;
+    color: #fafafa;
+    text-align: left;
+}
+.card01 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+    min-width: 280px;
+}
+.frameDiv {
+    width: 62px;
+    border-radius: 9999px;
+    background-color: #e0e7ff;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+    box-sizing: border-box;
+}
+.data02 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 32px;
+    font-size: 30px;
+    color: #325feb;
+    font-family: Manrope;
+}
+.container2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 48px;
+}
+.howItWork11 {
+    align-self: stretch;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 96px 112px;
+    color: #fdfdfd;
+}
+.divider {
+    width: 1440px;
+    background-color: #576fee;
+    height: 1px;
+    display: none;
+}
+.gvenlk {
+    align-self: stretch;
+    position: relative;
+    line-height: 22px;
+    font-weight: 500;
+}
+.maSonularnnGvenlii {
+    align-self: stretch;
+    position: relative;
+    font-size: 52px;
+    line-height: 52px;
+    font-weight: 600;
+    color: #fdfdfd;
+}
+.data011 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.b4 {
+    flex: 1;
+    position: relative;
+    line-height: 36px;
+}
+.div {
+    width: 50px;
+    border-radius: 9999px;
+    border: 2px solid #325feb;
+    box-sizing: border-box;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+}
+.doruRapor {
+    align-self: stretch;
+    position: relative;
+    line-height: 30px;
+    font-weight: 600;
+}
+.herIkiOyuncu {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 22px;
+    color: #8b8b8b;
+}
+.doruRaporParent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    text-align: left;
+    font-size: 20px;
+    color: #fdfdfd;
+    font-family: Inter;
+}
+.parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.card011 {
+    align-self: stretch;
+    border-radius: 12px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+.frame4 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+}
+.data021 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 24px;
+    color: #325feb;
+    font-family: Manrope;
+}
+.howItWork14 {
+    align-self: stretch;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 96px 112px;
+    font-size: 14px;
+    color: #8b8b8b;
+}
+.dividerIcon {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 1px;
+    flex-shrink: 0;
+}
+.container4 {
+    width: 1280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 32px;
+    box-sizing: border-box;
+}
+.divider1 {
+    align-self: stretch;
+    background-color: #3f3f3f;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+.skaSorulanSorular {
+    width: 1216px;
+    position: relative;
+    line-height: 52px;
+    font-weight: 600;
+    display: inline-block;
+}
+.yourQuestionsAnd {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 26px;
+    color: #a3a3a3;
+}
+.hangiOyunlarVeKonsollarDes {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 27px;
+}
+.hangiOyunlarVeContainer {
+    flex: 1;
+    position: relative;
+    line-height: 36px;
+    font-weight: 500;
+}
+.chevronDownIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+.header2 {
+    align-self: stretch;
+    border-radius: 12px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 16px;
+}
+.accordionParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+    text-align: left;
+    font-size: 20px;
+    color: #fdfdfd;
+}
+.container5 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 56px;
+}
+.contactUs24 {
+    width: 1440px;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 96px 112px;
+    box-sizing: border-box;
+}
+.buttonBase5 {
+    width: 364px;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    border: 1px solid #325feb;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+.container6 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 56px;
+}
+.contactUs {
+    width: 1216px;
+    position: relative;
+    line-height: 26px;
+    font-weight: 500;
+    display: inline-block;
+}
+.reachOutTo {
+    width: 1216px;
+    position: relative;
+    font-size: 36px;
+    line-height: 52px;
+    font-weight: 600;
+    font-family: Manrope;
+    display: inline-block;
+}
+.yourQuestionsAnd1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 26px;
+    color: #a3a3a3;
+}
+.mapPin01LocationPlaceM {
+    width: 50px;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.address {
+    align-self: stretch;
+    position: relative;
+    line-height: 36px;
+    font-weight: 600;
+}
+.wedBeDelighted {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    font-family: Inter;
+    color: #d1d5db;
+}
+.frame7 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.frameChild1 {
+    align-self: stretch;
+    position: relative;
+    border-top: 1px solid #374151;
+    box-sizing: border-box;
+    height: 1px;
+}
+.oakLaneLakeside {
+    align-self: stretch;
+    position: relative;
+    line-height: 22px;
+}
+.frame8 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 14px;
+    font-family: Inter;
+}
+.frame5 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.card1 {
+    flex: 1;
+    border-radius: 12px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    min-width: 288px;
+}
+.callPhoneTelephoneMobile {
+    width: 50px;
+    position: relative;
+    height: 50px;
+}
+.data2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 32px;
+    text-align: left;
+    font-size: 24px;
+    font-family: Manrope;
+}
+.contactUs25 {
+    width: 1440px;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 96px 112px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.pagedoneLogoIcon {
+    width: 168px;
+    position: relative;
+    height: 44px;
+}
+.vectorIcon {
+    width: 0px;
+    position: relative;
+    height: 104px;
+    object-fit: contain;
+}
+.kaydolgiriYap {
+    position: relative;
+    line-height: 30px;
+}
+.frame17 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 48px;
+}
+.pagedoneLogoParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 44px;
+}
+.socialMediaIcon {
+    width: 19.7px;
+    position: relative;
+    border-radius: 15px;
+    height: 20px;
+}
+.socialMediaWrapper {
+    width: 36px;
+    border-radius: 103px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.socialMediaIcon1 {
+    width: 20px;
+    position: relative;
+    border-radius: 15px;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialMediaContainer {
+    border-radius: 103px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 8px;
+}
+.logoIcon {
+    width: 20px;
+    position: relative;
+    height: 15.3px;
+}
+.logoWrapper {
+    border-radius: 103px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    box-sizing: border-box;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+.frameParent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.vectorIcon1 {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.mavesports2025All {
+    position: relative;
+    line-height: 22px;
+}
+.data21 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 28px;
+    font-size: 14px;
+}
+.container8 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.footer16 {
+    width: 1440px;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px 112px 28px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 18px;
+    color: #8b8b8b;
+}
+.desktop {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 52px;
+    color: #fff;
+    font-family: Inter;
+}
+
+.button, .button1 {
+    cursor: pointer;
+}
+
+.buttonBase, .buttonBase1 {
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonBase {
+    color: white;
+    background: transparent;
+}
+
+.buttonBase1 {
+    color: white;
+    background: rgb(37, 99, 235);
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.inputField {
+    cursor: pointer;
+    padding: 1px 0;
+}
+
+.header2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chevronDownIcon {
+    transition: transform 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.accordionContent {
+    margin-top: 16px;
+    padding: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hangiOyunlarVeKonsollarDes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 16px;
+}
+
+.forgotPassword {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.forgotPassword:hover {
+    text-decoration: underline;
+}
+
+.signInButton {
+    width: 100%;
+    height: 44px;
+    padding: 10px 18px;
+    background: rgb(50, 95, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.socialButton {
+    width: 100%;
+    height: 44px;
+    padding: 10px 18px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.signupButton {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.signupButton:hover {
+    opacity: 0.8;
+}
+
+.text6 {
+    color: rgb(50, 95, 235);
+}
+
+/* LandingPage için navbar butonları */
+.buttonBase .text {
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonBase .text:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.buttonBase1 .text {
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonBase1 .text:hover {
+    opacity: 0.9;
+    background-color: rgb(29, 78, 216); /* Daha koyu mavi */
+}
+
+/* Sign up butonu için güncelleme */
+.buttonBase1 {
+    background-color: rgb(37, 99, 235);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonBase1:hover {
+    background-color: rgb(29, 78, 216);
+}
+
+.buttonBase1 .text {
+    color: white;
+}
+
+.errorMessage {
+    color: #ff4d4f;
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 77, 79, 0.1);
+}
+
