@@ -1,0 +1,1301 @@
+.malarmGelenSteklerChild {
+    width: 525px;
+    position: absolute;
+    margin: 0 !important;
+    top: 732px;
+    left: 1084px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.15);
+    height: 525px;
+    z-index: 0;
+}
+.logo {
+    position: relative;
+}
+.hzlMeydanOku {
+    position: relative;
+    font-weight: 600;
+}
+.buton {
+    border-radius: 100px;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 32px;
+    cursor: pointer;
+}
+.proiconsgamedefault {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+.meydanOkumalar {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    font-weight: 500;
+}
+.navLinks1 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.navLinks2 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #1e2024;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fff;
+}
+.mdimessageIcon {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+}
+.navLinks3 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #c4c5d0;
+}
+.butonParent {
+    height: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #f5f5f5;
+    font-family: Inter;
+}
+.topContent {
+    align-self: stretch;
+    height: 532px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 26px 0px 0px;
+    box-sizing: border-box;
+    gap: 44px;
+}
+.navLinks7 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatarSingleIcon {
+    width: 40px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.username {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 100%;
+    font-weight: 600;
+}
+.userId123456 {
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 150%;
+}
+.text {
+    width: 132px;
+    position: relative;
+    height: 36px;
+}
+.userAvatar {
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.navLinks9 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    border-top: 1px solid #323339;
+    box-sizing: border-box;
+    height: 91px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fafafa;
+}
+.navLinksParent {
+    align-self: stretch;
+    height: 210px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: #c4c5d0;
+    font-family: Inter;
+}
+.topContentParent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 288px;
+}
+.navLinkssidebarOne {
+    width: 260px;
+    background-color: #121212;
+    border-right: 1px solid #181d27;
+    box-sizing: border-box;
+    height: 1024px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 16px;
+    z-index: 1;
+}
+.malarmWrapper {
+    width: 304px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.rewardText {
+    font-size: 18px;
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+}
+.rewardTextWrapper {
+    border-radius: 10px;
+    background-color: #0829ae;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.avatarIcon {
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    height: 48px;
+    object-fit: cover;
+}
+.username1 {
+    width: 100px;
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.userTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.frameParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: right;
+    font-size: 16px;
+    color: #f2f5ff;
+}
+.landingPageHeader {
+    width: 1170px;
+    background-color: #121212;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.oyunAdChild {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+.nba2k25 {
+    position: absolute;
+    top: 3px;
+    left: 40px;
+    line-height: 160%;
+    font-weight: 600;
+}
+.oyunAd {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    width: 103px;
+    height: 32px;
+}
+.dakika {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    line-height: 120%;
+}
+.dakikaWrapper {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    border-radius: 100px;
+    background-color: #414651;
+    width: 87px;
+    height: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+.cardImage {
+    align-self: stretch;
+    position: relative;
+    border-radius: 12px;
+    height: 163px;
+    background-image: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+}
+.cardImageWrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.username2 {
+    align-self: stretch;
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+}
+.konsol {
+    align-self: stretch;
+    position: relative;
+    line-height: 120%;
+    color: #a4a7ae;
+}
+.oyuncu1Info {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.avatarIcon1 {
+    width: 40px;
+    border-radius: 200px;
+    height: 40px;
+    object-fit: cover;
+}
+.oyuncu2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+    gap: 8px;
+}
+.vs1 {
+    width: 25px;
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+    display: inline-block;
+}
+.vs {
+    width: 24px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #325feb;
+}
+.username3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 120%;
+    font-weight: 600;
+}
+.konsol1 {
+    position: absolute;
+    top: 14px;
+    left: 0px;
+    line-height: 120%;
+    color: #a4a7ae;
+}
+.oyuncu1Info1 {
+    width: 76px;
+    position: relative;
+    height: 34px;
+}
+.oyuncu3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+    gap: 8px;
+    text-align: left;
+}
+.oyuncu2Parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 5px;
+    gap: 4px;
+}
+.header {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: right;
+    font-size: 12px;
+}
+.enteryFeeText {
+    font-size: 18px;
+    position: relative;
+    line-height: 120%;
+
+}
+.badgeBase {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2px 8px 2px 0px;
+}
+.badgeBaseWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.badgeBaseContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #60a408;
+}
+.cret {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+}
+.text1 {
+    position: relative;
+    line-height: 24px;
+    font-weight: 600;
+}
+.buttonBase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.buttonText {
+    background-color: #325feb;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttonText:hover {
+    background-color: #274bbf;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cell {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+}
+.headerCell {
+    flex: 1;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    color: #606266;
+}
+.mobileCard {
+    border-radius: 16px;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.buttonBase1 {
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    height: 35px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    color: #fff;
+}
+.mobileCard1 {
+    width: 315px;
+    border-radius: 16px;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mobileCardParent {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    padding: 10px;
+    gap: 20px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Kaydırma çubuğu stillerini güncelle */
+.mobileCardParent::-webkit-scrollbar {
+    height: 8px;
+}
+
+.mobileCardParent::-webkit-scrollbar-track {
+    background: #121212; /* Arka plan rengini koyu yap */
+    border-radius: 4px;
+}
+
+.mobileCardParent::-webkit-scrollbar-thumb {
+    background: #121212; /* Kaydırma çubuğu rengini koyu yap */
+    border-radius: 4px;
+}
+
+.mobileCardParent::-webkit-scrollbar-thumb:hover {
+    background: #121212; /* Hover rengini de koyu yap */
+}
+
+.stekler {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+}
+.headerMaTekliflerimChild {
+    width: 633.5px;
+    height: 44px;
+}
+.gelenIstekler {
+    position: relative;
+    line-height: 140%;
+    font-weight: 500;
+}
+.gelenIsteklerWrapper {
+    width: 122px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    box-sizing: border-box;
+    color: #48494d;
+}
+.gidenIsteklerWrapper {
+    width: 122px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #48494d;
+}
+.activeTab {
+    
+    color: #ffffff; /* Aktif sekme rengi */
+    background-color: #606266;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    width: 122px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.frameGroup {
+    border-radius: 4px;
+    border: 1px solid #303133;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2px;
+    font-size: 12px;
+}
+.headerMaTekliflerim {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+}
+.kullanc1 {
+    width: 48px;
+    position: absolute;
+    margin: 0 !important;
+    top: 16px;
+    left: 28px;
+    line-height: 20px;
+    font-weight: 500;
+    display: inline-block;
+    z-index: 0;
+}
+.head {
+    align-self: stretch;
+    background-color: rgba(220, 232, 242, 0.04);
+    height: 52px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    color: #606266;
+}
+.avatarIcon5 {
+    width: 40px;
+    position: relative;
+    border-radius: 80px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.username6 {
+    align-self: stretch;
+    position: relative;
+    font-weight: 600;
+}
+.usernameWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.tableuser {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.name {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #f2f5ff;
+    display: none;
+}
+.row2 {
+    align-self: stretch;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px 24px;
+}
+.avatarIcon6 {
+    width: 40px;
+    position: relative;
+    border-radius: 61.54px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.avatarIcon7 {
+    width: 40px;
+    position: relative;
+    border-radius: 61.54px;
+    height: 40px;
+}
+.kullanc {
+    width: 228px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 12px;
+}
+.oyun {
+    width: 31px;
+    position: absolute;
+    margin: 0 !important;
+    top: 16px;
+    left: 22px;
+    line-height: 20px;
+    font-weight: 500;
+    display: inline-block;
+    z-index: 0;
+}
+.head1 {
+    align-self: stretch;
+    background-color: rgba(220, 232, 242, 0.04);
+    height: 52px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 12px;
+    color: #606266;
+}
+.fc25Wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.avatarIcon8 {
+    width: 16px;
+    position: relative;
+    border-radius: 24.62px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.text3 {
+    position: relative;
+    line-height: 18px;
+    font-weight: 500;
+}
+.badgeBase5 {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 16px;
+    background-color: rgba(123, 235, 71, 0.21);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2px 8px 2px 3px;
+    gap: 6px;
+}
+.badgeBase4 {
+    width: 106px;
+    position: relative;
+    border-radius: 16px;
+    height: 26px;
+    font-size: 10px;
+    color: #fcfdff;
+}
+.name3 {
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+    color: #f2f5ff;
+    text-align: left;
+    display: none;
+}
+.row5 {
+    align-self: stretch;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+    height: 72px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px 24px;
+}
+.badgeBase7 {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    border-radius: 16px;
+    background-color: rgba(29, 54, 119, 0.6);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2px 8px 2px 3px;
+    gap: 6px;
+}
+.frameParent1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.kullanc2 {
+    width: 228px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.head2 {
+    align-self: stretch;
+    background-color: rgba(220, 232, 242, 0.04);
+    height: 52px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    font-size: 12px;
+    color: #606266;
+}
+.div {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.badgeBase10 {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2px 8px 2px 3px;
+}
+.badgeBaseWrapper1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.name6 {
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+    text-align: left;
+    display: none;
+}
+.dl2 {
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #f2f5ff;
+}
+.dl4 {
+    width: 27px;
+    position: absolute;
+    margin: 0 !important;
+    top: 16px;
+    left: 24px;
+    line-height: 20px;
+    font-weight: 500;
+    display: inline-block;
+    z-index: 0;
+}
+.head3 {
+    align-self: stretch;
+    background-color: rgba(220, 232, 242, 0.04);
+    height: 52px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: left;
+    font-size: 12px;
+    color: #606266;
+}
+.row11 {
+    align-self: stretch;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box;
+    height: 72px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+}
+.dl3 {
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #60a408;
+}
+.kalanSre1 {
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+}
+.head4 {
+    align-self: stretch;
+    background-color: rgba(220, 232, 242, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    text-align: left;
+    color: #606266;
+}
+.dakikaFrame {
+    width: 87px;
+    position: relative;
+    border-radius: 100px;
+    background-color: #414651;
+    height: 24px;
+}
+.name12 {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #f2f5ff;
+    text-align: left;
+    display: none;
+}
+.kalanSre {
+    width: 153px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 12px;
+}
+.head5 {
+    align-self: stretch;
+    background-color: rgba(220, 232, 242, 0.04);
+    height: 52px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.buttonBase2 {
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    height: 35px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttonBase2:hover {
+    background-color: #223f9e;
+}
+
+.declineButtonImage {
+    width: 20px;
+    height: 20px;
+}
+.buttonDecline {
+    background-color: #d02533;
+    padding: 8px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    
+}
+
+.buttonDecline:hover {
+    background-color: #a01d29;
+}
+
+.buttonBaseParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.buton1 {
+    width: 218px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+.tabloMaTekliflerim {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Kaydırma çubuğunu gizlemek için */
+.tabloMaTekliflerim::-webkit-scrollbar {
+    width: 0; /* Genişliği 0 yaparak gizleyin */
+    height: 0;
+}
+
+.tableHeaderRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background-color:#222224;
+    position: sticky; /* Sabit konum */
+    top: 0; /* Üstte sabitlenmesi için */
+    z-index: 1; /* Diğer içeriklerin üstünde kalması için */
+}
+
+.headerCell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: #606266;
+}
+
+.cell img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.buttonBaseParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.buttonBase2 {
+    background-color: #325feb;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttonBase3 {
+    background-color: #d02533;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.badgeBase4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+    border-radius: 12px;
+    padding: 4px 8px;
+    color: #fff;
+    margin-left: 8px;
+}
+
+.text3 {
+    margin-left: 4px;
+}
+
+.headerMaTekliflerimParent {
+    flex: 1;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.frameWrapper {
+    flex: 1;
+    border-radius: 20px;
+    background-color: rgba(218, 218, 218, 0.04);
+    height: 370px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.containerInner {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 20px;
+    font-size: 24px;
+}
+.container {
+    align-self: stretch;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    z-index: 2;
+    font-size: 22px;
+    font-family: Inter;
+}
+.malarmGelenStekler {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Reddit Sans';
+}
+
+.tableHeaderRow, .tableRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.headerCell, .cell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+}
+
+.headerCell {
+    font-weight: bold;
+    color: #606266;
+}
+
+.cell img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.buttonBaseParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.buttonBase2 {
+    background-color: #325feb;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttonBase3 {
+    background-color: #d02533;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.badgeBase4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+    border-radius: 12px;
+    padding: 4px 8px;
+    color: #fff;
+    margin-left: 8px;
+}
+
+.text3 {
+    margin-left: 4px;
+}
+
+.buttonCancel {
+    background-color: #d02533;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonCancel:hover {
+    background-color: #a01d29;
+}
+
+.mobileCard, .mobileCard1 {
+    min-width: 350px; /* Her kartın minimum genişliği */
+    flex-shrink: 0; /* Kartların sıkışmasını önle */
+}
+

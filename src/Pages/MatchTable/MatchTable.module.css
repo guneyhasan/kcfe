@@ -1,0 +1,130 @@
+/* Tabloyu "Meydan Okumalar" başlığının hemen altından başlat */
+.tabloMaTekliflerim {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px; /* Başlık ile arayı aç */
+  font-size: 14px; /* Varsayılan font boyutu */
+  max-height: 450px; /* Maksimum yüksekliği artırın */
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* Internet Explorer ve Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tabloMaTekliflerim::-webkit-scrollbar {
+  display: none; /* Webkit tabanlı tarayıcılarda kaydırma çubuğunu gizler */
+}
+
+/* Başlıkları (Kullanıcı, Oyun, Ödül vs.) düzelterek hizala */
+.headMeydanOkumalar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Üst üste binmeyi önlemek için */
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  width: 100%;
+  text-align: center;
+  font-size: 14px; /* Başlık font boyutu */
+}
+
+/* Her sütunun eşit genişlikte olmasını sağla */
+.kullaniciBilgi, .oyunBilgi, .katilimUcreti, .odul, .kalanSure, .aksiyon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px; /* Hücre font boyutu */
+}
+
+/* Satırları yan yana sıralamak için */
+.rowMeydanOkumalar {
+  display: flex;
+  flex-direction: row; /* Yatay hizalama */
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #222;
+  width: 100%;
+  margin-bottom: 10px; /* Alt boşluk ekleyin */
+  font-size: 14px; /* Satır font boyutu */
+}
+
+/* Kullanıcı bilgisi ve avatar */
+.kullaniciBilgi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Avatar resmi */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Oyun ve platform bilgisi */
+.oyunBilgi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  background: #444;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 12px; /* Platform font boyutu */
+}
+
+/* Platform ikonları */
+.platformIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Katılım ücreti ve ödül */
+.katilimUcreti {
+  font-weight: bold;
+  color: white;
+}
+
+.odul {
+  font-weight: bold;
+  color: #60a408;
+}
+
+/* Kalan süre */
+.kalanSure {
+  font-weight: bold;
+  color: #60a408;
+}
+
+
+/* Buton */
+.istekGonder {
+  background:#325feb;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px; /* Buton font boyutu */
+}
+
+.istekGonder:hover {
+  background: #1f3d96;
+}

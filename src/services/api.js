@@ -44,15 +44,15 @@ export const authService = {
         }
     },
 
-    login: async (username, password) => {
+    login: async (credentials) => {
         try {
-            const response = await api.post('/auth/login', { username, password });
-            if (response.data.access_token) {
-                localStorage.setItem('user', JSON.stringify(response.data));
-            }
+            const response = await axios.post('http://localhost:8090/auth/login', {
+                username: credentials.username,
+                password: credentials.password
+            });
             return response.data;
         } catch (error) {
-            throw error.response?.data || error.message;
+            throw error.response?.data || error;
         }
     },
 

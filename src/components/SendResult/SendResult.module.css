@@ -1,0 +1,276 @@
+.avatarIcon {
+    width: 32px;
+    border-radius: 200px;
+    height: 32px;
+    object-fit: cover;
+}
+.fc2k24 {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+}
+.avatarParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.dakika {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    line-height: 120%;
+}
+.dakikaWrapper {
+    width: 87px;
+    position: relative;
+    border-radius: 100px;
+    background-color: #414651;
+    height: 24px;
+    text-align: center;
+    font-size: 12px;
+}
+.frameGroup {
+    align-self: stretch;
+    border-bottom: 1px solid #414651;
+    box-sizing: border-box;
+    height: 78px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 8px;
+    font-size: 16px;
+    color: #fff;
+}
+.kazananSe {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.avatarIcon1 {
+    width: 48px;
+    border-radius: 200px;
+    height: 48px;
+    object-fit: cover;
+}
+.username1Ben {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.username1BenWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.avatarGroup {
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px solid #414651;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px;
+    gap: 9px;
+    cursor: pointer;
+}
+.frameContainer {
+    width: 418px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 14px;
+}
+.veya {
+    position: relative;
+    line-height: 20px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.avatarIcon4 {
+    width: 48px;
+    border-radius: 200px;
+    height: 48px;
+    object-fit: cover;
+    margin-left: -15px;
+}
+.avatarParent1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.katlmCretinizin95i {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+    color: #a4a7ae;
+}
+.upload2LineIcon {
+    width: 38px;
+    position: relative;
+    height: 38px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.ltfenMaSonucunun {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+}
+.ltfenMaSonucununEkranFotWrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.upload2LineParent {
+    align-self: stretch;
+    border-radius: 16px;
+    border: 1px dashed #414651;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    gap: 9px;
+    text-align: center;
+}
+.text {
+    position: relative;
+    line-height: 24px;
+    font-weight: 600;
+}
+.buttonBase, .buttonBase1 {
+    width: 40px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text1 {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.buttonBase1 {
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #414651;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+.buttonBase1:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.buttonBaseParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.frameWrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 10px;
+    color: #fff;
+}
+.frameParent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contentContainer {
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.frameGroup {
+    margin-bottom: 20px;
+}
+
+.avatarGroup {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.avatarGroup:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.buttonBase, .buttonBase1 {
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.buttonBase {
+    background-color: #3366FF;
+    transition: background-color 0.3s ease;
+}
+
+.buttonBase:hover {
+    background-color: #152a67;
+    cursor: pointer;
+}
+
+.buttonBase1 {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text, .text1 {
+    color: white;
+    font-weight: 500;
+}
+
+.selectedPlayer {
+    background-color: #338536 !important;
+    border: 1px solid #338536 !important;
+    
+}
+
+.selectedDraw {
+    background-color: #9c790f !important;
+    border: 1px solid #9c790f !important;
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: rgba(113, 113, 113, 0.05);
+  border: 1px solid #687080;
+}
+

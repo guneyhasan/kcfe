@@ -1,0 +1,748 @@
+.logo {
+    position: relative;
+}
+.hzlMeydanOku {
+    position: relative;
+    font-weight: 600;
+}
+.buton {
+    border-radius: 100px;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 32px;
+    cursor: pointer;
+}
+.proiconsgamedefault {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+.meydanOkumalar {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    font-weight: 500;
+}
+.navLinks1 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.navLinks2 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #1e2024;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fff;
+}
+.mdimessageIcon {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+}
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #c4c5d0;
+}
+.butonParent {
+    height: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #f5f5f5;
+    font-family: Inter;
+}
+.topContent {
+    align-self: stretch;
+    height: 532px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 26px 0px 0px;
+    box-sizing: border-box;
+    gap: 44px;
+}
+.canlYardm {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+}
+.navLinks7 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatarSingleIcon {
+    width: 40px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.username {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 100%;
+    font-weight: 600;
+}
+.userId123456 {
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 150%;
+}
+.text {
+    width: 132px;
+    position: relative;
+    height: 36px;
+}
+.userAvatar {
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.navLinks9 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    border-top: 1px solid #323339;
+    box-sizing: border-box;
+    height: 91px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fafafa;
+}
+.navLinksParent {
+    align-self: stretch;
+    height: 210px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: #c4c5d0;
+    font-family: Inter;
+}
+.topContentParent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 288px;
+}
+.navLinkssidebarOne {
+    width: 260px;
+    background-color: #121212;
+    border-right: 1px solid #181d27;
+    box-sizing: border-box;
+    height: 1024px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 16px;
+    z-index: 0;
+}
+.malarmWrapper {
+    width: 304px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.bakiye250Tl {
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+}
+.bakiye250TlWrapper {
+    border-radius: 10px;
+    background-color: #0829ae;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.avatarIcon {
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    height: 48px;
+    object-fit: cover;
+}
+.username1 {
+    width: 100px;
+    position: relative;
+    line-height: 120%;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.userTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.frameParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: right;
+    font-size: 16px;
+    color: #f2f5ff;
+}
+.landingPageHeader {
+    width: 1170px;
+    background-color: #121212;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.avatarIcon1 {
+    width: 32px;
+    border-radius: 200px;
+    height: 32px;
+    object-fit: cover;
+}
+.fc2k24 {
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+}
+.avatarParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.dakika {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    line-height: 120%;
+}
+.dakikaWrapper {
+    width: 87px;
+    position: relative;
+    border-radius: 100px;
+    background-color: #414651;
+    height: 24px;
+    text-align: center;
+    font-size: 12px;
+}
+.frameDiv {
+    align-self: stretch;
+    border-bottom: 1px solid #414651;
+    box-sizing: border-box;
+    height: 78px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 8px;
+}
+.avatarIcon2 {
+    width: 96px;
+    border-radius: 400px;
+    height: 96px;
+    object-fit: cover;
+}
+.username2 {
+    position: relative;
+    line-height: 160%;
+    font-weight: 600;
+}
+.avatarIcon3 {
+    width: 16px;
+    position: relative;
+    border-radius: 24.62px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.text1 {
+    position: relative;
+    line-height: 18px;
+    font-weight: 600;
+}
+.badgeBase {
+    border-radius: 16px;
+    background-color: rgba(29, 54, 119, 0.6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px 2px 3px;
+    gap: 6px;
+    font-size: 14px;
+    color: #fcfdff;
+}
+.usernameParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 31px;
+    gap: 4px;
+}
+.avatarGroup {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 173px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.frameWrapper {
+    width: 173px;
+    position: relative;
+    height: 159px;
+}
+.vs1 {
+    width: 25px;
+    position: relative;
+    line-height: 120%;
+    display: inline-block;
+}
+.vs {
+    width: 24px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #325feb;
+}
+.frameParent2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.katlmCreti {
+    position: relative;
+    line-height: 120%;
+}
+.badgeBase2 {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2px 8px 2px 0px;
+}
+.badgeBaseWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.badgeBaseContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: #60a408;
+}
+.frameParent3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.cret {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #8b8b8b;
+}
+.frameParent1 {
+    align-self: stretch;
+    border-bottom: 1px solid #414651;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 24px;
+    gap: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+.buttonBase{
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2446ac;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonBase1 {
+    width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: #121212;
+    border: 1px solid #414651;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.buttonBaseSonucuRaporla{
+    width: 400px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2446ac;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.buttonBase:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.buttonBase1:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}
+.buttonBaseSonucuRaporla:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}
+.buttonBaseParent {
+    width: 311px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+.frameWrapper2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 10px;
+    font-size: 14px;
+}
+.frameContainer {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    padding: 16px;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 36px 36px;
+    gap: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.headphonesIcon {
+    width: 32px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.maSalonu {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.headphonesParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+.frameChild {
+    align-self: stretch;
+    height: 522px;
+}
+.divider {
+    align-self: stretch;
+    position: relative;
+    background-color: #e9eaeb;
+    height: 1px;
+}
+.text5 {
+    flex: 1;
+    position: relative;
+    line-height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    padding: 10px 14px;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #121212;
+    color: white;
+}
+.input {
+    align-self: stretch;
+
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #121212;
+    border: 1px solid #717680;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 14px;
+    
+}
+.inputFieldBase {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.inputField {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sendIcon {
+    width: 16px;
+    position: relative;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.buttonBase2 {
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    border: 1px solid #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.button {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.actions {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.content {
+    align-self: stretch;
+    filter: drop-shadow(-1px 4px 4px rgba(0, 0, 0, 0.25));
+    border-top: 1px solid #252b37;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 16px 24px;
+}
+.footer {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.footerWrapper {
+    width: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #717680;
+}
+.frameParent4 {
+    width: 490px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #252b37;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 36px 0px;
+    gap: 24px;
+    font-size: 18px;
+    color: #f2f5ff;
+}
+.frameGroup {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 20px 50px;
+    gap: 27px;
+    font-size: 16px;
+}
+.container {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    z-index: 1;
+    font-size: 22px;
+    font-family: Inter;
+}
+.malarmSalonChild {
+    width: 525px;
+    position: absolute;
+    margin: 0 !important;
+    top: 1070px;
+    left: 994px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.15);
+    height: 525px;
+    z-index: 2;
+}
+.malarmSalon {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Reddit Sans';
+}
+.buttonBase2:hover {
+    opacity: 0.8;
+}
+.content1 input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #121212;
+    padding: 8px;
+  }

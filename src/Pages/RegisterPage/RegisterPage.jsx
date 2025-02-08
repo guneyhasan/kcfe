@@ -21,7 +21,7 @@ const RegisterPage = () => {
 	const [loading, setLoading] = useState(false);
 
 	const handleNavLoginClick = () => {
-		navigate('/landing');
+		navigate('/dashboard');
 	};
 
 	const handleNavSignupClick = () => {
@@ -42,11 +42,11 @@ const RegisterPage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		
+
 		// Tüm alanların dolu olduğunu kontrol et
 		const requiredFields = ['fullName', 'username', 'email', 'phoneNumber', 'password'];
 		const emptyFields = requiredFields.filter(field => !formData[field]);
-		
+
 		if (emptyFields.length > 0) {
 			setError(`Lütfen tüm alanları doldurun: ${emptyFields.join(', ')}`);
 			return;
@@ -56,7 +56,7 @@ const RegisterPage = () => {
 			setError('Lütfen üyelik sözleşmesini kabul edin');
 			return;
 		}
-		
+
 		if (formData.password !== formData.confirmPassword) {
 			setError('Şifreler eşleşmiyor');
 			return;
@@ -95,7 +95,7 @@ const RegisterPage = () => {
 				<div className={styles.textButtonParent}>
 					<div className={styles.textButton}>
 						<div className={styles.buttonBase}>
-							<div 
+							<div
 								className={styles.text}
 								onClick={handleNavLoginClick}
 							>
@@ -105,7 +105,7 @@ const RegisterPage = () => {
 					</div>
 					<div className={styles.textButton}>
 						<div className={styles.buttonBase1}>
-							<div 
+							<div
 								className={styles.text}
 								onClick={handleNavSignupClick}
 							>

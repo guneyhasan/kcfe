@@ -1,0 +1,932 @@
+.logo {
+  	position: relative;
+}
+.hzlMeydanOku {
+  	position: relative;
+  	font-weight: 600;
+}
+.buton {
+  	border-radius: 100px;
+  	background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 8px 32px;
+  	cursor: pointer;
+}
+.proiconsgamedefault {
+  	position: absolute;
+  	top: 12px;
+  	left: 16px;
+  	width: 24px;
+  	height: 24px;
+  	overflow: hidden;
+}
+.navLinks1 {
+  	width: 228px;
+  	position: relative;
+  	border-radius: 8px;
+  	background-color: #1e2024;
+  	height: 48px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	color: #fdfdfd;
+}
+.malarm {
+  	position: absolute;
+  	top: 14px;
+  	left: 48px;
+  	font-weight: 500;
+}
+.navLinks2 {
+  	width: 228px;
+  	position: relative;
+  	border-radius: 8px;
+  	background-color: #121212;
+  	height: 48px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	cursor: pointer;
+}
+.mdimessageIcon {
+  	position: absolute;
+  	top: 12px;
+  	left: 16px;
+  	width: 24px;
+  	height: 24px;
+}
+.navLinks {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 12px;
+  	color: #c4c5d0;
+}
+.butonParent {
+  	height: 421px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 16px;
+  	font-size: 16px;
+  	color: #f5f5f5;
+  	font-family: Inter;
+}
+.topContent {
+  	align-self: stretch;
+  	height: 532px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 26px 0px 0px;
+  	box-sizing: border-box;
+  	gap: 44px;
+}
+.canlYardm {
+  	position: absolute;
+  	top: 14px;
+  	left: 48px;
+  	letter-spacing: -0.02em;
+  	font-weight: 500;
+}
+.navLinks7 {
+  	align-self: stretch;
+  	position: relative;
+  	border-radius: 8px;
+  	background-color: #121212;
+  	height: 48px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+}
+.avatarSingleIcon {
+  	width: 40px;
+  	position: relative;
+  	height: 40px;
+  	object-fit: cover;
+}
+.username {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	line-height: 100%;
+  	font-weight: 600;
+}
+.userId123456 {
+  	position: absolute;
+  	top: 18px;
+  	left: 0px;
+  	font-size: 12px;
+  	line-height: 150%;
+}
+.text {
+  	width: 132px;
+  	position: relative;
+  	height: 36px;
+}
+.userAvatar {
+  	position: absolute;
+  	top: 25px;
+  	left: 12px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 12px;
+}
+.navLinks9 {
+  	align-self: stretch;
+  	position: relative;
+  	border-radius: 8px;
+  	background-color: #121212;
+  	border-top: 1px solid #323339;
+  	box-sizing: border-box;
+  	height: 91px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	color: #fafafa;
+}
+.navLinksParent {
+  	align-self: stretch;
+  	height: 210px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 12px;
+  	font-size: 16px;
+  	color: #c4c5d0;
+  	font-family: Inter;
+}
+.topContentParent {
+  	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 288px;
+}
+.navLinkssidebarOne {
+  	width: 260px;
+  	background-color: #121212;
+  	border-right: 1px solid #181d27;
+  	box-sizing: border-box;
+  	height: 1024px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 0px 16px;
+}
+.oyunlarWrapper {
+  	width: 304px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+}
+.bakiye250Tl {
+  	position: relative;
+  	line-height: 120%;
+  	font-weight: 600;
+}
+.bakiye250TlWrapper {
+  	border-radius: 10px;
+  	background-color: #0829ae;
+  	height: 48px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 8px;
+  	box-sizing: border-box;
+  	cursor: pointer;
+}
+.avatarIcon {
+  	width: 48px;
+  	position: relative;
+  	border-radius: 50%;
+  	height: 48px;
+  	object-fit: cover;
+}
+.username1 {
+  	width: 100px;
+  	position: relative;
+  	line-height: 120%;
+  	font-weight: 600;
+  	display: flex;
+  	align-items: center;
+  	flex-shrink: 0;
+}
+.userTopBar {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	gap: 8px;
+  	cursor: pointer;
+}
+.frameParent {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 10px;
+  	text-align: right;
+  	font-size: 16px;
+  	color: #f2f5ff;
+}
+.landingPageHeader {
+  	width: 1170px;
+  	background-color: #121212;
+  	height: 80px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	padding: 20px;
+  	box-sizing: border-box;
+}
+.frameChild {
+  	width: 250px;
+  	position: relative;
+  	border-radius: 20px;
+  	height: 170px;
+  	object-fit: cover;
+}
+.rectangleWrapper {
+  	display: inline-block;
+  	margin-right: 10px;
+}
+.frameGroup {
+  	display: inline-flex;
+}
+.frameWrapper {
+  	align-self: stretch;
+  	height: 225px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 0px 20px;
+  	box-sizing: border-box;
+  	overflow-x: auto;
+  	white-space: nowrap;
+  	-ms-overflow-style: none;
+  	scrollbar-width: none;
+}
+.frameWrapper::-webkit-scrollbar {
+  	display: none;
+}
+.containerInner {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+}
+.meydanOkumalar2 {
+  	position: relative;
+  	line-height: 140%;
+  	font-weight: 600;
+}
+.filter3FillIcon {
+  	width: 20px;
+  	position: relative;
+  	height: 20px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+}
+.text1 {
+  	position: relative;
+  	line-height: 24px;
+  	font-weight: 500;
+}
+.content {
+  	width: 153px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 8px;
+}
+.input {
+  	align-self: stretch;
+  	box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+  	border-radius: 8px;
+  	background-color: rgba(113, 113, 113, 0.05);
+  	border: 1px solid #3f3f3f;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 10px 14px;
+  	gap: 8px;
+}
+.inputDropdownBase {
+  	position: relative;
+  	padding: 10px 40px 10px 20px;
+  	border-radius: 8px;
+  	border: 1px solid #444;
+  	background-color: #222;
+  	color: #ccc;
+  	font-size: 14px;
+  	cursor: pointer;
+  	appearance: none;
+}
+.inputDropdownBase:focus {
+  	outline: none;
+  	border-color: #325feb;
+}
+.inputDropdownBase::after {
+  	content: '';
+  	position: absolute;
+  	right: 10px;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	width: 0;
+  	height: 0;
+  	border-left: 5px solid transparent;
+  	border-right: 5px solid transparent;
+  	border-top: 5px solid #ccc;
+  	pointer-events: none;
+}
+.filter {
+  	position: relative;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.filter img {
+  	position: absolute;
+  	left: 10px;
+  	width: 16px;
+  	height: 16px;
+  	pointer-events: none;
+}
+.content1 {
+  	width: 104px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 8px;
+}
+.inputWithLabel1 {
+  	width: 151px;
+  	height: 44px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+}
+.filterParent {
+  	width: 633.5px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-end;
+  	gap: 20px;
+  	font-size: 16px;
+  	color: #717680;
+}
+.headerMaTekliflerim {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: space-between;
+  	padding: 0px 16px;
+}
+.kullanc1 {
+  	width: 48px;
+  	position: absolute;
+  	margin: 0 !important;
+  	top: 16px;
+  	left: 28px;
+  	line-height: 20px;
+  	font-weight: 500;
+  	display: inline-block;
+  	z-index: 0;
+}
+.head {
+  	align-self: stretch;
+  	background-color: rgba(220, 232, 242, 0.04);
+  	height: 52px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 16px 24px;
+  	box-sizing: border-box;
+  	position: relative;
+  	text-align: center;
+  	color: #606266;
+}
+.avatarIcon1 {
+  	width: 40px;
+  	position: relative;
+  	border-radius: 61.54px;
+  	height: 40px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	object-fit: cover;
+}
+.username2 {
+  	align-self: stretch;
+  	position: relative;
+  	font-weight: 600;
+}
+.tableuser {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 12px;
+}
+.name {
+  	position: relative;
+  	font-size: 14px;
+  	line-height: 20px;
+  	font-weight: 500;
+  	color: #f2f5ff;
+  	display: none;
+}
+.row {
+  	align-self: stretch;
+  	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: space-between;
+  	padding: 16px 24px;
+}
+.avatarIcon2 {
+  	width: 40px;
+  	position: relative;
+  	border-radius: 61.54px;
+  	height: 40px;
+}
+.avatarIcon3 {
+  	width: 40px;
+  	position: relative;
+  	border-radius: 80px;
+  	height: 40px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+}
+.kullanc {
+  	width: 228px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	text-align: left;
+  	font-size: 12px;
+}
+.oyun {
+  	width: 31px;
+  	position: absolute;
+  	margin: 0 !important;
+  	top: 16px;
+  	left: 22px;
+  	line-height: 20px;
+  	font-weight: 500;
+  	display: inline-block;
+  	z-index: 0;
+}
+.head1 {
+  	align-self: stretch;
+  	background-color: rgba(220, 232, 242, 0.04);
+  	height: 52px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 16px 24px;
+  	box-sizing: border-box;
+  	position: relative;
+  	font-size: 12px;
+  	color: #606266;
+}
+.fc24Wrapper {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+}
+.avatarIcon6 {
+  	width: 16px;
+  	position: relative;
+  	border-radius: 24.62px;
+  	height: 16px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	object-fit: cover;
+}
+.text3 {
+  	position: relative;
+  	line-height: 18px;
+  	font-weight: 500;
+}
+.badgeBase1 {
+  	position: absolute;
+  	top: 2px;
+  	left: 3px;
+  	border-radius: 16px;
+  	background-color: rgba(123, 235, 71, 0.21);
+  	width: 95px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 2px 8px 2px 3px;
+  	box-sizing: border-box;
+  	gap: 6px;
+}
+.badgeBase {
+  	width: 106px;
+  	position: relative;
+  	border-radius: 16px;
+  	height: 26px;
+  	font-size: 10px;
+  	color: #fcfdff;
+}
+.frameParent1 {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 4px;
+}
+.name5 {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 500;
+  	color: #f2f5ff;
+  	text-align: left;
+  	display: none;
+}
+.row5 {
+  	align-self: stretch;
+  	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  	box-sizing: border-box;
+  	height: 72px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 16px 24px;
+}
+.badgeBase3 {
+  	position: absolute;
+  	top: 2px;
+  	left: 3px;
+  	border-radius: 16px;
+  	background-color: rgba(29, 54, 119, 0.6);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 2px 8px 2px 3px;
+  	gap: 6px;
+}
+.badgeBase5 {
+  	position: absolute;
+  	top: 2px;
+  	left: 3px;
+  	border-radius: 16px;
+  	background-color: rgba(123, 235, 71, 0.21);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 2px 8px 2px 3px;
+  	gap: 6px;
+}
+.frameParent4 {
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	gap: 12px;
+}
+.kullanc2 {
+  	width: 228px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+}
+.katlmCreti {
+  	width: 77px;
+  	position: absolute;
+  	margin: 0 !important;
+  	top: 16px;
+  	left: 24px;
+  	line-height: 20px;
+  	font-weight: 500;
+  	display: inline-block;
+  	z-index: 0;
+}
+.head2 {
+  	align-self: stretch;
+  	background-color: rgba(220, 232, 242, 0.04);
+  	height: 52px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 16px 24px;
+  	box-sizing: border-box;
+  	position: relative;
+  	text-align: left;
+  	font-size: 12px;
+  	color: #606266;
+}
+.div {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 600;
+}
+.badgeBase10 {
+  	border-radius: 16px;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-end;
+  	padding: 2px 8px 2px 3px;
+}
+.badgeBaseWrapper {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+}
+.name10 {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 500;
+  	text-align: left;
+  	display: none;
+}
+.dl {
+  	width: 145px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	color: #f2f5ff;
+}
+.dl2 {
+  	width: 27px;
+  	position: absolute;
+  	margin: 0 !important;
+  	top: 16px;
+  	left: 24px;
+  	line-height: 20px;
+  	font-weight: 500;
+  	display: inline-block;
+  	z-index: 0;
+}
+.head3 {
+  	align-self: stretch;
+  	background-color: rgba(220, 232, 242, 0.04);
+  	height: 52px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 16px 24px;
+  	box-sizing: border-box;
+  	position: relative;
+  	text-align: left;
+  	font-size: 12px;
+  	color: #606266;
+}
+.div5 {
+  	width: 28px;
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 600;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-shrink: 0;
+}
+.row15 {
+  	align-self: stretch;
+  	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  	box-sizing: border-box;
+  	height: 72px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 16px 24px;
+}
+.dl1 {
+  	width: 145px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	color: #60a408;
+}
+.kalanSre1 {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 500;
+}
+.head4 {
+  	align-self: stretch;
+  	background-color: rgba(220, 232, 242, 0.04);
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 16px 24px;
+  	text-align: left;
+  	color: #606266;
+}
+.dakika {
+  	position: absolute;
+  	top: 5px;
+  	left: 8px;
+  	line-height: 120%;
+}
+.dakikaWrapper {
+  	width: 87px;
+  	position: relative;
+  	border-radius: 100px;
+  	background-color: #414651;
+  	height: 24px;
+}
+.name20 {
+  	position: relative;
+  	font-size: 14px;
+  	line-height: 20px;
+  	font-weight: 500;
+  	color: #f2f5ff;
+  	text-align: left;
+  	display: none;
+}
+.kalanSre {
+  	width: 153px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	font-size: 12px;
+}
+.head5 {
+  	align-self: stretch;
+  	background-color: rgba(220, 232, 242, 0.04);
+  	height: 52px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+}
+.text8 {
+  	position: relative;
+  	line-height: 24px;
+  	font-weight: 600;
+}
+.buttonBase {
+  	box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+  	border-radius: 8px;
+  	background-color: #325feb;
+  	height: 35px;
+  	overflow: hidden;
+  	flex-shrink: 0;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 10px 18px;
+  	box-sizing: border-box;
+}
+.buton1 {
+  	width: 218px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	text-align: left;
+}
+.tabloMaTekliflerim {
+  	flex: 1;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: center;
+  	text-align: center;
+  	font-size: 14px;
+}
+.headerMaTekliflerimParent {
+  	flex: 1;
+  	height: 470px;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	gap: 24px;
+}
+.frameContainer {
+  	flex: 1;
+  	border-radius: 20px;
+  	background-color: rgba(218, 218, 218, 0.04);
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 10px;
+}
+.containerChild {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+  	justify-content: flex-start;
+  	padding: 0px 20px;
+  	font-size: 24px;
+}
+.containerItem {
+  	align-self: stretch;
+  	flex: 1;
+}
+.container {
+  	align-self: stretch;
+  	flex: 1;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+  	font-size: 22px;
+  	font-family: Inter;
+}
+.meydanOkumalar {
+  	width: 100%;
+  	position: relative;
+  	background-color: #121212;
+  	height: 1024px;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 10px;
+  	text-align: left;
+  	font-size: 24px;
+  	color: #fff;
+  	font-family: 'Reddit Sans';
+}
+.filterContainer {
+  	display: flex;
+  	gap: 20px;
+  	margin-bottom: 10px;
+}
+.inputDropdownBase {
+  	padding: 10px;
+  	border-radius: 5px;
+  	border: 1px solid #ccc;
+  	background-color: #222;
+  	color: white;
+  	font-size: 14px;
+  	cursor: pointer;
+}
+.inputDropdownBase:focus {
+  	outline: none;
+  	border-color: #325feb;
+}
+
+
+  
+

@@ -109,20 +109,19 @@ const LandingPage = () => {
         navigate('/forgot-password');
     };
 
-    const handleLoginClick = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError('');
 
         try {
-            const response = await authService.login(formData.username, formData.password);
-            if (response.access_token) {
+            const response = await authService.login(formData);
+            if (response) {
                 localStorage.setItem('user', JSON.stringify(response));
-                navigate('/dashboard');
+                navigate('/meydanokumalar');
             }
         } catch (err) {
-            console.error('Giriş hatası:', err);
-            setError('Kullanıcı adı veya şifre hatalı');
+            setError(err.message || 'Giriş başarısız oldu');
         } finally {
             setLoading(false);
         }
@@ -145,17 +144,13 @@ const LandingPage = () => {
     const googleLogin = useGoogleLogin({
         onSuccess: async (response) => {
             try {
-                setLoading(true);
-                const result = await authService.googleLogin(response.access_token);
-                if (result.access_token) {
-                    localStorage.setItem('user', JSON.stringify(result));
-                    navigate('/dashboard');
+                const result = await authService.googleLogin(response.credential);
+                if (result.data) {
+                    localStorage.setItem('user', JSON.stringify(result.data));
+                    navigate('/meydanokumalar');
                 }
             } catch (err) {
-                console.error('Google login hatası:', err);
                 setError('Google ile giriş başarısız oldu');
-            } finally {
-                setLoading(false);
             }
         },
         onError: () => {
@@ -261,7 +256,7 @@ const LandingPage = () => {
                             <div className={styles.actions}>
                                 <button
                                     className={styles.signInButton}
-                                    onClick={handleLoginClick}
+                                    onClick={handleSubmit}
                                     disabled={loading}
                                 >
                                     {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
@@ -432,7 +427,7 @@ const LandingPage = () => {
                 <div className={styles.container5}>
                     <div className={styles.textAndSupportingText}>
                         <div className={styles.skaSorulanSorular}>Sıkça Sorulan Sorular</div>
-                        <div className={styles.yourQuestionsAnd}>Your questions and concerns are important to us, and we’re dedicated to providing you with prompt and helpful responses. Whether you’re inquiring about a service, need assistance with a product, or simply want to share your thoughts,</div>
+                        <div className={styles.yourQuestionsAnd}>Your questions and concerns are important to us, and we're dedicated to providing you with prompt and helpful responses. Whether you're inquiring about a service, need assistance with a product, or simply want to share your thoughts,</div>
                     </div>
                     <div className={styles.accordionParent}>
                         {accordionItems.map((item) => (
@@ -479,7 +474,7 @@ const LandingPage = () => {
                     <div className={styles.textAndSupportingText}>
                         <div className={styles.contactUs}>Contact Us</div>
                         <div className={styles.reachOutTo}>Reach Out To Us</div>
-                        <div className={styles.yourQuestionsAnd1}>Your questions and concerns are important to us, and we’re dedicated to providing you with prompt and helpful responses. Whether you’re inquiring about a service, need assistance with a product, or simply want to share your thoughts,</div>
+                        <div className={styles.yourQuestionsAnd1}>Your questions and concerns are important to us, and we're dedicated to providing you with prompt and helpful responses. Whether you're inquiring about a service, need assistance with a product, or simply want to share your thoughts,</div>
                     </div>
                     <div className={styles.data2}>
                         <div className={styles.card1}>
