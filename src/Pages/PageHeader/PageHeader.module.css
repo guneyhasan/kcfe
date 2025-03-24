@@ -1,17 +1,44 @@
+/* Apply Inter font to all elements */
+* {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; /* Regular weight */
+}
+
+/* Font weight helpers */
+.fontWeight500 {
+  font-weight: 500 !important;
+}
+
+.fontWeight600 {
+  font-weight: 600 !important;
+}
+
+.fontWeight700 {
+  font-weight: 700 !important;
+}
+
+/* Elements that need specific font weights */
+.bakiye250Tl,
+.username1,
+.logo {
+  font-weight: 600;
+}
+
 .oyunlar {
   position: relative;
 }
 .oyunlarWrapper {
-  width: 304px;
+  min-width: 304px;
+  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  gap: 12px;
 }
 .bakiye250Tl {
   position: relative;
   line-height: 120%;
-  font-weight: 600;
 }
 .bakiye250TlWrapper {
   border-radius: 10px;
@@ -21,9 +48,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 8px 16px;
   box-sizing: border-box;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+.bakiye250TlWrapper:hover {
+  background-color: #0622a0;
 }
 .avatarIcon {
   width: 48px;
@@ -31,12 +62,12 @@
   border-radius: 50%;
   height: 48px;
   object-fit: cover;
+  border: 2px solid #0829ae;
 }
-.username {
+.username1 {
   width: 100px;
   position: relative;
   line-height: 120%;
-  font-weight: 600;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -48,13 +79,17 @@
   justify-content: center;
   gap: 8px;
   cursor: pointer;
+  transition: opacity 0.3s;
+}
+.userTopBar:hover {
+  opacity: 0.9;
 }
 .frameParent {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 16px;
   text-align: right;
   font-size: 16px;
   color: #f2f5ff;
@@ -73,6 +108,120 @@
   text-align: left;
   font-size: 22px;
   color: #fff;
-  font-family: Inter;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  position: relative;
+  white-space: nowrap;
+  font-size: 24px;
+  color: #fff;
+}
+
+.menuIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: none;
+}
+
+.menuIcon:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Sidebar Styles */
+.mobileSidebar {
+  position: fixed;
+  top: 0;
+  left: -280px; /* Start off-screen */
+  width: 260px;
+  height: 100vh;
+  background-color: #121212;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Enable scrolling for content */
+}
+
+.mobileSidebar.open {
+  left: 0; /* Slide in when open */
+}
+
+.mobileSidebar > div {
+  width: 100%;
+  height: 100%;
+  display: block !important;
+}
+
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.sidebarContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebarContainer > div {
+  width: 100% !important;
+  display: block !important;
+  position: relative !important;
+}
+
+/* Responsive tasarım için medya sorguları */
+@media screen and (max-width: 768px) {
+  .landingPageHeader {
+    padding: 16px;
+    height: 70px;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .bakiye250TlWrapper {
+    height: 40px;
+    padding: 6px 12px;
+  }
+  
+  .avatarIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .frameParent {
+    gap: 10px;
+  }
+  
+  .menuIcon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bakiye250Tl {
+    font-size: 14px;
+  }
+  
+  .username1 {
+    width: 80px;
+    font-size: 14px;
+  }
+  
+  .oyunlarWrapper {
+    min-width: auto;
+  }
+  
+  .userTopBar {
+    display: none;
+  }
 }
 

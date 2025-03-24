@@ -1,0 +1,40 @@
+.gameCard {
+  flex: 1;
+  min-width: 240px;
+  margin: 0 8px;
+  padding: 6px;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+.gameImage {
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gameImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(50, 94, 235, 0.4);
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .gameCard {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: unset;
+  }
+  
+  .gameImage {
+    height: 120px;
+    width: 100%;
+    border-radius: 8px;
+  }
+} 

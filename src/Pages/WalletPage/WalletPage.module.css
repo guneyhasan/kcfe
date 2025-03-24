@@ -1,0 +1,787 @@
+/* Apply Inter font to all elements */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+/* Font weight helpers */
+.fontWeight500 {
+    font-weight: 500 !important;
+}
+
+.fontWeight600 {
+    font-weight: 600 !important;
+}
+
+.fontWeight700 {
+    font-weight: 700 !important;
+}
+
+/* Elements that need specific font weights */
+.username,
+.username1,
+.userId123456,
+.bakiye250Tl,
+.div,
+.czdanGemii,
+.maSalonu {
+    font-weight: 600;
+}
+
+.logo,
+.meydanOkumalar,
+.canlYardm,
+.ekilebilirMiktar,
+.bonus1,
+.hesapAd,
+.userId {
+    font-weight: 500;
+}
+
+/* Copy functionality styles */
+.copyContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.copiedTooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.czdanChild {
+    width: 525px;
+    position: absolute;
+    margin: 0 !important;
+    top: 737px;
+    left: 1001px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 525px;
+    z-index: 0;
+}
+.logo {
+    position: relative;
+    font-size: 14px;
+}
+.hzlMeydanOku {
+    position: relative;
+}
+.buton {
+    border-radius: 100px;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 32px;
+    cursor: pointer;
+}
+.proiconsgamedefault {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+.meydanOkumalar {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    font-weight: 500;
+}
+.navLinks1 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.mdimessageIcon {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+}
+.navLinks4 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #1e2024;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fff;
+}
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #c4c5d0;
+}
+.butonParent {
+    height: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #f5f5f5;
+}
+.topContent {
+    align-self: stretch;
+    height: 532px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 26px 0px 0px;
+    box-sizing: border-box;
+    gap: 44px;
+}
+.canlYardm {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    letter-spacing: -0.02em;
+}
+.navLinks7 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatarSingleIcon {
+    width: 40px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.username {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 100%;
+}
+.userId123456 {
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 150%;
+}
+.text {
+    width: 132px;
+    position: relative;
+    height: 36px;
+}
+.userAvatar {
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.navLinks9 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    border-top: 1px solid #323339;
+    box-sizing: border-box;
+    height: 91px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fafafa;
+}
+.navLinksParent {
+    align-self: stretch;
+    height: 210px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: #c4c5d0;
+}
+.topContentParent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 288px;
+}
+.navLinkssidebarOne {
+    width: 260px;
+    background-color: #121212;
+    border-right: 1px solid #181d27;
+    box-sizing: border-box;
+    height: 1024px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 16px;
+    z-index: 1;
+}
+.czdanWrapper {
+    width: 304px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.bakiye250Tl {
+    position: relative;
+    line-height: 120%;
+}
+.bakiye250TlWrapper {
+    border-radius: 10px;
+    background-color: #0829ae;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.avatarIcon {
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    height: 48px;
+    object-fit: cover;
+}
+.username1 {
+    width: 100px;
+    position: relative;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.userTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.frameParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: right;
+    font-size: 16px;
+    color: #f2f5ff;
+}
+.landingPageHeader {
+    width: 1170px;
+    background-color: #121212;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.menuItemWrapper {
+    flex: 1;
+    filter: drop-shadow(0px 1px 12px rgba(50, 95, 235, 0.36));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    color: #325feb;
+}
+.menuItemContainer {
+    cursor: pointer;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: #808080;
+    position: relative;
+    text-align: center;
+    flex: 1;
+    border-bottom: 2px solid transparent;
+}
+.menuItemContainer:last-child {
+    margin-right: 0;
+}
+.menu {
+    width: 100%;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid #333;
+    justify-content: space-between;
+}
+.toplamBakiye {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    width: 123px;
+}
+.div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+}
+.para {
+    position: absolute;
+    top: 34px;
+    left: 0px;
+    width: 114px;
+    height: 58px;
+}
+.para1 {
+    position: absolute;
+    top: 34px;
+    left: 0px;
+    width: 151px;
+    height: 58px;
+}
+.toplamBakiyeParent {
+    width: 151px;
+    position: relative;
+    height: 92px;
+}
+.ekilebilirMiktar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+}
+.div2 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+}
+.cekilebilirMiktar {
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    width: 47px;
+    height: 26px;
+    color: #fff;
+}
+.ekilebilirMiktarParent {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 123px;
+    height: 52px;
+}
+.div3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    width: 60.7px;
+}
+.bonus {
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    width: 60.7px;
+    height: 26px;
+}
+.bonus1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    width: 110px;
+    white-space: nowrap;
+}
+.bonusParent {
+    position: absolute;
+    top: 0px;
+    left: 350px;
+    width: 100px;
+    height: 52px;
+    color: #fff;
+}
+.reservedBalanceParent {
+    position: absolute;
+    top: 0px;
+    left: 179px;
+    width: 120px;
+    height: 52px;
+    color: #fff;
+}
+.groupChild {
+    position: absolute;
+    top: 3.5px;
+    left: 150.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    width: 1px;
+    height: 45px;
+}
+.reservedDivider {
+    position: absolute;
+    top: 3.5px;
+    left: 320.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    width: 1px;
+    height: 45px;
+}
+.groupContainer {
+    width: 480px;
+    position: relative;
+    height: 52px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.groupParent {
+    flex: 1;
+    border-radius: 12px;
+    background-color: rgba(113, 113, 113, 0.05);
+    border: 1px solid #3f3f3f;
+    box-sizing: border-box;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 36px;
+    min-width: 420px;
+}
+.hzlParaYatr {
+    align-self: stretch;
+    position: relative;
+    line-height: 160%;
+}
+.hesapAd {
+    align-self: stretch;
+    position: relative;
+    line-height: 120%;
+}
+.documentIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+.mavsoftBlmLtdTParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 16px;
+    color: #fdfdfd;
+}
+.hesapAdParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.userId {
+    width: 55px;
+    position: relative;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+}
+.infoIcon {
+    width: 12px;
+    position: relative;
+    height: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.aklamayaYeNumaranz {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.ek {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+}
+.frameDiv {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #b4b4f8;
+}
+.hzlParaYatrParent {
+    flex: 1;
+    border-radius: 12px;
+    background: linear-gradient(-57.57deg, #100855, #072bb2 55%, #0047ff);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 8px;
+    min-width: 250px;
+    font-size: 18px;
+    color: #fdfdfd;
+}
+.frameContainer {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 56px;
+    min-width: 748px;
+}
+.czdanGemii {
+    align-self: stretch;
+    position: relative;
+    line-height: 140%;
+}
+.row {
+    align-self: stretch;
+    border-radius: 12px 12px 0px 0px;
+    background-color: rgba(24, 29, 39, 0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px;
+    gap: 8px;
+}
+.row1 {
+    align-self: stretch;
+    box-shadow: 0px -1px 0px #222 inset;
+    background-color: rgba(16, 18, 17, 0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px;
+    gap: 8px;
+}
+.row5 {
+    align-self: stretch;
+    border-radius: 0px 0px 12px 12px;
+    background-color: rgba(16, 18, 17, 0.7);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px;
+    gap: 8px;
+}
+.rowParent {
+    align-self: stretch;
+    backdrop-filter: blur(30px);
+    border-radius: 12px;
+    background-color: rgba(24, 29, 39, 0.7);
+    border: 1px solid #414651;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 12px;
+    color: #fafafa;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Webkit (Chrome, Safari, Edge) için scrollbar stilleri */
+.rowParent::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rowParent::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.rowParent::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+/* Başlık satırını sabit tutmak için */
+.row {
+    position: sticky;
+    top: 0;
+    background-color: #1A1A1A;
+    z-index: 1;
+}
+.czdanGemiiParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 22px;
+}
+.frameGroup {
+    width: 1017px;
+    height: 606px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 56px;
+    font-size: 48px;
+    color: #fff;
+}
+.menuParent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+    gap: 25px;
+}
+.container {
+    align-self: stretch;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    z-index: 2;
+    font-size: 22px;
+}
+.czdan {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 24px;
+    color: #fff;
+}
+
+.menuItemWrapper,
+.menuItemContainer {
+    cursor: pointer;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: #808080;
+    position: relative;
+    text-align: left;
+}
+
+.active {
+    color: #007AFF;
+    border-bottom: 2px solid #007AFF;
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    text-align: left;
+}
+
+.input1 {
+    width: 100%;
+    background: transparent;
+}
+
+.input1 .content {
+    width: 100%;
+}
+
+.input1 input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 12px 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input1 input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+

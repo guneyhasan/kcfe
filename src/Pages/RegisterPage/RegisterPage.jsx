@@ -5,6 +5,7 @@ import styles from './RegisterPage.module.css';
 import maviLogoImage from '../../images/konsolclub_logo_mavi.png';
 import beyazLogoImage from '../../images/konsolclub_logo_beyaz_yazi.svg';
 import googleLogoImage from '../../images/googleIcon.png';
+import { Helmet } from 'react-helmet';
 
 const RegisterPage = () => {
 	const navigate = useNavigate();
@@ -88,6 +89,11 @@ const RegisterPage = () => {
 
 	return (
 		<div className={styles.kaytOl}>
+			<Helmet>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+				<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+			</Helmet>
 			<div className={styles.landingPageHeader}>
 				<div className={styles.logoSvg}>
 					<img className={styles.vectorIcon} alt="" src={beyazLogoImage} />

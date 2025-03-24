@@ -84,81 +84,99 @@
     cursor: pointer;
 }
 .frameContainer {
-    width: 418px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 14px;
+    gap: 8px;
+    font-size: 14px;
+    color: #f5f5f5;
 }
 .veya {
+    align-self: stretch;
     position: relative;
     line-height: 20px;
-    color: #f5f5f5;
+    font-weight: 600;
+    color: #a4a7ae;
     text-align: center;
-    margin-bottom: 16px;
+    margin: 16px 0;
 }
 .avatarIcon4 {
     width: 48px;
     border-radius: 200px;
     height: 48px;
     object-fit: cover;
-    margin-left: -15px;
+    margin-left: -24px;
 }
 .avatarParent1 {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 .katlmCretinizin95i {
     align-self: stretch;
     position: relative;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 16px;
     color: #a4a7ae;
 }
 .upload2LineIcon {
-    width: 38px;
-    position: relative;
-    height: 38px;
+    width: 24px;
+    height: 24px;
     overflow: hidden;
     flex-shrink: 0;
 }
 .ltfenMaSonucunun {
-    align-self: stretch;
+    flex: 1;
     position: relative;
     line-height: 20px;
 }
 .ltfenMaSonucununEkranFotWrapper {
-    align-self: stretch;
+    flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.uploadLabel {
+    cursor: pointer;
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #414651;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    padding: 12px 16px;
+    gap: 8px;
+    margin: 16px 0;
 }
 .upload2LineParent {
     align-self: stretch;
-    border-radius: 16px;
-    border: 1px dashed #414651;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    gap: 9px;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: #f5f5f5;
 }
 .text {
     position: relative;
-    line-height: 24px;
+    line-height: 20px;
     font-weight: 600;
 }
-.buttonBase, .buttonBase1 {
-    width: 40px;
-    padding: 10px 20px;
+.buttonBase {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #3366FF;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    cursor: pointer;
 }
 .text1 {
     position: relative;
@@ -166,23 +184,23 @@
     font-weight: 600;
 }
 .buttonBase1 {
-    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    flex: 1;
     border-radius: 8px;
-    background-color: rgba(113, 113, 113, 0.05);
     border: 1px solid #414651;
-    overflow: hidden;
-    transition: background-color 0.3s ease;
-}
-.buttonBase1:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-.buttonBaseParent {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+.buttonBaseParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
-    gap: 4px;
+    gap: 8px;
 }
 .frameWrapper {
     align-self: stretch;
@@ -198,9 +216,17 @@
 .frameParent {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start;
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .frameParent {
+        align-items: center;
+        min-height: 100vh;
+    }
 }
 
 .contentContainer {
@@ -210,6 +236,48 @@
     width: 100%;
     max-width: 480px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+    .contentContainer {
+        padding: 16px;
+        margin-top: 0;
+        border-radius: 12px;
+    }
+    
+    .frameParent {
+        padding: 12px;
+        align-items: flex-start;
+    }
+    
+    .frameGroup {
+        margin-bottom: 16px;
+        height: auto;
+        min-height: 60px;
+    }
+    
+    .kazananSe {
+        margin-bottom: 12px;
+    }
+    
+    .veya {
+        margin: 12px 0;
+    }
+    
+    .uploadLabel {
+        margin: 12px 0;
+        padding: 10px 12px;
+    }
+    
+    .buttonBaseParent {
+        flex-direction: column;
+    }
+    
+    .buttonBase, .buttonBase1 {
+        margin-bottom: 8px;
+    }
 }
 
 .frameGroup {
@@ -272,5 +340,159 @@
   pointer-events: none;
   background-color: rgba(113, 113, 113, 0.05);
   border: 1px solid #687080;
+}
+
+.cret {
+    margin-top: 20px;
+}
+
+.frameParent3 {
+    display: flex;
+    gap: 12px;
+}
+
+.badgeBase2 {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.gameName {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.timeWrapper {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.playerInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.playerAvatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.playerName {
+    font-weight: 500;
+}
+
+.vs {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.financials {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.fee, .prize {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+
+.resultButtons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.resultButton {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resultButton:first-child {
+    background: #4CAF50;
+    color: white;
+}
+
+.resultButton:last-child {
+    background: #f44336;
+    color: white;
+}
+
+.resultButton.selected {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+.uploadSection {
+    margin-bottom: 16px;
+}
+
+.uploadButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.uploadButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.actionButtons {
+    display: flex;
+    gap: 12px;
+}
+
+.submitButton, .backButton {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submitButton {
+    background: #2196F3;
+    color: white;
+}
+
+.submitButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.backButton {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.backButton:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 

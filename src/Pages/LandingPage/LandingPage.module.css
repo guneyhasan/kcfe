@@ -1,3 +1,9 @@
+/* Apply Inter font to all elements */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
 .contentIcon {
     width: 64px;
     position: relative;
@@ -393,7 +399,7 @@
     margin: 0 !important;
     top: 130px;
     left: 96px;
-    font-size: 64px;
+    font-size: clamp(46px, 4vw, 64px);
     line-height: 120%;
     text-transform: capitalize;
     font-weight: 600;
@@ -408,14 +414,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 96px 32px 48px;
+    padding: 0px 32px 48px;
     box-sizing: border-box;
     position: relative;
     gap: 32px;
-    background-image: url('../../images/LandingBackground.png');
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ),
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(0, 0, 0, 0.7) 100%
+        ),
+        url('../../images/Landing/messi.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+    margin-top: -1px;
 }
 .heading {
     align-self: stretch;
@@ -609,7 +626,7 @@
     font-size: 20px;
     line-height: 32px;
     font-weight: 500;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: #fafafa;
     text-align: left;
 }
@@ -699,6 +716,7 @@
     flex: 1;
     position: relative;
     line-height: 36px;
+    font-family: 'Inter', sans-serif;
 }
 .div {
     width: 50px;
@@ -735,7 +753,7 @@
     text-align: left;
     font-size: 20px;
     color: #fdfdfd;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
 }
 .parent {
     align-self: stretch;
@@ -773,7 +791,7 @@
     justify-content: flex-start;
     font-size: 24px;
     color: #325feb;
-    font-family: Manrope;
+    font-family: 'Inter', sans-serif;
 }
 .howItWork14 {
     align-self: stretch;
@@ -828,7 +846,7 @@
 }
 .hangiOyunlarVeKonsollarDes {
     margin: 0;
-    font-family: inherit;
+    font-family: 'Inter', sans-serif;
     font-size: inherit;
     padding-left: 27px;
 }
@@ -921,7 +939,7 @@
     font-size: 36px;
     line-height: 52px;
     font-weight: 600;
-    font-family: Manrope;
+    font-family: 'Inter', sans-serif;
     display: inline-block;
 }
 .yourQuestionsAnd1 {
@@ -949,7 +967,7 @@
     font-size: 16px;
     line-height: 26px;
     font-weight: 500;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
     color: #d1d5db;
 }
 .frame7 {
@@ -980,7 +998,7 @@
     justify-content: flex-start;
     gap: 16px;
     font-size: 14px;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
 }
 .frame5 {
     align-self: stretch;
@@ -1020,7 +1038,7 @@
     gap: 32px;
     text-align: left;
     font-size: 24px;
-    font-family: Manrope;
+    font-family: 'Inter', sans-serif;
 }
 .contactUs25 {
     width: 1440px;
@@ -1177,7 +1195,7 @@
     text-align: center;
     font-size: 52px;
     color: #fff;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
 }
 
 .button, .button1 {
@@ -1368,5 +1386,277 @@
     padding: 8px;
     border-radius: 4px;
     background-color: rgba(255, 77, 79, 0.1);
+}
+
+.button .text,
+.button1 .text,
+.buttonBase .text,
+.buttonBase1 .text,
+.buttonBase3 .text,
+.buttonBase5 .text {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Mobil görünüm için genel düzenlemeler - breakpoint'i 1300px'e yükseltiyoruz */
+@media screen and (max-width: 1300px) {
+  /* Mevcut 768px medya sorgusunda olan tüm stilleri buraya taşıyın */
+  .oyunYetenekIdirContainer {
+    width: 100%;
+    position: static;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: clamp(46px, 4vw, 64px);
+    line-height: 110%;
+    text-align: left;
+    z-index: 1;
+  }
+
+  .content1 {
+    display: none; /* Varsayılan olarak gizli */
+  }
+
+  .logIn {
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;
+    height: auto;
+    min-height: 500px;
+  }
+  
+  /* Overlay stili */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Koyu karartma */
+    z-index: 99;
+  }
+  
+  /* Mobil görünümde giriş formu stilleri */
+  .content1 {
+    display: none;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 !important;
+  }
+  
+  .showMobileLogin {
+    display: flex;
+    background-color: rgba(1, 1, 1, 0.95);
+    border: 1px solid #325feb;
+    box-shadow: 0 0 20px rgba(50, 95, 235, 0.5);
+    border-radius: 16px;
+  }
+  
+  /* "Senin Oyunun Senin Konsolun" kısmı */
+  .container1 {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .headingAndSupportingText {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+  }
+
+  .supportingText1 {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  /* Konsol logoları bölümü */
+  .component2 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .ps5white1Icon, .ps4white2Icon, .xboxOneWhite1 {
+    width: 150px;
+    height: auto;
+  }
+
+  .xboxSeriesXSLogoWhite1, .image10Icon {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Oyun logoları bölümü */
+  .component1variant3 {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .image13Icon, .image12Icon, .image15Icon, .maxresdefault11 {
+    width: 150px;
+    height: auto;
+  }
+
+  /* "Nasıl Çalışır" bölümü */
+  .howItWork11, .howItWork14 {
+    padding: 40px 20px;
+  }
+
+  .data02 {
+    flex-direction: column;
+  }
+
+  .card01 {
+    width: 100%;
+    min-width: auto;
+  }
+
+  /* SSS bölümü */
+  .contactUs24, .contactUs25 {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .skaSorulanSorular, .contactUs, .reachOutTo {
+    width: 100%;
+  }
+
+  /* Footer bölümü */
+  .footer16 {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  .frame17 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Güvenlik bölümü */
+  .data021 {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .frame4 {
+    width: 100%;
+  }
+  
+  /* İletişim kartları */
+  .data2 {
+    flex-direction: column;
+  }
+  
+  .card1 {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .buttonBase5 {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Küçük ekranlar için ek stil ayarlamaları */
+@media screen and (max-width: 480px) {
+  .oyunYetenekIdirContainer {
+    font-size: clamp(46px, 3.5vw, 64px);
+    padding: 10px 20px;
+    text-align: left;
+  }
+  
+  .heading {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  
+  .naslAlr, .maSonularnnGvenlii {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  
+  .hangiOyunlarVeKonsollarDes {
+    font-size: 14px;
+  }
+  
+  .pagedoneLogoParent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+/* Desktop görünümünde de overlay ve popup için stil ekleyelim */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Koyu karartma */
+    z-index: 99;
+}
+
+/* Form popup için ana stil - hem desktop hem mobil için */
+.showMobileLogin {
+    display: flex !important; /* Gösterdiğimizde flex görünüm */
+    position: fixed !important; /* Sabit pozisyon */
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 100 !important;
+    background-color: rgba(1, 1, 1, 0.95) !important;
+    border: 1px solid #325feb !important;
+    box-shadow: 0 0 20px rgba(50, 95, 235, 0.5) !important;
+    border-radius: 16px !important;
+    margin: 0 !important;
+    width: 90% !important;
+    max-width: 400px !important;
+}
+
+/* Desktop görünüm için normal giriş formu */
+@media screen and (min-width: 1301px) {
+    .content1 {
+        /* Desktop görünümü için sabit konum */
+        position: absolute;
+        top: 126px;
+        left: 782px;
+        display: flex;
+    }
+    
+    /* Popup görünümü etkinleştirildiğinde, normal görünümü gizleyelim */
+    .overlay ~ .content1:not(.showMobileLogin) {
+        display: none;
+    }
+}
+
+/* Mobil görünüm için giriş formu (1300px ve altı) */
+@media screen and (max-width: 1300px) {
+    .content1 {
+        display: none; /* Varsayılan olarak gizli */
+    }
 }
 

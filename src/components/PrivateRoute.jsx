@@ -1,15 +1,28 @@
 import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    try {
+        const userStr = localStorage.getItem('user');
+        if (!userStr) {
+            console.log('No user data found in localStorage');
+            return <Navigate to="/" />;
+        }
 
-    if (!user) {
-        // Kullanıcı giriş yapmamışsa landing sayfasına yönlendir
-        return <Navigate to="/landing" />;
+        const user = JSON.parse(userStr);
+        if (!user.access_token) {
+            console.log('No access token found in user data');
+            localStorage.removeItem('user'); // Geçersiz veriyi temizle
+            return <Navigate to="/" />;
+        }
+
+        // Token varsa içeriği göster
+        return children;
+        
+    } catch (error) {
+        console.error('Error in PrivateRoute:', error);
+        localStorage.removeItem('user'); // Hata durumunda temizle
+        return <Navigate to="/" />;
     }
-
-    // Kullanıcı giriş yapmışsa istenen sayfayı göster
-    return children;
 };
 
 export default PrivateRoute; 

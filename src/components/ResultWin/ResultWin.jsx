@@ -1,14 +1,55 @@
-import { FunctionComponent } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ResultWin.module.css';
+// Import game images
+import fc24Image from '../../images/Games/fc24.jpeg';
+import fc25Image from '../../images/Games/fc25.jpeg';
+import nba2k24Image from '../../images/Games/nba2k24.png';
+import nba2k25Image from '../../images/Games/nba2k25.jpeg';
 
+const ResultWin = ({ matchData, onClose }) => {
+  const [currentUser, setCurrentUser] = useState(null);
 
-const Frame = ({ matchData }) => {
+  // Kullanıcı bilgilerini al
+  useEffect(() => {
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      try {
+        const parsedData = JSON.parse(userStr);
+        setCurrentUser(parsedData.user);
+      } catch (error) {
+        console.error('Kullanıcı bilgileri alınamadı:', error);
+      }
+    }
+  }, []);
+
+  // Get the appropriate game image based on game name
+  const getGameImage = (gameName) => {
+    switch (gameName) {
+      case 'FC 25':
+        return fc25Image;
+      case 'FC 24':
+        return fc24Image;
+      case 'NBA 2K24':
+        return nba2k24Image;
+      case 'NBA 2K25':
+        return nba2k25Image;
+      default:
+        return null;
+    }
+  };
+
+  const gameIcon = getGameImage(matchData.gameName);
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.header}>
           <div className={styles.gameInfo}>
-            <img className={styles.gameIcon} alt="" src={matchData.player1.avatarUrl} />
+            {gameIcon ? (
+              <img className={styles.gameIcon} alt="" src={gameIcon} />
+            ) : (
+              <img className={styles.gameIcon} alt="" src={matchData.player1.avatarUrl || '/avatar.png'} />
+            )}
             <span className={styles.gameName}>{matchData.gameName}</span>
           </div>
           <div className={styles.timeInfo}>
@@ -17,13 +58,19 @@ const Frame = ({ matchData }) => {
         </div>
 
         <div className={styles.playerInfo}>
-          <img className={styles.playerAvatar} alt="" src={matchData.player2.avatarUrl} />
-          <div className={styles.playerName}>{matchData.player1.username}</div>
+          <img 
+            className={styles.playerAvatar} 
+            alt="" 
+            src={currentUser?.avatarUrl || matchData.player1.avatarUrl || '/avatar.png'} 
+          />
+          <div className={styles.playerName}>
+            {currentUser?.username || matchData.player1.username}
+          </div>
         </div>
 
         <div className={styles.prizeInfo}>
           <div className={styles.prizeTitle}>Tebrikler Ödülün</div>
-          <div className={styles.prizeAmount}>{`${matchData.prize}₺`}</div>
+          <div className={styles.prizeAmount}>{`${Number(matchData.prize).toFixed(0)}₺`}</div>
         </div>
 
         <div className={styles.messageText}>
@@ -31,10 +78,7 @@ const Frame = ({ matchData }) => {
         </div>
 
         <div className={styles.actions}>
-          <button className={styles.primaryButton}>
-            Yeniden meydan oku
-          </button>
-          <button className={styles.secondaryButton}>
+          <button className={styles.primaryButton} onClick={onClose}>
             Anasayfaya dön
           </button>
         </div>
@@ -43,4 +87,4 @@ const Frame = ({ matchData }) => {
   );
 };
 
-export default Frame;
+export default ResultWin;

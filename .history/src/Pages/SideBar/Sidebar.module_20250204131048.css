@@ -1,0 +1,234 @@
+.navLinkssidebarOne {
+    width: 260px;
+    background-color: #121212;
+    border-right: 1px solid #181d27;
+    box-sizing: border-box;
+    height: 1024px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 16px;
+}
+
+.topContentParent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 288px;
+}
+
+.topContent {
+    align-self: stretch;
+    height: 532px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 26px 0px 0px;
+    box-sizing: border-box;
+    gap: 44px;
+}
+
+.logo {
+    position: relative;
+}
+
+.butonParent {
+    height: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #f5f5f5;
+    font-family: Inter;
+}
+
+.buton {
+    border-radius: 100px;
+    background:  #325feb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 32px;
+    cursor: pointer;
+}
+
+.hzlMeydanOku {
+    position: relative;
+    font-weight: 600;
+    color: #fdfdfd;
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #c4c5d0;
+}
+
+.navLinks1 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #1e2024;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fdfdfd;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.navLinks2 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fdfdfd;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.proiconsgamedefault {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.malarm {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    font-weight: 500;
+}
+
+.mdimessageIcon {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+}
+
+.navLinksParent {
+    align-self: stretch;
+    height: 210px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: #c4c5d0;
+    font-family: Inter;
+}
+
+.navLinks7 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    color: #fdfdfd;
+    font-size: 16px;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: none;
+    outline: none;
+}
+
+.navLinks7:hover {
+    background-color: #2a2a2a;
+}
+
+.canlYardm {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+}
+
+.navLinks9 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    border-top: 1px solid #323339;
+    box-sizing: border-box;
+    height: 91px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fafafa;
+}
+
+.userAvatar {
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.avatarSingleIcon {
+    width: 40px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+
+.text {
+    width: 132px;
+    position: relative;
+    height: 36px;
+}
+
+.username {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 100%;
+    font-weight: 600;
+}
+
+.userId123456 {
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 150%;
+}
+.navLinks1:hover,
+.navLinks2:hover {
+    background-color: #2a2a2a;
+}

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LandingPage.module.css';
 import { authService } from '../../services/api';
 import { useGoogleLogin } from '@react-oauth/google';
+
+// Import Inter font
+import { Helmet } from 'react-helmet';
 
 // Görselleri import ediyoruz
 import ps5Image from '../../images/ps5.png';
@@ -37,6 +40,7 @@ const LandingPage = () => {
     });
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showMobileLoginForm, setShowMobileLoginForm] = useState(false);
 
     // Akordiyonları ve içeriklerini tanımlayalım
     const accordionItems = [
@@ -98,7 +102,8 @@ const LandingPage = () => {
     };
 
     const handleNavLoginClick = () => {
-        navigate('/landing');
+        // Hem desktop hem de mobil görünüm için formu popup olarak göster
+        setShowMobileLoginForm(!showMobileLoginForm);
     };
 
     const handleNavSignupClick = () => {
@@ -158,8 +163,21 @@ const LandingPage = () => {
         }
     });
 
+    // Overlay'e tıklama işleyicisi
+    const handleOverlayClick = (e) => {
+        // Overlay'e tıklandığında (formun kendisine değil) form kapanacak
+        if (e.target.classList.contains(styles.overlay)) {
+            setShowMobileLoginForm(false);
+        }
+    };
+
     return (
         <div className={styles.desktop}>
+            <Helmet>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+            </Helmet>
             <div className={styles.dropdownHeaderNavigation}>
                 <div className={styles.header}>
                     <div className={styles.container}>
@@ -197,7 +215,7 @@ const LandingPage = () => {
             </div>
             <div className={styles.headerSection}>
                 <div className={styles.logIn}>
-                    <div className={styles.content1}>
+                    <div className={`${styles.content1} ${showMobileLoginForm ? styles.showMobileLogin : ''}`}>
                         <div className={styles.header1}>
                             <div className={styles.logo}>
                                 <img className={styles.contentIcon1} alt="" src={blueLogoImage} />
@@ -283,9 +301,11 @@ const LandingPage = () => {
                             </div>
                         </div>
                     </div>
+                    {showMobileLoginForm && (
+                        <div className={styles.overlay} onClick={handleOverlayClick}></div>
+                    )}
                     <div className={styles.oyunYetenekIdirContainer}>
-                        <p className={styles.oyunYetenekIdir}>Oyun Yetenek İşidir! Yeteneğini göster ödülleri kap!</p>
-                        <p className={styles.blankLine}>&nbsp;</p>
+                        <p className={styles.oyunYetenekIdir}>Oyun Yetenek İşidir! Yeteneğini Göster Ödülleri Kap!</p>
                     </div>
                 </div>
                 <div className={styles.container1}>

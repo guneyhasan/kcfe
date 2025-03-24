@@ -1,9 +1,39 @@
+/* Apply Inter font to all elements */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+/* Font weight helpers */
+.fontWeight500 {
+    font-weight: 500 !important;
+}
+
+.fontWeight600 {
+    font-weight: 600 !important;
+}
+
+.fontWeight700 {
+    font-weight: 700 !important;
+}
+
+/* Elements that need specific font weights */
+.hzlMeydanOku,
+.username {
+    font-weight: 600;
+}
+
+.malarm,
+.canlYardm {
+    font-weight: 500;
+}
+
 .navLinkssidebarOne {
     width: 260px;
     background-color: #121212;
     border-right: 1px solid #181d27;
     box-sizing: border-box;
-    height: 1024px;
+    height: 100vh;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -11,6 +41,28 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0px 16px;
+    position: sticky;
+    top: 0;
+}
+
+/* Mobil görünüm için media query */
+@media screen and (max-width: 768px) {
+    .navLinkssidebarOne {
+        display: none; /* Mobil görünümde sidebar'ı gizle */
+        width: 0; /* Genişliği sıfırla */
+        padding: 0; /* Padding'i kaldır */
+        margin: 0; /* Margin'i kaldır */
+        flex: 0; /* Flex büyüme/küçülme özelliğini kapat */
+        flex-basis: 0; /* Flex temel boyutunu sıfırla */
+    }
+    
+    /* Sidebar'ın parent elementine eklenmesi gereken stil */
+    /* Bu stil, sidebar'ın parent elementinde uygulanmalı */
+    body .sidebarParent {
+        grid-template-columns: 0 1fr !important; /* Grid layout kullanıyorsa */
+        display: flex; /* Flex layout kullanıyorsa */
+        flex-direction: column; /* İçeriği dikey olarak düzenle */
+    }
 }
 
 .topContentParent {
@@ -18,13 +70,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    gap: 288px;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 0;
 }
 
 .topContent {
     align-self: stretch;
-    height: 532px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,10 +88,12 @@
 
 .logo {
     position: relative;
+    font-size: 22px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .butonParent {
-    height: 421px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,23 +101,27 @@
     gap: 16px;
     font-size: 16px;
     color: #f5f5f5;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
 }
 
 .buton {
     border-radius: 100px;
-    background:  #325feb;
+    background: #325feb;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 8px 32px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buton:hover {
+    background: #2a51d1;
 }
 
 .hzlMeydanOku {
     position: relative;
-    font-weight: 600;
     color: #fdfdfd;
 }
 
@@ -91,6 +149,8 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .navLinks2 {
@@ -109,6 +169,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    transition: background-color 0.3s;
 }
 
 .proiconsgamedefault {
@@ -124,7 +185,6 @@
     position: absolute;
     top: 14px;
     left: 48px;
-    font-weight: 500;
 }
 
 .mdimessageIcon {
@@ -137,7 +197,6 @@
 
 .navLinksParent {
     align-self: stretch;
-    height: 210px;
     overflow: hidden;
     flex-shrink: 0;
     display: flex;
@@ -147,7 +206,7 @@
     gap: 12px;
     font-size: 16px;
     color: #c4c5d0;
-    font-family: Inter;
+    font-family: 'Inter', sans-serif;
 }
 
 .navLinks7 {
@@ -162,6 +221,8 @@
     flex-shrink: 0;
     border: none;
     outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .navLinks7:hover {
@@ -173,7 +234,6 @@
     top: 14px;
     left: 48px;
     letter-spacing: -0.02em;
-    font-weight: 500;
 }
 
 .navLinks9 {
@@ -205,6 +265,7 @@
     position: relative;
     height: 40px;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .text {
@@ -218,7 +279,6 @@
     top: 0px;
     left: 0px;
     line-height: 100%;
-    font-weight: 600;
 }
 
 .userId123456 {
@@ -227,8 +287,37 @@
     left: 0px;
     font-size: 12px;
     line-height: 150%;
+    color: #c4c5d0;
 }
+
 .navLinks1:hover,
 .navLinks2:hover {
     background-color: #2a2a2a;
+}
+
+/* Responsive tasarım için medya sorguları */
+@media screen and (max-width: 768px) {
+    .navLinkssidebarOne {
+        width: 240px;
+    }
+    
+    .navLinks1,
+    .navLinks2 {
+        width: 208px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navLinkssidebarOne {
+        width: 220px;
+    }
+    
+    .navLinks1,
+    .navLinks2 {
+        width: 188px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
 }

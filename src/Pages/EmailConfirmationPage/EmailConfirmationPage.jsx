@@ -3,6 +3,7 @@ import styles from './EmailConfirmationPage.module.css';
 import logoYazi from '../../images/konsolclub_logo_beyaz_yazi.svg'
 import logoMavi from '../../images/konsolclub_logo_mavi.png'
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 const EmailConfirmationPage = () => {
@@ -25,6 +26,11 @@ const EmailConfirmationPage = () => {
 
     return (
         <div className={styles.dorulama}>
+            <Helmet>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+            </Helmet>
             <div className={styles.landingPageHeader}>
                 <div className={styles.logoSvg} >
                     <img className={styles.vectorIcon} alt="" src={logoYazi} />

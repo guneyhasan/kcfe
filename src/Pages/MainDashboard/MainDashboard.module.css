@@ -1,3 +1,35 @@
+/* Apply Inter font to all elements */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+/* Font weight helpers */
+.fontWeight500 {
+    font-weight: 500 !important;
+}
+
+.fontWeight600 {
+    font-weight: 600 !important;
+}
+
+.fontWeight700 {
+    font-weight: 700 !important;
+}
+
+/* Elements that need specific font weights */
+h1, h3 {
+    font-weight: 600;
+}
+
+.username, .logoutButton {
+    font-weight: 500;
+}
+
+.statCard p {
+    font-weight: 600;
+}
+
 .dashboard {
     min-height: 100vh;
     background-color: #1a1a1a;
@@ -21,11 +53,6 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-}
-
-.username {
-    color: #fff;
-    font-size: 1rem;
 }
 
 .logoutButton {
@@ -76,6 +103,10 @@
 
 .statCard p {
     font-size: 1.5rem;
-    font-weight: bold;
     color: #fff;
+}
+
+.username {
+    color: #fff;
+    font-size: 1rem;
 } 

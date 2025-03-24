@@ -3,12 +3,18 @@ import styles from './SetNewPasswordPage.module.css';
 import LogoYazi from '../../../images/konsolclub_logo_beyaz_yazi.svg';
 import LogoMavi from '../../../images/konsolclub_logo_mavi.png';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 const SetNewPasswordPage = () => {
 
   	return (
     		<div className={styles.ifremiUnuttum}>
+          <Helmet>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          </Helmet>
       			<div className={styles.landingPageHeader}>
         				<div className={styles.logoSvg}>
           					<img className={styles.vectorIcon} alt="" src={LogoYazi} />

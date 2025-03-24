@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './MainDashboard.module.css';
 import konsoloyunLogoBeyazYazi from '../../images/konsolclub_logo_beyaz_yazi.svg';
+import { Helmet } from 'react-helmet';
 
 const MainDashboard = () => {
     const navigate = useNavigate();
@@ -14,6 +15,11 @@ const MainDashboard = () => {
 
     return (
         <div className={styles.dashboard}>
+            <Helmet>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+            </Helmet>
             <div className={styles.header}>
                 <div className={styles.logoContainer}>
                     <img 

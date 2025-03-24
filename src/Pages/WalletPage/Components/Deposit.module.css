@@ -1,0 +1,679 @@
+/* Apply Inter font to all elements */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+/* Font weight helpers */
+.fontWeight500 {
+    font-weight: 500 !important;
+}
+
+.fontWeight600 {
+    font-weight: 600 !important;
+}
+
+.fontWeight700 {
+    font-weight: 700 !important;
+}
+
+/* Elements that need specific font weights */
+.hesabnaParaYatr,
+.mavsoftBlmLtd,
+.naslParaYatrlr {
+    font-weight: 600;
+}
+
+.logo,
+.hesapIsmi,
+.iban1,
+.div2,
+.div3 {
+    font-weight: 500;
+}
+
+.logo {
+    position: relative;
+}
+.hzlMeydanOku {
+    position: relative;
+}
+.buton {
+    border-radius: 100px;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 32px;
+    cursor: pointer;
+}
+.proiconsgamedefault {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+.meydanOkumalar {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    font-weight: 500;
+}
+.navLinks1 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.mdimessageIcon {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+}
+.navLinks4 {
+    width: 228px;
+    position: relative;
+    border-radius: 8px;
+    background-color: #1e2024;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fff;
+}
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #c4c5d0;
+}
+.butonParent {
+    height: 421px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #f5f5f5;
+}
+.topContent {
+    align-self: stretch;
+    height: 532px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 26px 0px 0px;
+    box-sizing: border-box;
+    gap: 44px;
+}
+.canlYardm {
+    position: absolute;
+    top: 14px;
+    left: 48px;
+    letter-spacing: -0.02em;
+}
+.navLinks7 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatarSingleIcon {
+    width: 40px;
+    position: relative;
+    height: 40px;
+    object-fit: cover;
+}
+.username {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    line-height: 100%;
+}
+.userId123456 {
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 150%;
+}
+.text {
+    width: 132px;
+    position: relative;
+    height: 36px;
+}
+.userAvatar {
+    position: absolute;
+    top: 25px;
+    left: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.navLinks9 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 8px;
+    background-color: #121212;
+    border-top: 1px solid #323339;
+    box-sizing: border-box;
+    height: 91px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: #fafafa;
+}
+.navLinksParent {
+    align-self: stretch;
+    height: 210px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    color: #c4c5d0;
+}
+.topContentParent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 288px;
+}
+.navLinkssidebarOne {
+    width: 260px;
+    background-color: #121212;
+    border-right: 1px solid #181d27;
+    box-sizing: border-box;
+    height: 1024px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 16px;
+}
+.czdanWrapper {
+    width: 304px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.bakiye250Tl {
+    position: relative;
+    line-height: 120%;
+}
+.bakiye250TlWrapper {
+    border-radius: 10px;
+    background-color: #0829ae;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.avatarIcon {
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    height: 48px;
+    object-fit: cover;
+}
+.username1 {
+    width: 100px;
+    position: relative;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.userTopBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.frameParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: right;
+    font-size: 16px;
+    color: #f2f5ff;
+}
+.landingPageHeader {
+    width: 1170px;
+    background-color: #121212;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.menuItemWrapper {
+    flex: 1;
+    border-bottom: 1.5px solid #8b8b8b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+.menuItemContainer {
+    flex: 1;
+    filter: drop-shadow(0px 1px 12px rgba(50, 95, 235, 0.36));
+    border-bottom: 1.5px solid #325feb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    color: #325feb;
+}
+.menu {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.hesabnaParaYatr {
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+    font-size: 25px;
+}
+.hesabnaParaYatrWrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.ltfenTransferSrasnda {
+    color: #336cff;
+}
+.herTrkBankasndanContainer {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.herTrkBankasndanAadakiWrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.frameContainer {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px 8px;
+    gap: 4px;
+}
+.hesapIsmi {
+    position: relative;
+    line-height: 20px;
+}
+.hesapIsimHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.mavsoftBlmLtd {
+    position: relative;
+    line-height: 160%;
+}
+.document24Outline {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.hesapIsim1 {
+    align-self: stretch;
+    height: 29px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 18px;
+    color: #e1e2e5;
+}
+.hesapIsim {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.iban1 {
+    align-self: stretch;
+    position: relative;
+    line-height: 20px;
+}
+.documentIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+.iban2 {
+    align-self: stretch;
+    height: 29px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 18px;
+    color: #e1e2e5;
+}
+.infoIcon {
+    width: 12px;
+    position: relative;
+    height: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.ek {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    font-size: 12px;
+    color: #336cff;
+}
+.uyeNoHeader {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.uyeNo1 {
+    width: 103px;
+    height: 29px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 18px;
+}
+.uyeNo {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    color: #e1e2e5;
+}
+.paraYatirma {
+    width: 488px;
+    border-radius: 12px;
+    border: 1px solid #3f3f3f;
+    box-sizing: border-box;
+    height: 267px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 24px;
+}
+.paraYatirmaWrapper {
+    width: 498px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: #8b8b8b;
+}
+.naslParaYatrlr {
+    align-self: stretch;
+    position: relative;
+    line-height: 160%;
+}
+.groupChild {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    border: 1px solid #325feb;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+}
+.div2 {
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ellipseParent {
+    width: 36px;
+    position: relative;
+    height: 36px;
+}
+.bankaUygulamanzaGirinWrapper {
+    width: 191px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.how1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.div3 {
+    position: absolute;
+    top: 5px;
+    left: 13px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.yukardaBelirtilenHesapIsminWrapper {
+    width: 185px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.aklamayaYeNumaranzMutlWrapper {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.gnderimdenSonra5DakikaIeWrapper {
+    width: 353px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.how4 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.how {
+    width: 413px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    font-size: 16px;
+}
+.howAll {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 18px;
+    color: #fdfdfd;
+}
+.frameGroup {
+    width: 1015px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+}
+.frameWrapper {
+    width: 1017px;
+    height: 606px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 20px;
+    color: #fafafa;
+}
+.menuParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 20px;
+    gap: 27px;
+    z-index: 1;
+    font-size: 16px;
+    color: #8b8b8b;
+}
+.containerChild {
+    width: 525px;
+    position: absolute;
+    margin: 0 !important;
+    top: 733px;
+    left: 731px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 525px;
+    z-index: 2;
+}
+.container {
+    align-self: stretch;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    gap: 20px;
+    font-size: 22px;
+}
+.czdan {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    text-align: left;
+    font-size: 24px;
+    color: #fff;
+}
+
+.copyContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copiedTooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

@@ -1,3 +1,41 @@
+/* Apply Inter font to all elements */
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+/* Font weight helpers */
+.fontWeight500 {
+    font-weight: 500 !important;
+}
+
+.fontWeight600 {
+    font-weight: 600 !important;
+}
+
+.fontWeight700 {
+    font-weight: 700 !important;
+}
+
+/* Elements that need specific font weights */
+.text,
+.text2,
+.label,
+.supportingText,
+.text9,
+.text12,
+.text13 {
+    font-weight: 600;
+}
+
+.hintText,
+.inputField::placeholder,
+.signInButton,
+.googleButton,
+.loginButton {
+    font-weight: 500;
+}
+
 .vectorIcon {
     width: 120px;
     position: relative;
@@ -17,7 +55,6 @@
 .text {
     position: relative;
     line-height: 24px;
-    font-weight: 600;
 }
 .buttonBase {
     border-radius: 8px;
@@ -73,7 +110,6 @@
     align-self: stretch;
     position: relative;
     line-height: 38px;
-    font-weight: 600;
 }
 .supportingText {
     align-self: stretch;
@@ -103,7 +139,6 @@
 .label {
     position: relative;
     line-height: 20px;
-    font-weight: 500;
 }
 .text3 {
     flex: 1;
@@ -203,7 +238,6 @@
     flex: 1;
     position: relative;
     line-height: 20px;
-    font-weight: 500;
 }
 .checkbox {
     width: 396px;
@@ -340,7 +374,6 @@
 .text13 {
     position: relative;
     line-height: 20px;
-    font-weight: 600;
 }
 .button {
     display: flex;
@@ -454,7 +487,6 @@
     flex: 1;
     position: relative;
     line-height: 20px;
-    font-weight: 500;
 }
 .checkbox {
     width: 396px;
@@ -591,7 +623,6 @@
 .text13 {
     position: relative;
     line-height: 20px;
-    font-weight: 600;
 }
 .button {
     display: flex;
@@ -702,94 +733,2882 @@
     accent-color: rgb(37, 99, 235);
 }
 .text9 {
-    color: white;
-    font-size: 14px;
+    flex: 1;
+    position: relative;
+    line-height: 20px;
 }
-.loginButton {
-    background: transparent;
-    border: none;
-    color: rgb(50, 95, 235);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
 }
-.loginButton:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
 }
-.loginHeaderButton {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 8px 16px;
-    transition: all 0.2s;
-}
-.loginHeaderButton:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-.signupHeaderButton {
-    background: rgb(37, 99, 235);
-    border: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 8px 16px;
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
     border-radius: 8px;
-    transition: all 0.2s;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
 }
-.signupHeaderButton:hover {
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
     background: rgb(29, 78, 216);
 }
-.checkboxContainer {
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
 }
 .checkboxInput {
     width: 18px;
     height: 18px;
     cursor: pointer;
     accent-color: rgb(37, 99, 235);
-    margin-top: 3px;
 }
 .text9 {
-    color: white;
-    font-size: 14px;
-    user-select: none;
+    flex: 1;
+    position: relative;
+    line-height: 20px;
 }
-/* RegisterPage için navbar butonları */
-.buttonBase .text {
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
 }
-
-.buttonBase .text:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
 }
-
-/* Sign up butonu için güncelleme */
-.buttonBase1 {
-    background-color: rgb(37, 99, 235);
-    padding: 8px 16px;
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
     border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
 }
-
-.buttonBase1:hover {
-    background-color: rgb(29, 78, 216);
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-
-.buttonBase1 .text {
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
     color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
+    line-height: 20px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #325feb;
+}
+.row1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    color: #717680;
+}
+.content {
+    width: 400px;
+    border-radius: 16px;
+    background-color: rgba(1, 1, 1, 0.8);
+    border: 1px solid #414651;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+    gap: 32px;
+}
+.container {
+    width: 1200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    z-index: 0;
+}
+.section1Child {
+    width: 711px;
+    position: absolute;
+    margin: 0 !important;
+    top: 382px;
+    left: 949.5px;
+    filter: blur(200px);
+    border-radius: 50%;
+    background-color: rgba(0, 71, 255, 0.25);
+    height: 711px;
+    z-index: 1;
+}
+.section1 {
+    width: 1440px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 119px 100px;
+    box-sizing: border-box;
+    position: relative;
+    gap: 10px;
+    font-size: 14px;
+    color: #fafafa;
+}
+.kaytOl {
+    width: 100%;
+    position: relative;
+    background-color: #121212;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+.inputField {
+    width: 100%;
+    padding: 10px 14px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+.inputField::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+.inputField:focus {
+    border-color: rgb(37, 99, 235);
+}
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.checkboxInput {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: rgb(37, 99, 235);
+}
+.text9 {
+    flex: 1;
+    position: relative;
+    line-height: 20px;
+}
+.checkbox {
+    width: 396px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.row {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    color: #717680;
+}
+.buttonBase2 {
+    flex: 1;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #325feb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+}
+.buttonL1 {
+    align-self: stretch;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.signin {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.socialIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.socialButton {
+    align-self: stretch;
+    box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d5d7da;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.signInWithGoogle {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #414651;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.signInButton {
+    width: 100%;
+    padding: 12px;
+    background: rgb(37, 99, 235);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.signInButton:hover {
+    background: rgb(29, 78, 216);
+}
+.googleButton {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+.googleButton:hover {
+    background: #f9fafb;
+}
+.socialIcon {
+    width: 24px;
+    height: 24px;
+}
+.content1 {
+    align-self: stretch;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    color: #8b8b8b;
+}
+.text12 {
+    position: relative;
+    line-height: 20px;
+}
+.text13 {
+    position: relative;
 }
 
