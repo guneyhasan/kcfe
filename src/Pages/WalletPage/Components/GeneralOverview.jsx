@@ -4,7 +4,7 @@ import CopyIcon from '../../../images/Wallet/copy.svg';
 import InfoIcon from '../../../images/Wallet/info.svg';
 import { Helmet } from 'react-helmet';
 
-const GeneralOverview = ({ walletData }) => {
+const GeneralOverview = ({ walletData, isLoading }) => {
   const {
     totalBalance,
     withdrawableAmount,
@@ -73,28 +73,52 @@ const GeneralOverview = ({ walletData }) => {
           <div className={styles.toplamBakiyeParent}>
             <div className={styles.toplamBakiye}>Toplam bakiye</div>
             <div className={styles.para}>
-              <div className={styles.div}>{totalBalance}₺</div>
+              <div className={styles.div}>
+                {isLoading ? (
+                  <span className={styles.loadingIndicator}>Yükleniyor...</span>
+                ) : (
+                  `${totalBalance}₺`
+                )}
+              </div>
             </div>
           </div>
           <div className={styles.groupContainer}>
             <div className={styles.ekilebilirMiktarParent}>
               <div className={styles.ekilebilirMiktar}>Çekilebilir miktar</div>
               <div className={styles.cekilebilirMiktar}>
-                <div className={styles.div2}>{withdrawableAmount}₺</div>
+                <div className={styles.div2}>
+                  {isLoading ? (
+                    <span className={styles.loadingIndicator}>Yükleniyor...</span>
+                  ) : (
+                    `${withdrawableAmount}₺`
+                  )}
+                </div>
               </div>
             </div>
             {reservedBalance !== undefined && (
               <div className={styles.reservedBalanceParent}>
                 <div className={styles.bonus1}>Rezerve Bakiye</div>
                 <div className={styles.bonus}>
-                  <div className={styles.div3}>{reservedBalance}₺</div>
+                  <div className={styles.div3}>
+                    {isLoading ? (
+                      <span className={styles.loadingIndicator}>Yükleniyor...</span>
+                    ) : (
+                      `${reservedBalance}₺`
+                    )}
+                  </div>
                 </div>
               </div>
             )}
             <div className={styles.bonusParent}>
               <div className={styles.bonus1}>Bonus</div>
               <div className={styles.bonus}>
-                <div className={styles.div3}>{bonusAmount}₺</div>
+                <div className={styles.div3}>
+                  {isLoading ? (
+                    <span className={styles.loadingIndicator}>Yükleniyor...</span>
+                  ) : (
+                    `${bonusAmount}₺`
+                  )}
+                </div>
               </div>
             </div>
             <div className={styles.groupChild} />

@@ -85,11 +85,7 @@ const Withdraw = ({ withdrawData, onSubmit }) => {
           </div>
           <div className={styles.herTrkBankasndanAadakiWrapper}>
             <div className={styles.herTrkBankasndanContainer}>
-              <span>Her Türk bankasından aşağıdaki IBAN'a kolayca para transferi yapabilirsiniz. </span>
-              <span className={styles.ltfenTransferSrasndaAk}>
-              Lütfen transfer sırasında açıklama kısmına üye numaranızı eklemeyi unutmayın.
-              </span>
-              <span> Bu sayede bakiyeniz kısa sürede hesabınıza tanımlanacaktır. </span>
+              <span>Kendi isim soyisiminize ait IBAN bilgilerinizi ve çekmek istediğiniz miktarı girerek dakikalar içerisinde para çekim işleminizi tamamlayabilirsiniz. </span>
             </div>
           </div>
         </div>
@@ -156,8 +152,6 @@ const Withdraw = ({ withdrawData, onSubmit }) => {
           </div>
         </div>
       </div>
-      <div className={styles.frameChild} />
-      <div className={styles.detaylYaz}>Detaylı yazı / Legal kısım</div>
     </div>
   );
 };

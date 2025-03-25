@@ -14,13 +14,14 @@ const mockBankData = {
     iban: "TR68 0006 4000 0016 0470 3762 75"
 };
 
-const mockWalletData = {
-    totalBalance: 1350,
-    withdrawableAmount: 1250,
+// Initialize wallet data with zeros instead of mock values
+const initialWalletData = {
+    totalBalance: 0,
+    withdrawableAmount: 0,
     bonusAmount: 0,
-    reservedBalance: 200,
+    reservedBalance: 0,
     bankInfo: mockBankData,
-    userId: "536832",
+    userId: "",
     transactions: [
         {
             id: "1",
@@ -35,12 +36,12 @@ const mockWalletData = {
 
 const mockWithdrawData = {
     fullName: "Emre Maviş",
-    maxWithdrawAmount: mockWalletData.withdrawableAmount
+    maxWithdrawAmount: 0 // Initialize this to zero as well
 };
 
 const Cuzdan = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [walletData, setWalletData] = useState(mockWalletData);
+  const [walletData, setWalletData] = useState(initialWalletData);
   const [isLoading, setIsLoading] = useState(true);
   const [userId, setUserId] = useState("");
   
@@ -63,18 +64,20 @@ const Cuzdan = () => {
         setIsLoading(true);
         const balanceData = await walletService.getBalance();
         
-        // API'den gelen verileri walletData formatına dönüştür
-        setWalletData({
-          ...walletData,
-          totalBalance: balanceData.balance,
-          withdrawableAmount: balanceData.availableBalance,
-          // Eğer bonusAmount API'den gelmiyorsa mevcut değeri kullan
-          // Rezerve edilen bakiye kavramı burada kullanılabilir
-          reservedBalance: balanceData.reservedBalance,
-        });
+        // Update wallet data with API response
+        setWalletData(prevData => ({
+          ...prevData,
+          totalBalance: balanceData.balance || 0,
+          withdrawableAmount: balanceData.availableBalance || 0,
+          bonusAmount: balanceData.bonusAmount || 0,
+          reservedBalance: balanceData.reservedBalance || 0,
+        }));
+        
+        // Also update withdraw data
+        mockWithdrawData.maxWithdrawAmount = balanceData.availableBalance || 0;
       } catch (error) {
         console.error('Bakiye bilgisi alınamadı:', error);
-        // Hata durumunda mevcut mockup verileri kullan
+        // Error handling - we'll just keep the zeros in state
       } finally {
         setIsLoading(false);
       }
@@ -103,7 +106,7 @@ const Cuzdan = () => {
   const renderContent = () => {
     switch(activeTab) {
       case 'overview':
-        return <GeneralOverview walletData={{...walletData, userId: userId || walletData.userId}} />;
+        return <GeneralOverview walletData={{...walletData, userId: userId || walletData.userId}} isLoading={isLoading} />;
       case 'deposit':
         return <Deposit bankData={{...mockBankData, userId: userId || walletData.userId}} />;
       case 'withdraw':
@@ -112,7 +115,7 @@ const Cuzdan = () => {
           onSubmit={handleWithdrawSubmit}
         />;
       default:
-        return <GeneralOverview walletData={{...walletData, userId: userId || walletData.userId}} />;
+        return <GeneralOverview walletData={{...walletData, userId: userId || walletData.userId}} isLoading={isLoading} />;
     }
   };
 

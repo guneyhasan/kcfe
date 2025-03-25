@@ -309,6 +309,7 @@
     justify-content: flex-start;
 }
 .hesabnaParaYatr {
+    color: #FFFFFF;
     flex: 1;
     position: relative;
     line-height: 140%;

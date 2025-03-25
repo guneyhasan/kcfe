@@ -124,10 +124,11 @@ const Deposit = ({ bankData }) => {
                 <div style={{
                   color: '#336cff',
                   fontSize: '11px',
-                  position: 'absolute',
-                  marginLeft: '120px',
-                  marginTop: '0px',
-                  whiteSpace: 'nowrap'
+                  position: 'relative',
+                  marginTop: '5px',
+                  whiteSpace: 'normal',
+                  wordBreak: 'break-word',
+                  maxWidth: '100%'
                 }}>
                   Açıklamaya üye numaranızı yazmayı unutmayın.
                 </div>
