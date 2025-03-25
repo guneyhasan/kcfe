@@ -10,6 +10,8 @@ import { challengeService } from '../../services/api';
 import { toast } from 'react-toastify';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import PSlogo from '../../images/konsolLogoları/PSlogo.png';
+import Xboxlogo from '../../images/konsolLogoları/XBOXlogo.png';
 
 // Import game images
 import fc24Image from '../../images/Games/fc24.jpeg';
@@ -33,12 +35,14 @@ const MalarmSalon = () => {
     player1: {
       username: "",
       avatarUrl: null,
-      ps5Id: ""
+      ps5Id: "",
+      consoleImage: PSlogo
     },
     player2: {
       username: "",
       avatarUrl: null,
-      ps5Id: ""
+      ps5Id: "",
+      consoleImage: PSlogo
     },
     entryFee: 0,
     prize: 0
@@ -102,12 +106,14 @@ const MalarmSalon = () => {
             player1: {
               username: matchData.host.username || "",
               avatarUrl: matchData.host.avatarUrl || null,
-              ps5Id: ""
+              ps5Id: matchData.host.ps5Id || "",
+              consoleImage: PSlogo
             },
             player2: {
               username: matchData.opponent.username || "",
               avatarUrl: matchData.opponent.avatarUrl || null,
-              ps5Id: ""
+              ps5Id: matchData.opponent.ps5Id || "",
+              consoleImage: PSlogo
             },
             entryFee: entryFee,
             prize: calculatedPrize // Hesaplanan ödül değerini kullan

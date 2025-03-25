@@ -54,6 +54,20 @@ const MatchHistory = ({ historyData, currentPage, totalPages, onPageChange }) =>
     };
   }, []);
 
+  // Mobil görünüm için sütun başlıklarını kısalt
+  const getColumnTitle = (title) => {
+    if (!isMobile) return title;
+    
+    switch(title) {
+      case 'Tarih': return 'Tarih';
+      case 'Oyun': return 'Oyun';
+      case 'Rakip': return 'Rakip';
+      case 'Ödül': return 'Ödül';
+      case 'Sonuç': return 'Sonuç';
+      default: return title;
+    }
+  };
+
   return (
     <div className={styles.maGemiiParent}>
       <div className={styles.maGemiiHeader}>
@@ -97,11 +111,11 @@ const MatchHistory = ({ historyData, currentPage, totalPages, onPageChange }) =>
           <table className={styles.matchTable}>
             <thead>
               <tr className={styles.row9}>
-                <th className={styles.tarih}>Tarih</th>
-                <th className={styles.tarih}>Oyun</th>
-                <th className={styles.tarih}>Rakip</th>
-                <th className={styles.tarih}>Ödül</th>
-                <th className={styles.tarih}>Sonuç</th>
+                <th className={styles.tarih}>{getColumnTitle('Tarih')}</th>
+                <th className={styles.tarih}>{getColumnTitle('Oyun')}</th>
+                <th className={styles.tarih}>{getColumnTitle('Rakip')}</th>
+                <th className={styles.tarih}>{getColumnTitle('Ödül')}</th>
+                <th className={styles.tarih}>{getColumnTitle('Sonuç')}</th>
               </tr>
             </thead>
             <tbody>
@@ -120,11 +134,9 @@ const MatchHistory = ({ historyData, currentPage, totalPages, onPageChange }) =>
                           : styles.kazandm4
                     }
                   >
-                    {match.result === 'win' 
-                      ? 'Kazandım' 
-                      : match.result === 'lose' 
-                        ? 'Kaybettim' 
-                        : 'Berabere'
+                    {isMobile 
+                      ? (match.result === 'win' ? 'Kazandı' : match.result === 'lose' ? 'Kaybetti' : 'Berabere')
+                      : (match.result === 'win' ? 'Kazandım' : match.result === 'lose' ? 'Kaybettim' : 'Berabere')
                     }
                   </td>
                 </tr>
@@ -141,7 +153,12 @@ const MatchHistory = ({ historyData, currentPage, totalPages, onPageChange }) =>
             key={i} 
             onClick={() => onPageChange(i + 1)}
             className={currentPage === i + 1 ? styles.activePage : ''}
-            style={{ cursor: 'pointer', margin: '0 5px' }}
+            style={{ 
+              cursor: 'pointer', 
+              margin: isMobile ? '0 3px' : '0 5px',
+              padding: isMobile ? '0 5px' : '0', 
+              fontSize: isMobile ? '12px' : 'inherit'
+            }}
           >
             {i + 1}
           </span>

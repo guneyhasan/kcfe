@@ -938,10 +938,34 @@
 
 /* Mobil uyumluluk için media query'ler */
 @media screen and (max-width: 768px) {
+  /* Ana container responsive */
+  .profil {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .containerInner {
+    padding: 0 10px;
+  }
+  
+  .frameGroup {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* ProfileHeader */
   .profileTagParent {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    padding: 16px 0;
+    width: 100%;
   }
   
   .profileTag {
@@ -968,6 +992,61 @@
     justify-content: center;
     width: 100%;
   }
+
+  /* MatchHistory */
+  .maGemiiParent {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .rowParent {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .matchTable {
+    min-width: 500px;
+  }
+  
+  .tarih, .kazandm, .kazandm1, .kazandm4 {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  /* RecentMatches */
+  .recentMatchesContainer {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .matchesScrollContainer {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .matchCard {
+    min-width: 260px;
+    margin-right: 10px;
+  }
+  
+  /* Statistics */
+  .statistikParent {
+    width: 100%;
+  }
+  
+  .drawParent {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+  
+  .draw1 {
+    min-width: 180px;
+    margin-right: 10px;
+    flex: 0 0 auto;
+  }
 }
 
 /* Daha küçük ekranlar için ek düzenlemeler */
@@ -981,6 +1060,7 @@
   .profileTag1 {
     align-items: center;
     margin-top: 10px;
+    width: 100%;
   }
   
   .kullaniciId {
@@ -994,6 +1074,31 @@
   
   .text1 {
     font-size: 14px;
+  }
+  
+  .buttonBase, .button6 {
+    padding: 6px 10px;
+  }
+  
+  .maGemii {
+    font-size: 18px;
+  }
+  
+  .row10 td, .row9 th {
+    padding: 8px 6px;
+  }
+  
+  .son10Ma {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .matchCard {
+    min-width: 220px;
+  }
+  
+  .draw1 {
+    min-width: 160px;
   }
 }
 

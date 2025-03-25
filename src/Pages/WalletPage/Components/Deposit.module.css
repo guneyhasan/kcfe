@@ -578,22 +578,25 @@
     color: #fdfdfd;
 }
 .frameGroup {
-    width: 1015px;
+    width: 636px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 32px;
+    gap: 24px;
+    color: #325feb;
+    min-height: fit-content;
+    padding-bottom: 20px;
 }
 .frameWrapper {
-    width: 1017px;
-    height: 606px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     font-size: 20px;
     color: #fafafa;
+    min-height: fit-content;
 }
 .menuParent {
     align-self: stretch;
@@ -630,6 +633,7 @@
     position: relative;
     gap: 20px;
     font-size: 22px;
+    min-height: fit-content;
 }
 .czdan {
     width: 100%;
@@ -674,6 +678,263 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+/* Custom styles for better display */
+.ibanText {
+    font-family: monospace; /* Use monospace for better readability of numbers/letters */
+}
+
+/* Mobile-specific classes */
+.mobileFrameGroup {
+    background-color: #121212;
+    min-height: 100vh; /* Ensures content fills the entire viewport height */
+    padding-bottom: 50px !important; /* Strong override to prevent white space */
+}
+
+.mobileHowAll {
+    padding-bottom: 30px !important;
+}
+
+.mobileHow {
+    width: 100% !important;
+}
+
+.mobileHow4 {
+    margin-bottom: 0 !important;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .frameGroup {
+        width: 100%;
+        padding: 0 10px 40px;
+        box-sizing: border-box;
+        min-height: fit-content;
+        margin-bottom: 0;
+        background-color: #121212;
+    }
+    
+    .paraYatirma {
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        margin-bottom: 0;
+    }
+    
+    .paraYatirmaWrapper {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .container {
+        min-height: fit-content;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .frameWrapper {
+        min-height: fit-content;
+        margin-bottom: 0;
+    }
+    
+    .frameContainer {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .menuParent {
+        margin-bottom: 0;
+    }
+    
+    .howAll {
+        margin-bottom: 0;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    
+    .hesapIsim1, .iban2, .uyeNo1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .mavsoftBlmLtd {
+        flex: 1;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        margin-right: 8px;
+    }
+    
+    .copyContainer {
+        margin-left: 8px;
+    }
+    
+    .uyeNoHeader {
+        flex-wrap: wrap;
+    }
+    
+    .ek {
+        margin-top: 4px;
+        width: 100%;
+    }
+    
+    .how1, .how4 {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .how4 {
+        justify-content: flex-start;
+        gap: 24px;
+    }
+    
+    .bankaUygulamanzaGirinWrapper,
+    .yukardaBelirtilenHesapIsminWrapper,
+    .aklamayaYeNumaranzMutlWrapper,
+    .gnderimdenSonra5DakikaIeWrapper {
+        width: auto;
+        flex: 1;
+    }
+    
+    .copiedTooltip {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .how {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .frameGroup {
+        padding: 0 8px 40px;
+    }
+    
+    .paraYatirma {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .container {
+        gap: 12px;
+    }
+    
+    .frameContainer {
+        padding: 12px 4px;
+    }
+    
+    .hesabnaParaYatr {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .herTrkBankasndanContainer {
+        font-size: 13px;
+        text-align: center;
+    }
+    
+    .hesapIsmi, .iban1 {
+        font-size: 14px;
+    }
+    
+    .mavsoftBlmLtd {
+        font-size: 15px;
+    }
+    
+    .document24Outline, .documentIcon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .naslParaYatrlr {
+        font-size: 16px;
+    }
+    
+    .how1, .how4 {
+        margin-bottom: 16px;
+    }
+    
+    .how4:last-child {
+        margin-bottom: 0;
+    }
+    
+    .howAll {
+        padding-bottom: 30px;
+    }
+    
+    .ellipseParent {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+    
+    .groupChild {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .div2, .div3 {
+        font-size: 14px;
+        top: 3px;
+        left: 11px;
+    }
+    
+    .ek {
+        font-size: 11px;
+    }
+    
+    .ibanText {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+    
+    .bankaUygulamanzaGirinWrapper,
+    .yukardaBelirtilenHesapIsminWrapper,
+    .aklamayaYeNumaranzMutlWrapper,
+    .gnderimdenSonra5DakikaIeWrapper {
+        padding-right: 8px;
+    }
+    
+    .yukardaBelirtilenHesapIsminWrapper .naslParaYatrlr,
+    .gnderimdenSonra5DakikaIeWrapper .naslParaYatrlr {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    .how1, .how4 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .ellipseParent {
+        margin-bottom: 4px;
+    }
+    
+    .bankaUygulamanzaGirinWrapper,
+    .yukardaBelirtilenHesapIsminWrapper,
+    .aklamayaYeNumaranzMutlWrapper,
+    .gnderimdenSonra5DakikaIeWrapper {
+        padding-left: 36px;
+        box-sizing: border-box;
+    }
+    
+    .frameGroup {
+        padding-bottom: 50px;
+    }
+    
+    .howAll {
+        padding-bottom: 40px;
     }
 }
 

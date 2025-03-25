@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Withdraw.module.css';
 import QuestionIcon from '../../../images/Wallet/help-circle.svg';
 import { Helmet } from 'react-helmet';
@@ -10,6 +10,23 @@ const Withdraw = ({ withdrawData, onSubmit }) => {
   } = withdrawData;
   const [ibanValue, setIbanValue] = useState(withdrawData.iban || '');
   const [amountValue, setAmountValue] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if screen width is less than 768px
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // IBAN formatını düzenleyen yardımcı fonksiyon
   const formatIBAN = (value) => {
@@ -45,6 +62,7 @@ const Withdraw = ({ withdrawData, onSubmit }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
       <div className={styles.frameContainer}>
         <div className={styles.frameDiv}>

@@ -162,6 +162,24 @@ const Profil = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(3);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // Initial check
+    handleResize();
+    
+    // Listen for window resize
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // Get game icon helper function
   const getGameIcon = (gameName) => {
@@ -303,6 +321,7 @@ const Profil = () => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Helmet>
       <Sidebar />
       <div className={styles.container}>
@@ -314,14 +333,22 @@ const Profil = () => {
               onFriendsClick={handleFriendsClick}
               onSettingsClick={handleSettingsClick}
             />
-            <RecentMatches matchesData={matchesData} />
-            <Statistics statsData={statsData} />
-            <MatchHistory 
-              historyData={historyData}
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-            />
+            {loading ? (
+              <div style={{ textAlign: 'center', padding: '20px', color: '#fff' }}>
+                Veriler yükleniyor...
+              </div>
+            ) : (
+              <>
+                <RecentMatches matchesData={matchesData} />
+                <Statistics statsData={statsData} />
+                <MatchHistory 
+                  historyData={historyData}
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
+              </>
+            )}
           </div>
         </div>
       </div>

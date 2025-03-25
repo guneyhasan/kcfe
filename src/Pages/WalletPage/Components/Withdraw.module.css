@@ -465,18 +465,14 @@
     justify-content: center;
 }
 .frameWrapper {
-    align-self: stretch;
-    border-radius: 8px;
-    background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #fdfdfd;
-    transition: all 0.2s ease-in-out;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 20px;
+    color: #fafafa;
+    min-height: fit-content;
 }
 
 .frameWrapper:hover {
@@ -530,6 +526,7 @@
     justify-content: flex-start;
     gap: 24px;
     color: #325feb;
+    min-height: fit-content;
 }
 .menuParent {
     align-self: stretch;
@@ -550,9 +547,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
     gap: 20px;
-    z-index: 1;
     font-size: 22px;
+    min-height: fit-content;
 }
 .czdanChild {
     width: 525px;
@@ -579,5 +577,219 @@
     text-align: left;
     font-size: 24px;
     color: #fff;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .frameGroup {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+        min-height: fit-content;
+        margin-bottom: 0;
+    }
+    
+    .frameContainer {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .frameDiv {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .container {
+        min-height: fit-content;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .frameWrapper {
+        width: 100%;
+        min-height: fit-content;
+        margin-bottom: 0;
+    }
+    
+    .inputFieldBaseWrapper,
+    .inputFieldBaseParent {
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 0;
+    }
+    
+    .inputFieldBase {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .content {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .text1 {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .input, 
+    .input1, 
+    .input2 {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 0;
+    }
+    
+    .frameChild {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .hesabnaParaEk {
+        font-size: 22px;
+        text-align: center;
+    }
+    
+    .herTrkBankasndanContainer {
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    /* Fix for iOS input styling */
+    .input1 input {
+        -webkit-appearance: none;
+        border-radius: 8px;
+    }
+    
+    /* Help icon positioning */
+    .helpIcon {
+        flex-shrink: 0;
+    }
+    
+    /* Submit button improvements */
+    .paraEkmeTalebiGnderWrapper {
+        padding: 4px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .frameGroup {
+        padding: 0 8px;
+    }
+    
+    .frameDiv {
+        padding: 12px 4px;
+    }
+    
+    .container {
+        gap: 12px;
+    }
+    
+    .inputFieldBaseWrapper,
+    .inputFieldBaseParent {
+        padding: 8px 0;
+    }
+    
+    .input1 input {
+        padding: 10px 12px;
+    }
+    
+    .frameWrapper {
+        padding: 8px;
+        margin-top: 8px;
+    }
+    
+    .inputFieldBaseParent {
+        gap: 16px;
+    }
+    
+    .hesabnaParaEk {
+        font-size: 20px;
+    }
+    
+    .herTrkBankasndanContainer {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .label {
+        font-size: 14px;
+    }
+    
+    .input, 
+    .input1 {
+        padding: 0;
+    }
+    
+    .input1 input {
+        font-size: 14px;
+        padding: 10px 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .hintText {
+        font-size: 12px;
+        padding: 4px 0;
+    }
+    
+    .bakiye250Tl {
+        font-size: 14px;
+    }
+    
+    .detaylYaz {
+        font-size: 12px;
+        height: auto;
+        margin-top: 10px;
+    }
+    
+    .inputFieldBaseParent {
+        gap: 24px;
+    }
+    
+    /* Space between form fields */
+    .inputFieldBase + .inputFieldBase {
+        margin-top: 8px;
+    }
+    
+    /* Better highlight for submit button */
+    .frameWrapper:hover {
+        transform: scale(1.01);
+    }
+    
+    /* Improved touch target */
+    .paraEkmeTalebiGnderWrapper {
+        min-height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Small mobile fixes */
+@media (max-width: 360px) {
+    .input1 input::placeholder {
+        font-size: 12px;
+    }
+    
+    .input1 input {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+    
+    .bakiye250Tl {
+        font-size: 13px;
+        white-space: nowrap;
+    }
 }
 

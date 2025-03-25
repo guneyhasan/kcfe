@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from '../../Pages/SalonPage/Salon.module.css';
 // Import game images
 import fc24Image from '../../images/Games/fc24.jpeg';
 import fc25Image from '../../images/Games/fc25.jpeg';
 import nba2k24Image from '../../images/Games/nba2k24.png';
 import nba2k25Image from '../../images/Games/nba2k25.jpeg';
+import PSlogo from '../../images/konsolLogoları/PSlogo.png';
 
 const MatchDetails = ({ matchData, matchStarted, onButonContainerClick, onCancelRequestClick, onReportResultClick }) => {
+  // Generate random 9-digit PlayStation IDs for display
+  const randomPs5Id1 = useMemo(() => {
+    return Math.floor(100000000 + Math.random() * 900000000).toString();
+  }, []);
+
+  const randomPs5Id2 = useMemo(() => {
+    return Math.floor(100000000 + Math.random() * 900000000).toString();
+  }, []);
+  
   if (!matchData || !matchData.player1 || !matchData.player2) {
     return <div>Yükleniyor...</div>;
   }
@@ -28,6 +38,13 @@ const MatchDetails = ({ matchData, matchStarted, onButonContainerClick, onCancel
   };
 
   const gameIcon = getGameImage(matchData.gameName);
+
+  // Custom style for blurred text
+  const blurredStyle = {
+    filter: 'blur(3px)',
+    WebkitFilter: 'blur(3px)',
+    letterSpacing: '0.5px'
+  };
 
   return (
     <div className={styles.frameContainer}>
@@ -54,8 +71,10 @@ const MatchDetails = ({ matchData, matchStarted, onButonContainerClick, onCancel
               <div className={styles.usernameParent}>
                 <div className={styles.username2}>{matchData.player1.username}</div>
                 <div className={styles.badgeBase}>
-                  <img className={styles.avatarIcon3} alt="" src={matchData.player1.avatarUrl || '/avatar.png'} />
-                  <div className={styles.text1}>{`PS5 ID: ${matchData.player1.ps5Id}`}</div>
+                  <img className={styles.avatarIcon3} alt="PS Logo" src={PSlogo} />
+                  <div className={styles.text1}>
+                    PS5 ID: <span style={blurredStyle}>{randomPs5Id1}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -69,8 +88,10 @@ const MatchDetails = ({ matchData, matchStarted, onButonContainerClick, onCancel
               <div className={styles.usernameParent}>
                 <div className={styles.username2}>{matchData.player2.username}</div>
                 <div className={styles.badgeBase}>
-                  <img className={styles.avatarIcon3} alt="" src={matchData.player2.avatarUrl || '/avatar.png'} />
-                  <div className={styles.text1}>{`PS5 ID: ${matchData.player2.ps5Id}`}</div>
+                  <img className={styles.avatarIcon3} alt="PS Logo" src={PSlogo} />
+                  <div className={styles.text1}>
+                    PS5 ID: <span style={blurredStyle}>{randomPs5Id2}</span>
+                  </div>
                 </div>
               </div>
             </div>

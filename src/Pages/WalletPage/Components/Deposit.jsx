@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Deposit.module.css';
 import CopyIcon from '../../../images/Wallet/copy.svg';
 import InfoIcon from '../../../images/Wallet/info.svg';
@@ -17,6 +17,24 @@ const Deposit = ({ bankData }) => {
     iban: false,
     userId: false
   });
+  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if screen width is less than 768px
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleCopy = (text, field) => {
     if (text) {
@@ -34,11 +52,22 @@ const Deposit = ({ bankData }) => {
   };
 
   return (
-    <div className={styles.frameGroup}>
+    <div className={`${styles.frameGroup} ${isMobile ? styles.mobileFrameGroup : ''}`}>
       <Helmet>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {isMobile && (
+          <style type="text/css">{`
+            body {
+              background-color: #121212 !important;
+              min-height: 100vh;
+              margin: 0;
+              padding: 0;
+            }
+          `}</style>
+        )}
       </Helmet>
       <div className={styles.frameContainer}>
         <div className={styles.hesabnaParaYatrWrapper}>
@@ -59,7 +88,7 @@ const Deposit = ({ bankData }) => {
               <div className={styles.hesapIsmi}>Hesap ismi</div>
             </div>
             <div className={styles.hesapIsim1}>
-              <div className={styles.mavsoftBlmLtd}>{accountName}</div>
+              <div className={styles.mavsoftBlmLtd} title={accountName}>{accountName}</div>
               <div className={styles.copyContainer}>
                 <img 
                   className={styles.document24Outline} 
@@ -75,7 +104,7 @@ const Deposit = ({ bankData }) => {
           <div className={styles.hesapIsim}>
             <div className={styles.iban1}>IBAN</div>
             <div className={styles.iban2}>
-              <div className={styles.mavsoftBlmLtd}>{iban}</div>
+              <div className={`${styles.mavsoftBlmLtd} ${styles.ibanText}`} title={iban}>{iban}</div>
               <div className={styles.copyContainer}>
                 <img 
                   className={styles.documentIcon} 
@@ -112,9 +141,9 @@ const Deposit = ({ bankData }) => {
           </div>
         </div>
       </div>
-      <div className={styles.howAll}>
+      <div className={`${styles.howAll} ${isMobile ? styles.mobileHowAll : ''}`}>
         <div className={styles.naslParaYatrlr}>Nasıl para yatırılır?</div>
-        <div className={styles.how}>
+        <div className={`${styles.how} ${isMobile ? styles.mobileHow : ''}`}>
           <div className={styles.how1}>
             <div className={styles.ellipseParent}>
               <div className={styles.groupChild} />
@@ -142,7 +171,7 @@ const Deposit = ({ bankData }) => {
               <div className={styles.naslParaYatrlr}>Açıklamaya üye numaranızı mutlaka ekleyin</div>
             </div>
           </div>
-          <div className={styles.how4}>
+          <div className={`${styles.how4} ${isMobile ? styles.mobileHow4 : ''}`}>
             <div className={styles.ellipseParent}>
               <div className={styles.groupChild} />
               <div className={styles.div3}>4</div>

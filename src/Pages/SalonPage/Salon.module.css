@@ -351,8 +351,30 @@
     height: 16px;
     overflow: hidden;
     flex-shrink: 0;
-    object-fit: cover;
+    object-fit: contain;
 }
+
+/* For PS5 logo specifically */
+.badgeBase img.avatarIcon3 {
+    width: 16px;
+    height: 16px;
+    border-radius: 0; /* Remove border radius for console logos */
+    background: transparent; /* Ensure transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* Ensure text1 is vertically centered with the PS5 logo */
+.badgeBase .text1 {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
 .text1 {
     position: relative;
     line-height: 18px;

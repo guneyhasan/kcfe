@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../WalletPage.module.css';
 import CopyIcon from '../../../images/Wallet/copy.svg';
 import InfoIcon from '../../../images/Wallet/info.svg';
@@ -20,6 +20,24 @@ const GeneralOverview = ({ walletData }) => {
     iban: false,
     userId: false
   });
+  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if screen width is less than 768px
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleCopy = (text, field) => {
     if (text) {
@@ -36,12 +54,19 @@ const GeneralOverview = ({ walletData }) => {
     }
   };
 
+  // Function to truncate long strings for mobile display
+  const truncateText = (text, maxLength = 15) => {
+    if (!isMobile || !text || text.length <= maxLength) return text;
+    return `${text.substring(0, maxLength)}...`;
+  };
+
   return (
     <div className={styles.frameGroup}>
       <Helmet>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
       <div className={styles.frameContainer}>
         <div className={styles.groupParent}>
@@ -82,7 +107,9 @@ const GeneralOverview = ({ walletData }) => {
             <div className={styles.hesapAdParent}>
               <div className={styles.hesapAd}>Hesap Adı</div>
               <div className={styles.mavsoftBlmLtdTParent}>
-                <div className={styles.bakiye250Tl}>{bankInfo.accountName}</div>
+                <div className={styles.bakiye250Tl} title={bankInfo.accountName}>
+                  {bankInfo.accountName}
+                </div>
                 <div className={styles.copyContainer}>
                   <img 
                     className={styles.documentIcon} 
@@ -98,7 +125,9 @@ const GeneralOverview = ({ walletData }) => {
             <div className={styles.hesapAdParent}>
               <div className={styles.hesapAd}>IBAN</div>
               <div className={styles.mavsoftBlmLtdTParent}>
-                <div className={styles.bakiye250Tl}>{bankInfo.iban}</div>
+                <div className={`${styles.bakiye250Tl} ${styles.ibanText}`} title={bankInfo.iban}>
+                  {bankInfo.iban}
+                </div>
                 <div className={styles.copyContainer}>
                   <img 
                     className={styles.documentIcon} 
@@ -148,7 +177,9 @@ const GeneralOverview = ({ walletData }) => {
               <div className={styles.aklamayaYeNumaranz}>{transaction.date}</div>
               <div className={styles.aklamayaYeNumaranz}>{transaction.type}</div>
               <div className={styles.aklamayaYeNumaranz}>{transaction.amount} TL</div>
-              <div className={styles.aklamayaYeNumaranz}>{transaction.transactionId}</div>
+              <div className={styles.aklamayaYeNumaranz} title={transaction.transactionId}>
+                {isMobile ? truncateText(transaction.transactionId, 8) : transaction.transactionId}
+              </div>
             </div>
           ))}
         </div>

@@ -195,7 +195,7 @@ const LandingPage = () => {
                                         className={styles.text}
                                         onClick={handleNavLoginClick}
                                     >
-                                        Log in
+                                        Giriş Yap
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +205,7 @@ const LandingPage = () => {
                                         className={styles.text}
                                         onClick={handleNavSignupClick}
                                     >
-                                        Sign up
+                                        Kayıt Ol
                                     </div>
                                 </div>
                             </div>

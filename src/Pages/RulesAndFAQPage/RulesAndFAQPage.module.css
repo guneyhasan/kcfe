@@ -2,6 +2,14 @@
 * {
     font-family: 'Inter', sans-serif;
     font-weight: 400; /* Regular weight */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 /* Font weight helpers */
@@ -419,5 +427,142 @@
     text-align: left;
     font-size: 24px;
     color: #fff;
+}
+
+/* Remove these unused mobile menu styles */
+.mobileHeader,
+.menuButton,
+.mobileSidebar,
+.closeButton {
+  display: none;
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .kurallar {
+    flex-direction: column;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .container {
+    padding: 0 10px;
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  .menuParent {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .contentWrapper {
+    width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  .menu {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .menuItemWrapper,
+  .menuItemContainer {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .sitemizeKaydolduunuzIsimVeParent {
+    width: 100%;
+    height: auto;
+    position: static;
+    overflow-x: hidden;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sitemizeKaydolduunuzIsimContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+  }
+  
+  .sitemizeKaydolduunuzIsimContainer p {
+    max-width: 100%;
+    padding-right: 10px;
+    margin-right: 0;
+  }
+  
+  .sitemizeKaydolduunuzIsim {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    max-width: 100%;
+    display: inline-block;
+    margin-right: 0;
+  }
+  
+  /* Mobile sidebar styling */
+  .navLinkssidebarOne {
+    display: none; /* Hide sidebar on mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  .hzlMeydanOku, 
+  .logo {
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  
+  .landingPageHeader {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .kurallarVeSka {
+    font-size: 24px;
+  }
+  
+  .sitemizeKaydolduunuzIsim {
+    font-size: 13px;
+    padding-right: 5px;
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
