@@ -5,14 +5,28 @@ import { Helmet } from 'react-helmet';
 
 const Withdraw = ({ withdrawData, onSubmit }) => {
   const {
-    fullName,
     maxWithdrawAmount
   } = withdrawData;
+  
+  const [fullName, setFullName] = useState('');
   const [ibanValue, setIbanValue] = useState(withdrawData.iban || '');
   const [amountValue, setAmountValue] = useState('');
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Get fullName from localStorage token
+    const userStr = localStorage.getItem('user');
+    if (userStr) {
+      try {
+        const parsedData = JSON.parse(userStr);
+        if (parsedData.user) {
+          setFullName(parsedData.user.fullName || '');
+        }
+      } catch (error) {
+        console.error('User data parsing error:', error);
+      }
+    }
+
     // Check if screen width is less than 768px
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);

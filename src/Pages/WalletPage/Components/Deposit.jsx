@@ -75,9 +75,9 @@ const Deposit = ({ bankData }) => {
         </div>
         <div className={styles.herTrkBankasndanAadakiWrapper}>
           <div className={styles.herTrkBankasndanContainer}>
-            <span>{`Her Türk bankasından aşağıdaki IBAN'a kolayca para transferi yapabilirsiniz. `}</span>
+            <span style={{ color: '#FFFFFF' }}>{`Her Türk bankasından aşağıdaki IBAN'a kolayca para transferi yapabilirsiniz. `}</span>
             <span className={styles.ltfenTransferSrasnda}>Lütfen transfer sırasında açıklama kısmına üye numaranızı eklemeyi unutmayın</span>
-            <span>. Bu sayede bakiyeniz kısa sürede hesabınıza tanımlanacaktır.</span>
+            <span style={{ color: '#FFFFFF' }}>. Bu sayede bakiyeniz kısa sürede hesabınıza tanımlanacaktır.</span>
           </div>
         </div>
       </div>
@@ -120,10 +120,23 @@ const Deposit = ({ bankData }) => {
           <div className={styles.uyeNo}>
             <div className={styles.uyeNoHeader}>
               <div className={styles.hesapIsmi}>Üye numaram</div>
-              <div className={styles.ek}>
-                <img className={styles.infoIcon} alt="" src={InfoIcon} />
-                <i className={styles.herTrkBankasndanContainer}>Açıklamaya üye numaranızı yazmayı unutmayın.</i>
-              </div>
+              {isMobile ? (
+                <div style={{
+                  color: '#336cff',
+                  fontSize: '11px',
+                  position: 'absolute',
+                  marginLeft: '120px',
+                  marginTop: '0px',
+                  whiteSpace: 'nowrap'
+                }}>
+                  Açıklamaya üye numaranızı yazmayı unutmayın.
+                </div>
+              ) : (
+                <div className={styles.ek}>
+                  <img className={styles.infoIcon} alt="" src={InfoIcon} />
+                  <i className={styles.herTrkBankasndanContainer}>Açıklamaya üye numaranızı yazmayı unutmayın.</i>
+                </div>
+              )}
             </div>
             <div className={styles.uyeNo1}>
               <div className={styles.mavsoftBlmLtd}>{userId}</div>

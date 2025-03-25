@@ -85,17 +85,17 @@ const GeneralOverview = ({ walletData }) => {
             </div>
             {reservedBalance !== undefined && (
               <div className={styles.reservedBalanceParent}>
+                <div className={styles.bonus1}>Rezerve Bakiye</div>
                 <div className={styles.bonus}>
                   <div className={styles.div3}>{reservedBalance}₺</div>
                 </div>
-                <div className={styles.bonus1}>Rezerve Bakiye</div>
               </div>
             )}
             <div className={styles.bonusParent}>
+              <div className={styles.bonus1}>Bonus</div>
               <div className={styles.bonus}>
                 <div className={styles.div3}>{bonusAmount}₺</div>
               </div>
-              <div className={styles.bonus1}>Bonus</div>
             </div>
             <div className={styles.groupChild} />
             <div className={styles.reservedDivider} />
