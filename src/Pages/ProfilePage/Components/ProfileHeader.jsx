@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from '../ProfilePage.module.css';
 import { Helmet } from 'react-helmet';
 import CopyIcon from '../../../images/Wallet/copy.svg';
+import SettingsIcon from '../../../images/Sidebar/settings.svg';
+import FriendsIcon from '../../../images/Profile/friends.svg';
 
 const ProfileHeader = ({ userData, onFriendsClick, onSettingsClick }) => {
   const { username, userId, balance } = userData;
@@ -75,7 +77,7 @@ const ProfileHeader = ({ userData, onFriendsClick, onSettingsClick }) => {
             style={{ cursor: 'pointer' }}
           >
             <div className={styles.buttonBase1}>
-              <img className={styles.users24Outline} alt="" src="users / 24 / Outline.svg" />
+              <img className={styles.users24Outline} alt="Friends" src={FriendsIcon} />
               <div className={styles.text1}>{isMobile ? "Arkadaşlar" : "Arkadaşlarım"}</div>
             </div>
           </div>
@@ -85,7 +87,7 @@ const ProfileHeader = ({ userData, onFriendsClick, onSettingsClick }) => {
             style={{ cursor: 'pointer' }}
           >
             <div className={styles.buttonBase1}>
-              <img className={styles.documentIcon} alt="" src="material-symbols-light:settings-rounded.svg" />
+              <img className={styles.documentIcon} alt="Settings" src={SettingsIcon} />
               <div className={styles.text1}>Ayarlar</div>
             </div>
           </div>

@@ -28,20 +28,67 @@ const Statistics = ({ statsData }) => {
     };
   }, []);
 
-  // Get game icon helper function
+  // Get game icon helper function with improved matching
   const getGameIcon = (gameName) => {
-    switch (gameName.toLowerCase()) {
+    const name = gameName.toLowerCase().replace(/\s+/g, '');
+    
+    switch (name) {
       case 'fc24':
+      case 'fc 24':
+      case 'fifa24':
         return fc24Image;
       case 'fc25':
+      case 'fc 25':
+      case 'fifa25':
         return fc25Image;
       case 'nba2k24':
+      case 'nba 2k24':
+      case '2k24':
         return nba2k24Image;
       case 'nba2k25':
+      case 'nba 2k25':
+      case '2k25':
         return nba2k25Image;
       default:
         return '/avatar.png'; // Fallback image
     }
+  };
+
+  // Helper function to format game name for display
+  const formatGameName = (gameName) => {
+    const name = gameName.toLowerCase().replace(/\s+/g, '');
+    
+    if (name.includes('nba2k24') || name.includes('2k24')) {
+      return 'NBA 2K24';
+    } else if (name.includes('nba2k25') || name.includes('2k25')) {
+      return 'NBA 2K25';
+    } else if (name.includes('fc24') || name.includes('fifa24')) {
+      return 'FC 24';
+    } else if (name.includes('fc25') || name.includes('fifa25')) {
+      return 'FC 25';
+    }
+    
+    return gameName;
+  };
+
+  // Custom style for the game icon
+  const gameLogoStyle = {
+    width: '40px',
+    height: '40px',
+    objectFit: 'cover',
+    borderRadius: '50%',
+    marginRight: '8px',
+    background: '#121212'
+  };
+
+  // Custom style for game name text
+  const gameNameStyle = {
+    fontSize: '14px',
+    fontWeight: '600',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    maxWidth: isMobile ? '100px' : '120px'
   };
 
   return (
@@ -71,8 +118,19 @@ const Statistics = ({ statsData }) => {
           }}>
             <div className={styles.row5}>
               <div className={styles.oyunAd1}>
-                <img className={styles.oyunAdChild} alt="" src={getGameIcon(game.name)} />
-                <div className={styles.nba2k25}>{game.name}</div>
+                <img 
+                  style={gameLogoStyle}
+                  className={styles.oyunAdChild} 
+                  alt={formatGameName(game.name)} 
+                  src={getGameIcon(game.name)} 
+                />
+                <div 
+                  className={styles.nba2k25}
+                  style={gameNameStyle}
+                  title={formatGameName(game.name)}
+                >
+                  {formatGameName(game.name)}
+                </div>
               </div>
               <div className={styles.win5Parent}>
                 <div className={styles.win5}>Win: {game.stats.wins}</div>
