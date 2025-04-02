@@ -35,16 +35,30 @@
   color: white;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 10px; /* Başlık ile arayı aç */
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 0; /* Remove bottom margin */
   font-size: 14px; /* Varsayılan font boyutu */
   max-height: 450px; /* Maksimum yüksekliği artırın */
   overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   -ms-overflow-style: none;  /* Internet Explorer ve Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
 .tabloMaTekliflerim::-webkit-scrollbar {
   display: none; /* Webkit tabanlı tarayıcılarda kaydırma çubuğunu gizler */
+}
+
+.tableRows {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileTable {
+  width: 100%;
+  max-width: 100vw;
+  padding: 10px;
 }
 
 /* Başlıkları (Kullanıcı, Oyun, Ödül vs.) düzelterek hizala */
@@ -256,5 +270,122 @@
   
   .platformContainer {
     padding: 4px 7.8px; /* Reduced by 35% from 6px 12px */
+  }
+  
+  /* Fix mobile table layout */
+  .tabloMaTekliflerim {
+    padding: 10px;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .mobileTable {
+    padding: 5px;
+    overflow-x: hidden;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  .tableRows {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .headMeydanOkumalar {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .rowMeydanOkumalar {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  /* Adjust column widths */
+  .kullaniciBilgi {
+    flex: 1;
+    padding-left: 2px;
+    min-width: 0;
+    font-size: 12px;
+    max-width: 25%;
+    box-sizing: border-box;
+  }
+  
+  .oyunBilgi {
+    flex: 1;
+    min-width: 0;
+    font-size: 12px;
+    max-width: 25%;
+    box-sizing: border-box;
+  }
+  
+  .katilimUcreti, .odul {
+    flex: 0.8;
+    min-width: 0;
+    font-size: 12px;
+    max-width: 18%;
+    box-sizing: border-box;
+  }
+  
+  .aksiyon {
+    flex: 0.8;
+    min-width: 0;
+    max-width: 18%;
+    box-sizing: border-box;
+  }
+  
+  .username {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 12px;
+  }
+  
+  .gameNameSpan {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 12px;
+  }
+  
+  .usernameWrapper {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .istekGonderMobile {
+    padding: 4px 6px;
+    font-size: 10px;
+    min-width: 0;
+    max-width: 100%;
+    width: auto;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 380px) {
+  .kullaniciBilgi, .oyunBilgi, .katilimUcreti, .odul, .aksiyon {
+    font-size: 10px;
+  }
+  
+  .username, .gameNameSpan {
+    font-size: 10px;
+  }
+  
+  .istekGonderMobile {
+    padding: 2px 4px;
+    font-size: 9px;
   }
 }

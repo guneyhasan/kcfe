@@ -28,6 +28,7 @@ const Matches = () => {
     const [selectedChallenge, setSelectedChallenge] = useState(null);
     const [activeMatches, setActiveMatches] = useState([]);
     const [completedMatches, setCompletedMatches] = useState([]);
+    const [processingRequests, setProcessingRequests] = useState({});
     const navigate = useNavigate();
 
     // İstek iptal etme fonksiyonu
@@ -46,7 +47,11 @@ const Matches = () => {
 
     // İstek kabul etme fonksiyonu
     const handleAcceptRequest = async (requestId) => {
+        if (processingRequests[requestId]) return;
+        
         try {
+            setProcessingRequests(prev => ({ ...prev, [requestId]: true }));
+            
             const response = await challengeService.acceptRequest(requestId);
             if (response.success) {
                 const { match } = response.data;
@@ -67,6 +72,7 @@ const Matches = () => {
         } catch (error) {
             console.error('İstek kabul edilirken hata:', error);
             toast.error(error.message || 'İstek kabul edilirken bir hata oluştu');
+            setProcessingRequests(prev => ({ ...prev, [requestId]: false }));
         }
     };
 
@@ -133,7 +139,8 @@ const Matches = () => {
                                 creatorAvatar: item.challenge?.creator?.avatarUrl || null,
                                 // İstek için aksiyonlar
                                 onAcceptClick: () => handleAcceptRequest(request.id),
-                                onDeclineClick: () => handleDeclineRequest(request.id)
+                                onDeclineClick: () => handleDeclineRequest(request.id),
+                                isProcessing: processingRequests[request.id] || false
                             };
                         });
                         return [...acc, ...requestsWithChallenge];
@@ -352,6 +359,19 @@ const Matches = () => {
         }
     }, [activeMatches.length, completedMatches.length]);
 
+    // Watch for changes in processingRequests and update UI accordingly
+    useEffect(() => {
+        if (Object.keys(processingRequests).length > 0 && gelenIstekler.length > 0) {
+            // Update gelenIstekler with current processing status
+            const updatedRequests = gelenIstekler.map(request => ({
+                ...request,
+                isProcessing: processingRequests[request.id] || false
+            }));
+            
+            setGelenIstekler(updatedRequests);
+        }
+    }, [processingRequests]);
+
     // Tab değiştirme fonksiyonu
     const handleTabChange = (tab) => {
         console.log('Tab değişti:', tab);
@@ -483,7 +503,7 @@ const Matches = () => {
                                 <button 
                                     className={styles.istekGonder} 
                                     onClick={request.onAcceptClick}
-                                    disabled={request.status === 'accepted'}
+                                    disabled={request.status === 'accepted' || request.isProcessing}
                                 >
                                     <img 
                                         className={styles.checkIcon} 
@@ -491,13 +511,14 @@ const Matches = () => {
                                         src={checkIcon} 
                                     />
                                     <span className={styles.buttonText}>
-                                        {request.status === 'accepted' ? 'Onaylandı' : 'Onayla'}
+                                        {request.status === 'accepted' ? 'Onaylandı' : 
+                                         request.isProcessing ? 'İşleniyor...' : 'Onayla'}
                                     </span>
                                 </button>
                                 <button 
                                     className={styles.buttonDecline} 
                                     onClick={request.onDeclineClick}
-                                    disabled={request.status === 'accepted' || request.status === 'rejected'}
+                                    disabled={request.status === 'accepted' || request.status === 'rejected' || request.isProcessing}
                                 >
                                     <img 
                                         className={styles.declineButtonImage} 

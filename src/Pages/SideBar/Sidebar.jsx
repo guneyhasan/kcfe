@@ -81,7 +81,13 @@ const Sidebar = ({ defaultActiveTab = 0 }) => {
             </Helmet>
             <div className={styles.topContentParent}>
                 <div className={styles.topContent}>
-                    <b className={styles.logo}>konsolclub</b>
+                    <b 
+                        className={styles.logo}
+                        onClick={() => handleNavigation(0, '/meydanokumalar')}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        konsolclub
+                    </b>
                     <div className={styles.butonParent}>
                         <div 
                             className={styles.buton}
@@ -137,18 +143,6 @@ const Sidebar = ({ defaultActiveTab = 0 }) => {
                                     src={activeTab === 3 ? MaviCüzdanSimgesi : BeyazCüzdanSimgesi}
                                 />
                                 <div className={styles.malarm}>Cüzdan</div>
-                            </button>
-                            <button
-                                type="button"
-                                className={activeTab === 4 ? styles.navLinks1 : styles.navLinks2}
-                                onClick={() => handleNavigation(4, '/bildirimler')}
-                            >
-                                <div className={styles.malarm}>Bildirimler</div>
-                                <img
-                                    className={styles.mdimessageIcon}
-                                    alt=""
-                                    src={activeTab === 4 ? MaviBildirimSimgesi : BeyazBildirimSimgesi}
-                                />
                             </button>
                             <button
                                 type="button"

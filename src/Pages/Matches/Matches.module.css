@@ -35,7 +35,6 @@
 .meydanOkumalar,
 .canlYardm,
 .buttonBase2,
-.buttonCancel,
 .gelenIstekler {
     font-weight: 500;
 }
@@ -178,7 +177,7 @@
     display: block;
     text-align: left;
     margin-left: 10px;
-    font-size: calc(12px * 1.5 * 1.3 * 0.92); /* Match the katilimUcreti font size and reduce by 8% */
+    font-size: calc(12px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 to 1.2 * 1.1 */
 }
 .userId123456 {
     position: absolute;
@@ -1129,17 +1128,27 @@
     height: 20px;
 }
 .buttonDecline {
-    background-color: #d02533;
-    padding: 8px;
-    border-radius: 9px;
+    border-radius: 4px;
+    background-color: #dd3b4e;
+    padding: 6px 10px;
+    color: #fff;
+    border: none;
+    font-size: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
     display: flex;
-    
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonDecline:hover {
-    background-color: #a01d29;
+    background-color: #c0303f;
+}
+
+.buttonDecline:disabled {
+    background-color: #495057;
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .buttonBaseParent {
@@ -1321,10 +1330,10 @@
 .istekGonder {
     border-radius: 3px;
     background-color: #0829ae;
-    padding: 4px 7px;
+    padding: 8px 12px;
     color: #fff;
     border: none;
-    font-size: 8px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
     white-space: nowrap;
@@ -1332,6 +1341,7 @@
     align-items: center;
     justify-content: center;
     gap: 3px;
+    font-weight: 500;
 }
 
 .istekGonder:hover {
@@ -1341,12 +1351,19 @@
 .istekGonder:disabled {
     background-color: #495057;
     cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Add styles for processing state */
+.istekGonder[disabled] .buttonText {
+    opacity: 0.8;
+    font-style: italic;
 }
 
 .checkIcon {
-    width: 8px;
-    height: 8px;
-    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
 }
 
 /* Only show check icon on mobile devices */
@@ -1356,44 +1373,17 @@
     }
 }
 
-.buttonDecline {
-    border-radius: 4px;
-    background-color: #dd3b4e;
-    padding: 6px 10px;
-    color: #fff;
-    border: none;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.buttonDecline:hover {
-    background-color: #c0303f;
-}
-
-.buttonDecline:disabled {
-    background-color: #495057;
-    cursor: not-allowed;
-}
-
-.declineButtonImage {
-    width: 20px;
-    height: 20px;
-}
-
 .buttonCancel {
     border-radius: 4px;
     background-color: #dd3b4e;
-    padding: 6px 10px;
+    padding: 10px 16px;
     color: #fff;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
     white-space: nowrap;
+    font-weight: 500;
 }
 
 .buttonCancel:hover {
@@ -1580,10 +1570,10 @@
 .istekGonder {
     border-radius: 3px;
     background-color: #0829ae;
-    padding: 4px 7px;
+    padding: 8px 12px;
     color: #fff;
     border: none;
-    font-size: 8px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
     white-space: nowrap;
@@ -1591,6 +1581,7 @@
     align-items: center;
     justify-content: center;
     gap: 3px;
+    font-weight: 500;
 }
 
 .istekGonder:hover {
@@ -1600,12 +1591,19 @@
 .istekGonder:disabled {
     background-color: #495057;
     cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Add styles for processing state */
+.istekGonder[disabled] .buttonText {
+    opacity: 0.8;
+    font-style: italic;
 }
 
 .checkIcon {
-    width: 8px;
-    height: 8px;
-    margin-right: 2px;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
 }
 
 /* Only show check icon on mobile devices */
@@ -1636,6 +1634,7 @@
 .buttonDecline:disabled {
     background-color: #495057;
     cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .declineButtonImage {
@@ -1643,30 +1642,26 @@
     height: 20px;
 }
 
-.gelenIsteklerWrapper, .gidenIsteklerWrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: calc(0.2rem + 0.1vw) calc(0.5rem + 0.3vw);
+.buttonCancel {
     border-radius: 4px;
+    background-color: #dd3b4e;
+    padding: 10px 16px;
+    color: #fff;
+    border: none;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
     white-space: nowrap;
-    font-size: calc(0.6rem + 0.2vw);
+    font-weight: 500;
 }
 
-.gelenIstekler {
-    position: relative;
-    line-height: 140%;
-    font-weight: 500;
-    font-size: calc(0.6rem + 0.2vw);
+.buttonCancel:hover {
+    background-color: #c0303f;
 }
 
-.activeTab {
-    background-color: #0829ae;
-    color: white;
-    font-weight: 500;
+.buttonCancel:disabled {
+    background-color: #495057;
+    cursor: not-allowed;
 }
 
 /* Responsive adjustments */
@@ -1768,8 +1763,8 @@
   }
   
   .istekGonder, .buttonCancel {
-    padding: calc(0.2rem + 0.1vw) calc(0.4rem + 0.2vw);
-    font-size: calc(0.55rem + 0.15vw);
+    padding: calc(0.3rem + 0.2vw) calc(0.8rem + 0.3vw);
+    font-size: calc(0.7rem + 0.2vw);
   }
   
   .buttonDecline {
@@ -1796,11 +1791,11 @@
 
   .username {
     margin-left: 0;
-    font-size: calc(10px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(10px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
 
   .gameNameSpan {
-    font-size: calc(10px * 1.5 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(10px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
 
   .malarmGelenStekler {
@@ -1834,11 +1829,11 @@
   
   .kullaniciBilgi, .oyunBilgi, .katilimUcreti, .odul, .aksiyon {
     min-width: auto;
-    font-size: calc(8px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(8px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .gameNameSpan {
-    font-size: calc(8px * 1.5 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(8px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .platformContainer {
@@ -1853,9 +1848,9 @@
   }
   
   .istekGonder, .buttonCancel {
-    padding: 2px 4px;
-    font-size: 6px;
-    min-width: 30px;
+    padding: 5px 10px;
+    font-size: 11px;
+    min-width: 60px;
   }
 }
 
@@ -1874,15 +1869,15 @@
   .kullaniciBilgi, .oyunBilgi, .katilimUcreti, .odul, .aksiyon {
     padding: 0;
     min-width: auto;
-    font-size: calc(7px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .gameNameSpan {
-    font-size: calc(7px * 1.5 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .username {
-    font-size: calc(7px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .platformContainer {
@@ -1898,9 +1893,9 @@
   }
   
   .istekGonder, .buttonCancel {
-    padding: 1px 3px;
-    font-size: 5px;
-    min-width: 20px;
+    padding: 4px 8px;
+    font-size: 9px;
+    min-width: 50px;
   }
   
   .buttonDecline {
@@ -1987,7 +1982,7 @@
   
   .username {
     margin-left: 0;
-    font-size: calc(10px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(9px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   /* Adjust column spacing for mobile */
@@ -2007,7 +2002,7 @@
     flex: 0.35;
     min-width: auto;
     padding: 0 1px;
-    font-size: calc(10px * 1.5 * 1.3 * 1.2); /* Reduced by 8% */
+    font-size: calc(9px * 1.2 * 1.1 * 1.2); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
     overflow: visible;
     white-space: normal;
   }
@@ -2070,7 +2065,7 @@
   /* Adjust button sizes */
   .istekGonder {
     padding: 4px;
-    border-radius: 9px;
+    border-radius: 4px;
     min-width: auto;
     width: 30px;
     height: 30px;
@@ -2085,6 +2080,7 @@
     min-width: auto;
     width: 30px;
     height: 30px;
+    border-radius: 4px;
   }
   
   .declineButtonImage {
@@ -2111,20 +2107,21 @@
   }
   
   .username {
-    font-size: calc(8px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(8px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .katilimUcreti, .odul {
-    font-size: calc(8px * 1.5 * 1.3 * 1.2); /* Reduced by 8% */
+    font-size: calc(8px * 1.2 * 1.1 * 1.2); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .gameNameSpan {
-    font-size: calc(8px * 1.5 * 1.2); /* Reduced by 8% */
+    font-size: calc(8px * 1.2 * 1.1 * 1.2); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .istekGonder, .buttonDecline {
     width: 26px;
     height: 26px;
+    border-radius: 4px;
   }
   
   .checkIcon {
@@ -2144,20 +2141,21 @@
   }
   
   .username {
-    font-size: calc(7px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .katilimUcreti, .odul {
-    font-size: calc(7px * 1.5 * 1.3 * 1.2 * 0.92); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 1.2 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .gameNameSpan {
-    font-size: calc(7px * 1.5 * 1.2); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 1.2 * 0.92); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
   
   .istekGonder, .buttonDecline {
     width: 22px;
     height: 22px;
+    border-radius: 4px;
   }
   
   .checkIcon {
@@ -2173,19 +2171,19 @@
 
 @media (max-width: 576px) {
   .gameNameSpan {
-    font-size: calc(10px * 1.5 * 1.2); /* Reduced by 8% */
+    font-size: calc(9px * 1.2 * 1.1 * 0.92); /* Reduced from previous size */
   }
 }
 
 @media (max-width: 480px) {
   .gameNameSpan {
-    font-size: calc(8px * 1.5 * 1.2); /* Reduced by 8% */
+    font-size: calc(8px * 1.2 * 1.1 * 1.2); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
 }
 
 @media (max-width: 380px) {
   .gameNameSpan {
-    font-size: calc(7px * 1.5 * 1.2); /* Reduced by 8% */
+    font-size: calc(7px * 1.2 * 1.1 * 1.2); /* Reduced from 1.5 * 1.3 * 1.2 to 1.2 * 1.1 */
   }
 }
 

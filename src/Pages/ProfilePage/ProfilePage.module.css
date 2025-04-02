@@ -1190,15 +1190,13 @@
     text-align: center;
   }
   
+  /* Remove the column direction for row to keep horizontal layout */
   .row {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    padding: 12px 8px;
   }
   
   .oyunAd, .cret {
-    width: 100%;
-    justify-content: center;
+    width: auto;
   }
 }
 
@@ -1345,5 +1343,39 @@
     to {
         opacity: 1;
     }
+}
+
+/* Game and prize container for better alignment */
+.gameAndPrizeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* At mobile sizes, maintain the same layout */
+@media screen and (max-width: 768px) {
+  .gameAndPrizeContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .oyunAd {
+    max-width: 70%;
+  }
+  
+  .cret {
+    margin-left: auto;
+  }
+}
+
+.winParent {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 0 4px;
+  width: max-content; /* İçerik genişliğine göre ayarla - önemli! */
 }
 

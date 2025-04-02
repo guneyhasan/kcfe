@@ -28,6 +28,9 @@ const HizliMeydanOku = () => {
 
   // Dropdown açılma durumu
   const [openDropdown, setOpenDropdown] = useState(null); // 1: Game, 2: Console, 3: Fee, 4: Mode
+  
+  // İşlem durumu için yeni state
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Verileri çek
   useEffect(() => {
@@ -74,7 +77,13 @@ const HizliMeydanOku = () => {
   };
 
   const handleCreate = async () => {
+    // Eğer form zaten gönderiliyorsa, işlemi engelle
+    if (isSubmitting) return;
+    
     try {
+      // Form gönderim durumunu true yap
+      setIsSubmitting(true);
+      
       const challengeData = {
         title: `${selectedGame} ${selectedMode}`,
         description: `${selectedGame} oyununda ${selectedMode} maçı`,
@@ -109,6 +118,9 @@ const HizliMeydanOku = () => {
     } catch (error) {
       console.error('Meydan okuma oluşturma hatası:', error);
       toast.error(error.message);
+    } finally {
+      // İşlem bittikten sonra form gönderim durumunu false yap
+      setIsSubmitting(false);
     }
   };
 
@@ -296,11 +308,11 @@ const HizliMeydanOku = () => {
 
                 {/* Oluştur Butonu */}
                 <button
-                    className={styles.buttonBase}
+                    className={`${styles.buttonBase} ${isSubmitting ? styles.submitting : ''}`}
                     onClick={handleCreate}
-                    disabled={!isFormComplete}
+                    disabled={!isFormComplete || isSubmitting}
                 >
-                  <span className={styles.text6}>Oluştur</span>
+                  <span className={styles.text6}>{isSubmitting ? 'Oluşturuluyor...' : 'Oluştur'}</span>
                 </button>
               </div>
             </div>

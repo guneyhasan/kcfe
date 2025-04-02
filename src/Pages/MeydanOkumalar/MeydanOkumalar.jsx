@@ -134,6 +134,15 @@ const MeydanOkumalar = () => {
 		}));
 	};
 
+	const handlePageChange = (newPage) => {
+		if (newPage < 1 || newPage > pagination.totalPages) return;
+		
+		setFilters(prev => ({
+			...prev,
+			page: newPage
+		}));
+	};
+
 	return (
 		<div className={styles.meydanOkumalar}>
 			<Helmet>
@@ -200,26 +209,40 @@ const MeydanOkumalar = () => {
 									matches={challenges.map(formatChallengeForTable)}
 									loading={loading}
 								/>
-								{pagination.totalPages > 1 && (
-									<div className={styles.pagination}>
-										<button 
-											onClick={() => handleFilterChange('page', filters.page - 1)}
-											disabled={filters.page === 1}
-											className={styles.paginationButton}
-										>
-											Önceki
-										</button>
-										<span className={styles.paginationInfo}>{`Sayfa ${filters.page} / ${pagination.totalPages}`}</span>
-										<button 
-											onClick={() => handleFilterChange('page', filters.page + 1)}
-											disabled={filters.page === pagination.totalPages}
-											className={styles.paginationButton}
-										>
-											Sonraki
-										</button>
+								
+								{/* Show message when there are no challenges */}
+								{!loading && challenges.length === 0 && (
+									<div className={styles.noResultsMessage}>
+										Meydan okuma bulunamadı. Filtre ayarlarını değiştirmeyi deneyin.
 									</div>
 								)}
 							</div>
+							
+							{/* Pagination Controls */}
+							{!loading && challenges.length > 0 && (
+								<div className={styles.paginationContainer}>
+									<button
+										className={styles.paginationButton}
+										disabled={pagination.currentPage <= 1}
+										onClick={() => handlePageChange(pagination.currentPage - 1)}
+									>
+										Önceki
+									</button>
+									<span className={styles.paginationInfo}>
+										Sayfa {pagination.currentPage} / {pagination.totalPages} 
+										<span className={styles.totalItems}>
+											(Toplam: {pagination.totalItems} maç)
+										</span>
+									</span>
+									<button
+										className={styles.paginationButton}
+										disabled={pagination.currentPage >= pagination.totalPages}
+										onClick={() => handlePageChange(pagination.currentPage + 1)}
+									>
+										Sonraki
+									</button>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

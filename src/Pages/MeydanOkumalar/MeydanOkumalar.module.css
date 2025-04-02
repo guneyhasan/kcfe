@@ -921,7 +921,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	gap: 2vh;
+	gap: 0;
 }
 .frameContainer {
 	flex: 1;
@@ -984,6 +984,27 @@
 	color: #fff;
 	font-family: 'Inter', sans-serif;
 }
+
+/* Target the specific div that contains the table */
+.headerMaTekliflerimParent > .meydanOkumalar {
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	min-height: auto;
+}
+
+.paginationContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 20px;
+	gap: 16px;
+	width: 100%;
+	position: relative;
+}
+
 .filterContainer {
 	display: flex;
 	gap: calc(0.8rem + 0.5vw);
@@ -1045,7 +1066,14 @@
 	cursor: not-allowed;
 }
 .paginationInfo {
-	color: #ccc;
+	font-size: 14px;
+	color: #c4c5d0;
+	font-weight: 500;
+}
+.totalItems {
+	font-size: 12px;
+	opacity: 0.7;
+	margin-left: 4px;
 }
 .meydanOkumalar .tableHeaderRow {
 	display: flex;
@@ -1395,6 +1423,66 @@ select.inputDropdownBase::-ms-expand {
 
 select.inputDropdownBase:hover {
 	border-color: #3e71f3;
+}
+
+/* Pagination styles */
+.paginationContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	gap: 16px;
+	width: 100%;
+	position: relative;
+}
+
+.paginationButton {
+	background: linear-gradient(41deg, #325feb, #3763eb 6.25%, #3c67ec 12.5%, #406aec 18.75%, #446ded 25%, #4870ed 31.25%, #4b73ed 37.5%, #4e75ee 43.75%, #5177ee 50%, #5379ee 56.25%, #557bee 62.5%, #577cef 68.75%, #587def 75%, #5a7eef 81.25%, #5a7fef 87.5%, #5b7fef 93.75%, #5b7fef);
+	border: none;
+	border-radius: 8px;
+	color: white;
+	padding: 8px 16px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+.paginationButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.paginationInfo {
+	font-size: 14px;
+	color: #c4c5d0;
+	font-weight: 500;
+}
+
+/* Responsive pagination styles */
+@media screen and (max-width: 480px) {
+	.paginationContainer {
+		margin-top: 15px;
+		gap: 8px;
+	}
+	
+	.paginationButton {
+		padding: 6px 12px;
+		font-size: 12px;
+	}
+	
+	.paginationInfo {
+		font-size: 12px;
+	}
+}
+
+.noResultsMessage {
+	text-align: center;
+	padding: 30px 0;
+	color: #c4c5d0;
+	font-size: 16px;
+	font-weight: 500;
 }
 
 
