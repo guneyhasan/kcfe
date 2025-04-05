@@ -182,11 +182,13 @@ const LandingPage = () => {
                 <div className={styles.header}>
                     <div className={styles.container}>
                         <div className={styles.logoContainer}>
-                            <img
-                                src={konsolclubLogo}
-                                alt="Logo"
+                            <b
                                 className={styles.headerLogo}
-                            />
+                                onClick={() => navigate('/landing')}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                konsolclub
+                            </b>
                         </div>
                         <div className={styles.navigationActions}>
                             <div className={styles.button}>
