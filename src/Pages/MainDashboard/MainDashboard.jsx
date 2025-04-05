@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './MainDashboard.module.css';
-import konsoloyunLogoBeyazYazi from '../../images/konsolclub_logo_beyaz_yazi.svg';
+import konsolclubLogo from '../../images/konsolclub/konsolclub.png';
 import { Helmet } from 'react-helmet';
 
 const MainDashboard = () => {
@@ -23,7 +23,7 @@ const MainDashboard = () => {
             <div className={styles.header}>
                 <div className={styles.logoContainer}>
                     <img 
-                        src={konsoloyunLogoBeyazYazi} 
+                        src={konsolclubLogo} 
                         alt="Logo" 
                         className={styles.logo}
                     />

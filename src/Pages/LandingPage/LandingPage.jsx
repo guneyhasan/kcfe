@@ -26,7 +26,7 @@ import discordImage from '../../images/discord.svg';
 import instagramImage from '../../images/instagram.png';
 import blueLogoImage from '../../images/konsolclub_logo_mavi.png';
 import googleLogoImage from '../../images/googleIcon.png';
-import konsoloyunLogoBeyazYazi from '../../images/konsolclub_logo_beyaz_yazi.svg';
+import konsolclubLogo from '../../images/konsolclub/konsolclub.png';
 import chevronDownIcon from '../../images/chevron-down.svg';
 
 const LandingPage = () => {
@@ -183,7 +183,7 @@ const LandingPage = () => {
                     <div className={styles.container}>
                         <div className={styles.logoContainer}>
                             <img
-                                src={konsoloyunLogoBeyazYazi}
+                                src={konsolclubLogo}
                                 alt="Logo"
                                 className={styles.headerLogo}
                             />
@@ -218,7 +218,7 @@ const LandingPage = () => {
                     <div className={`${styles.content1} ${showMobileLoginForm ? styles.showMobileLogin : ''}`}>
                         <div className={styles.header1}>
                             <div className={styles.logo}>
-                                <img className={styles.contentIcon1} alt="" src={blueLogoImage} />
+                                <img className={styles.contentIcon1} alt="" src={konsolclubLogo} />
                             </div>
                             <div className={styles.textAndSupportingText}>
                                 <div className={styles.text2}>Giriş Yap</div>
@@ -549,15 +549,8 @@ const LandingPage = () => {
                 <div className={styles.container8}>
                     <div className={styles.row}>
                         <div className={styles.pagedoneLogoParent}>
-                            <img className={styles.pagedoneLogoIcon} alt="" src={konsoloyunLogoBeyazYazi} />
-                            <img className={styles.vectorIcon} alt="" src="Vector.svg" />
-                            <div className={styles.frame17}>
-                                <div className={styles.kaydolgiriYap}>Kaydol/Giriş Yap</div>
-                                <div className={styles.kaydolgiriYap}>Hakkımızda</div>
-                                <div className={styles.kaydolgiriYap}>SSS</div>
-                                <div className={styles.kaydolgiriYap}>Kurallar</div>
-                                <div className={styles.kaydolgiriYap}>Destek</div>
-                            </div>
+                            <img className={styles.pagedoneLogoIcon} alt="" src={konsolclubLogo} />
+                            <div className={styles.text}>© 2023 KONSOLCLUB. Tüm hakları saklıdır.</div>
                         </div>
                         <div className={styles.frameParent}>
                             <div className={styles.socialMediaWrapper}>
