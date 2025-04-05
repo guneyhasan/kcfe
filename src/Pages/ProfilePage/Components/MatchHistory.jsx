@@ -68,6 +68,20 @@ const MatchHistory = ({ historyData, currentPage, totalPages, onPageChange }) =>
     }
   };
 
+  // Sonuç metni için yardımcı fonksiyon
+  const getResultText = (result, isMobile) => {
+    if (result === 'win') {
+      return isMobile ? 'Kazandı' : 'Kazandım';
+    } else if (result === 'lose') {
+      return isMobile ? 'Kaybetti' : 'Kaybettim';
+    } else if (result === 'draw') {
+      return 'Berabere';
+    } else {
+      // Diğer durumları da "berabere" olarak işle
+      return 'Berabere';
+    }
+  };
+
   return (
     <div className={styles.maGemiiParent}>
       <div className={styles.maGemiiHeader}>
@@ -134,10 +148,7 @@ const MatchHistory = ({ historyData, currentPage, totalPages, onPageChange }) =>
                           : styles.kazandm4
                     }
                   >
-                    {isMobile 
-                      ? (match.result === 'win' ? 'Kazandı' : match.result === 'lose' ? 'Kaybetti' : 'Berabere')
-                      : (match.result === 'win' ? 'Kazandım' : match.result === 'lose' ? 'Kaybettim' : 'Berabere')
-                    }
+                    {getResultText(match.result, isMobile)}
                   </td>
                 </tr>
               ))}

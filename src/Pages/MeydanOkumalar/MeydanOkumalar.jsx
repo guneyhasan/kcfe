@@ -37,25 +37,101 @@ const MeydanOkumalar = () => {
 		limit: 10
 	});
 
+	// Sadece kendi meydan okumalarını görüntülemek için bir state
+	const [filterType, setFilterType] = useState('all'); // 'all', 'mine', 'opponents'
+
 	// Game images data
-	const gameImages = [
-		{ id: 'FC24', name: 'FC 24', image: fc24Image },
-		{ id: 'FC25', name: 'FC 25', image: fc25Image },
-		{ id: 'NBA2K24', name: 'NBA 2K24', image: nba2k24Image },
-		{ id: 'NBA2K25', name: 'NBA 2K25', image: nba2k25Image }
-	];
+	const [gameImages, setGameImages] = useState([
+		{ id: 'FC 24', name: 'FC 24', image: fc24Image },
+		{ id: 'FC 25', name: 'FC 25', image: fc25Image },
+		{ id: 'NBA 2K24', name: 'NBA 2K24', image: nba2k24Image },
+		{ id: 'NBA 2K25', name: 'NBA 2K25', image: nba2k25Image }
+	]);
 
 
 	useEffect(() => {
 		fetchChallenges();
-	}, [filters]);
+	}, [filters, filterType]);
 
 	const fetchChallenges = async () => {
 		try {
 			setLoading(true);
-			const response = await challengeService.getChallenges(filters);
 			
-			if (response.success) {
+			let response;
+			
+			// Debug: Filter değerlerini kontrol edelim
+			console.log("Kullanılan filtreler:", filters);
+			console.log("Filtre tipi:", filterType);
+			
+			// Önce tüm meydan okumaları getirelim
+			response = await challengeService.getChallenges(filters);
+			
+			// Debug: API yanıtını kontrol edelim
+			console.log("API yanıtı:", response);
+			
+			// Kullanıcı bilgilerini localStorage'dan alıyoruz
+			let currentUsername = null;
+			const userData = localStorage.getItem('user');
+			
+			if (userData && (filterType === 'mine' || filterType === 'opponents')) {
+				try {
+					const parsedUserData = JSON.parse(userData);
+					// Kullanıcı datası içinde doğrudan username veya user objesi içinde username kontrolü
+					currentUsername = parsedUserData.username || (parsedUserData.user && parsedUserData.user.username);
+					
+					// Debug
+					console.log("Filtreleme için kullanılan username:", currentUsername);
+					
+					if (response.success && currentUsername) {
+						if (filterType === 'mine') {
+							// Benimkiler: Sadece kullanıcının oluşturduğu meydan okumaları göster
+							const userChallenges = response.data.challenges.filter(
+								challenge => challenge.creator && challenge.creator.username === currentUsername
+							);
+							
+							console.log("Kullanıcının meydan okumaları:", userChallenges);
+							
+							// Yanıtı manuel olarak güncelle
+							response = {
+								...response,
+								data: {
+									...response.data,
+									challenges: userChallenges,
+									pagination: {
+										...response.data.pagination,
+										totalItems: userChallenges.length
+									}
+								}
+							};
+						} else if (filterType === 'opponents') {
+							// Rakipler: Kullanıcının oluşturmadığı meydan okumaları göster
+							const opponentChallenges = response.data.challenges.filter(
+								challenge => challenge.creator && challenge.creator.username !== currentUsername
+							);
+							
+							console.log("Rakiplerin meydan okumaları:", opponentChallenges);
+							
+							// Yanıtı manuel olarak güncelle
+							response = {
+								...response,
+								data: {
+									...response.data,
+									challenges: opponentChallenges,
+									pagination: {
+										...response.data.pagination,
+										totalItems: opponentChallenges.length
+									}
+								}
+							};
+						}
+					}
+				} catch (error) {
+					console.error('User data parsing error:', error);
+					toast.error('Kullanıcı bilgileri alınamadı');
+				}
+			}
+			
+			if (response && response.success) {
 				setChallenges(response.data.challenges);
 				setPagination(response.data.pagination);
 			}
@@ -106,6 +182,24 @@ const MeydanOkumalar = () => {
 		const entryFee = Number(challenge.entryFee);
 		const prize = entryFee * 1.8;
 		
+		// Kullanıcı bilgilerini localStorage'dan alıyoruz
+		const userData = localStorage.getItem('user');
+		let currentUsername = null;
+		
+		// localStorage'dan username'i almaya çalışıyoruz
+		if (userData) {
+			try {
+				const parsedUserData = JSON.parse(userData);
+				// Kullanıcı datası içinde doğrudan username veya user objesi içinde username kontrolü
+				currentUsername = parsedUserData.username || (parsedUserData.user && parsedUserData.user.username);
+			} catch (error) {
+				console.error('User data parsing error:', error);
+			}
+		}
+		
+		// Meydan okumanın yaratıcısının username'i ile giriş yapmış kullanıcının username'ini karşılaştırıyoruz
+		const isCreator = currentUsername && challenge.creator && challenge.creator.username === currentUsername;
+		
 		return {
 			id: challenge.id,
 			username: challenge.creator.username,
@@ -118,20 +212,57 @@ const MeydanOkumalar = () => {
 			communicationLink: challenge.communicationLink,
 			maxParticipants: challenge.maxParticipants,
 			participantCount: challenge.participantCount,
-			onRequestClick: () => handleSendChallengeRequest({
-				...challenge,
-				entryFee: entryFee,
-				prize: prize
-			})
+			// Kullanıcı meydan okumanın yaratıcısı ise "İptal Et" butonu göster, değilse "İstek Gönder" butonu göster
+			isCreator: isCreator,
+			onRequestClick: isCreator 
+				? () => handleCancelChallenge(challenge.id)
+				: () => handleSendChallengeRequest({
+					...challenge,
+					entryFee: entryFee,
+					prize: prize
+				})
 		};
 	};
 
+	const handleCancelChallenge = async (challengeId) => {
+		try {
+			const response = await challengeService.cancelChallenge(challengeId);
+			
+			if (response.success) {
+				toast.success(
+					'Meydan okuma başarıyla iptal edildi!',
+					{
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+					}
+				);
+				
+				// Meydan okumaları yeniden getir
+				fetchChallenges();
+			}
+		} catch (error) {
+			console.error('Meydan okuma iptal edilemedi:', error.message);
+			toast.error(error.message || 'Meydan okuma iptal edilirken bir hata oluştu');
+		}
+	};
+
 	const handleFilterChange = (key, value) => {
-		setFilters(prev => ({
-			...prev,
-			[key]: value,
-			page: 1
-		}));
+		// Debug için log ekleyelim
+		console.log(`Filtre değişiyor: ${key} = ${value}`);
+		
+		setFilters(prev => {
+			const newFilters = {
+				...prev,
+				[key]: value,
+				page: 1
+			};
+			
+			console.log("Güncellenmiş filtreler:", newFilters);
+			return newFilters;
+		});
 	};
 
 	const handlePageChange = (newPage) => {
@@ -183,9 +314,11 @@ const MeydanOkumalar = () => {
 												onChange={(e) => handleFilterChange('platform', e.target.value)}
 											>
 												<option value="">Platform</option>
-												<option value="Steam">Steam</option>
 												<option value="PS5">PS5</option>
-												<option value="XBOX">XBOX</option>
+												<option value="PS4">PS4</option>
+												<option value="XBOX ONE">XBOX ONE</option>
+												<option value="XBOX S">XBOX S</option>
+												<option value="XBOX X">XBOX X</option>
 											</select>
 										</div>
 										<div className={styles.filter}>
@@ -195,10 +328,21 @@ const MeydanOkumalar = () => {
 												onChange={(e) => handleFilterChange('game', e.target.value)}
 											>
 												<option value="">Oyun</option>
-												<option value="FC24">FC 24</option>
-												<option value="FC25">FC 25</option>
-												<option value="NBA2K24">NBA 2K24</option>
-												<option value="NBA2K25">NBA 2K25</option>
+												<option value="FC 25">FC 25</option>
+												<option value="FC 24">FC 24</option>
+												<option value="NBA 2K25">NBA 2K25</option>
+												<option value="NBA 2K24">NBA 2K24</option>
+											</select>
+										</div>
+										<div className={styles.filter}>
+											<select 
+												className={styles.inputDropdownBase}
+												value={filterType}
+												onChange={(e) => setFilterType(e.target.value)}
+											>
+												<option value="all">Tümü</option>
+												<option value="mine">Benimkiler</option>
+												<option value="opponents">Rakipler</option>
 											</select>
 										</div>
 									</div>
@@ -209,13 +353,6 @@ const MeydanOkumalar = () => {
 									matches={challenges.map(formatChallengeForTable)}
 									loading={loading}
 								/>
-								
-								{/* Show message when there are no challenges */}
-								{!loading && challenges.length === 0 && (
-									<div className={styles.noResultsMessage}>
-										Meydan okuma bulunamadı. Filtre ayarlarını değiştirmeyi deneyin.
-									</div>
-								)}
 							</div>
 							
 							{/* Pagination Controls */}

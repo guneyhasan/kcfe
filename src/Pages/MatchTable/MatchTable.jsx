@@ -42,47 +42,53 @@ const MatchTable = ({ matches, loading }) => {
             </div>
 
             <div className={styles.tableRows}>
-                {matches.map((match, index) => (
-                    <div className={styles.rowMeydanOkumalar} key={index}>
-                        <div className={styles.kullaniciBilgi}>
-                            {!isMobile && (
-                                <img 
-                                    className={styles.avatarIcon} 
-                                    src={match.avatar || '/avatar.png'} 
-                                    alt={match.username} 
-                                />
-                            )}
-                            <div className={styles.usernameWrapper}>
-                                <div className={styles.username}>{match.username}</div>
-                            </div>
-                        </div>
-                        <div className={styles.oyunBilgi}>
-                            <div className={`${styles.oyunPlatform} ${isMobile ? styles.oyunPlatformMobile : ''}`}>
-                                <span className={styles.gameNameSpan}>{match.game}</span>
-                                <div className={`${styles.platformContainer} ${match.platform.includes('XBOX') ? styles.xboxContainer : ''}`}>
-                                    {match.platform === 'PS5' || match.platform === 'PS4' ? (
-                                        <img src={PSLogo} alt={match.platform} />
-                                    ) : match.platform.includes('XBOX') ? (
-                                        <img src={XBOXLogo} alt={match.platform} />
-                                    ) : (
-                                        <img src={match.platformImg} alt={match.platform} />
-                                    )}
-                                    <span>{match.platform}</span>
+                {matches.length > 0 ? (
+                    matches.map((match, index) => (
+                        <div className={styles.rowMeydanOkumalar} key={index}>
+                            <div className={styles.kullaniciBilgi}>
+                                {!isMobile && (
+                                    <img 
+                                        className={styles.avatarIcon} 
+                                        src={match.avatar || '/avatar.png'} 
+                                        alt={match.username} 
+                                    />
+                                )}
+                                <div className={styles.usernameWrapper}>
+                                    <div className={styles.username}>{match.username}</div>
                                 </div>
                             </div>
+                            <div className={styles.oyunBilgi}>
+                                <div className={`${styles.oyunPlatform} ${isMobile ? styles.oyunPlatformMobile : ''}`}>
+                                    <span className={styles.gameNameSpan}>{match.game}</span>
+                                    <div className={`${styles.platformContainer} ${match.platform.includes('XBOX') ? styles.xboxContainer : ''}`}>
+                                        {match.platform === 'PS5' || match.platform === 'PS4' ? (
+                                            <img src={PSLogo} alt={match.platform} />
+                                        ) : match.platform.includes('XBOX') ? (
+                                            <img src={XBOXLogo} alt={match.platform} />
+                                        ) : (
+                                            <img src={match.platformImg} alt={match.platform} />
+                                        )}
+                                        <span>{match.platform}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles.katilimUcreti}>{match.entryFee}₺</div>
+                            <div className={styles.odul}>{match.prize}₺</div>
+                            <div className={styles.aksiyon}>
+                                <button 
+                                    className={`${match.isCreator ? styles.iptalEt : styles.istekGonder} ${isMobile ? (match.isCreator ? styles.iptalEtMobile : styles.istekGonderMobile) : ''}`}
+                                    onClick={match.onRequestClick}
+                                >
+                                    {match.isCreator ? 'İptal Et' : 'İstek Gönder'}
+                                </button>
+                            </div>
                         </div>
-                        <div className={styles.katilimUcreti}>{match.entryFee}₺</div>
-                        <div className={styles.odul}>{match.prize}₺</div>
-                        <div className={styles.aksiyon}>
-                            <button 
-                                className={`${styles.istekGonder} ${isMobile ? styles.istekGonderMobile : ''}`}
-                                onClick={match.onRequestClick}
-                            >
-                                İstek Gönder
-                            </button>
-                        </div>
+                    ))
+                ) : (
+                    <div className={styles.noResultsMessage}>
+                        Meydan okuma bulunamadı. Filtre ayarlarını değiştirmeyi deneyin.
                     </div>
-                ))}
+                )}
             </div>
         </div>
     );

@@ -186,36 +186,70 @@
   color: #60a408;
 }
 
-/* Buton */
+/* İstek Gönder butonu */
 .istekGonder {
-  background:#325feb;
+  background: #3399ff;
   color: white;
-  padding: 8px 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
   cursor: pointer;
-  text-align: center;
-  font-size: 14px; /* Buton font boyutu */
+  transition: background-color 0.3s;
+  font-weight: 600;
+  white-space: nowrap;
+  width: 120px; /* Sabit genişlik ekliyorum */
+  text-align: center; /* Metni ortalıyorum */
 }
 
 .istekGonder:hover {
-  background: #1f3d96;
+  background: #1a80ff;
+}
+
+/* İptal Et butonu için kırmızı stil */
+.iptalEt {
+  background: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+  white-space: nowrap;
+  width: 120px; /* İstek Gönder butonu ile aynı genişlik */
+  text-align: center; /* Metni ortalıyorum */
+}
+
+.iptalEt:hover {
+  background: #e60000;
 }
 
 .istekGonderMobile {
     /* Mobil için daha küçük buton boyutlandırması */
     font-size: 0.75rem;
     padding: 4px 8px;
-    width: auto;
-    min-width: 70px;
+    width: 90px !important; /* Sabit genişlik ve !important ekleyerek öncelik veriyorum */
+    min-width: 80px;
+    max-width: 90px;
+}
+
+/* İptal Et butonu için mobil stil */
+.iptalEtMobile {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    width: 90px !important; /* İstek Gönder butonu ile aynı genişlik */
+    min-width: 80px;
     max-width: 90px;
 }
 
 @media (max-width: 480px) {
-    .istekGonderMobile {
+    .istekGonderMobile, .iptalEtMobile {
         font-size: 0.7rem;
         padding: 3px 6px;
-        min-width: 60px;
+        min-width: 70px;
+        width: 80px !important;
         max-width: 80px;
     }
 }
@@ -387,5 +421,27 @@
   .istekGonderMobile {
     padding: 2px 4px;
     font-size: 9px;
+  }
+}
+
+.noResultsMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px 20px;
+  color: #c4c5d0;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  background-color: rgba(30, 32, 36, 0.2);
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+@media (max-width: 480px) {
+  .noResultsMessage {
+    font-size: 14px;
+    padding: 20px 10px;
   }
 }

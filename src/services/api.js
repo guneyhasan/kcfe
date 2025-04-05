@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { compressImage } from '../utils/imageCompression';
 
-const API_URL = 'http://62.171.189.135:8090';
+//const API_URL = 'http://62.171.189.135:8090';
+const API_URL = 'http://localhost:8090';
 
 const api = axios.create({
     baseURL: API_URL,
@@ -147,24 +148,63 @@ export const challengeService = {
         try {
             const userData = localStorage.getItem('user');
             const token = JSON.parse(userData).access_token;
-            const response = await api.get('http://62.171.189.135:8090/challenges', { 
+            
+            // Debug: API'ye gönderilen parametreleri görüntüle
+            console.log("API filtreleme parametreleri:", params);
+            
+            // Parametreleri kopyalayıp, gerekirse düzelt
+            const queryParams = {
+                page: params.page || 1,
+                limit: params.limit || 10,
+                status: params.status || 'pending',
+                category: params.category || undefined,
+                difficulty: params.difficulty || undefined,
+                search: params.search || undefined,
+                platform: params.platform || undefined,
+                creatorId: params.creatorId || undefined
+            };
+            
+            // game parametresini kontrol et ve doğru formatta olduğunu garantile
+            if (params.game) {
+                queryParams.game = params.game;
+            }
+            
+            const response = await api.get('/challenges', { 
                 headers: {
                     Authorization: `Bearer ${token}`
                 },
-                params: {
-                    page: params.page || 1,
-                    limit: params.limit || 10,
-                    status: params.status || 'pending',
-                    category: params.category || undefined,
-                    difficulty: params.difficulty || undefined,
-                    search: params.search || undefined,
-                    game: params.game || undefined,
-                    platform: params.platform || undefined
-                }
+                params: queryParams
             });
+            
+            // Debug: API yanıtını görüntüle
+            console.log("API yanıtı (getChallenges):", response.data);
+            
             return response.data;
         } catch (error) {
             console.error('Get Challenges Error:', error);
+            throw error;
+        }
+    },
+
+    // Kullanıcının kendi meydan okumalarını getir
+    getMyChallenges: async (params = {}) => {
+        try {
+            const userData = localStorage.getItem('user');
+            const parsedData = JSON.parse(userData);
+            const token = parsedData.access_token;
+            const userId = parsedData.user?.id || parsedData.id;
+            
+            if (!userId) {
+                throw new Error('Kullanıcı ID bilgisi bulunamadı');
+            }
+            
+            // Mevcut getChallenges metodunu çağırarak, creatorId parametresini ekleyerek kullanıyoruz
+            return await challengeService.getChallenges({
+                ...params, 
+                creatorId: userId
+            });
+        } catch (error) {
+            console.error('Kendi meydan okumalarını getirme hatası:', error);
             throw error;
         }
     },
@@ -250,6 +290,36 @@ export const challengeService = {
             return response.data;
         } catch (error) {
             throw error.response?.data || error;
+        }
+    },
+
+    // Challenge iptal etme
+    cancelChallenge: async (challengeId) => {
+        try {
+            const token = challengeService.getToken();
+            const response = await axios.post(
+                `${API_URL}/challenges/${challengeId}/cancel`,
+                {},
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            return response.data;
+        } catch (error) {
+            console.error('Challenge iptal edilemedi:', error);
+            if (error.response) {
+                // Sunucudan dönen hata
+                throw new Error(error.response.data.message || 'İptal işlemi başarısız oldu');
+            } else if (error.request) {
+                // İstek yapıldı ama yanıt alınamadı
+                throw new Error('Sunucudan yanıt alınamadı');
+            } else {
+                // İstek oluşturulurken bir hata oldu
+                throw new Error('İstek oluşturulurken hata: ' + error.message);
+            }
         }
     },
 

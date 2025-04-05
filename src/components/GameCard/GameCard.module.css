@@ -30,11 +30,20 @@
     margin: 0;
     padding: 0;
     min-width: unset;
+    display: flex;
+    justify-content: center;
   }
   
   .gameImage {
     height: 120px;
+    max-width: 100%;
     width: 100%;
     border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gameImage {
+    height: 90px;
   }
 } 

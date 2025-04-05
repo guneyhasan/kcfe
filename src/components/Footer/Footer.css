@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 12px 0;
+  }
+  
+  .footer p {
+    font-size: 12px;
+  }
+} 

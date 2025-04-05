@@ -8,6 +8,7 @@ import Statistics from './Components/Statistics';
 import MatchHistory from './Components/MatchHistory';
 import { Helmet } from 'react-helmet';
 import { challengeService } from '../../services/api';
+import { StatisticsService } from '../../services/statisticsService';
 import { toast } from 'react-toastify';
 
 // Import game images
@@ -157,10 +158,12 @@ const mockHistoryData = [
 const Profil = () => {
   const [userData, setUserData] = useState(mockUserData);
   const [matchesData, setMatchesData] = useState([]);
-  const [statsData, setStatsData] = useState(mockStatsData);
-  const [historyData, setHistoryData] = useState(mockHistoryData);
+  const [statsData, setStatsData] = useState([]);
+  const [historyData, setHistoryData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(3);
+  const [totalPages, setTotalPages] = useState(1);
+  const [allHistoryData, setAllHistoryData] = useState([]);
+  const [itemsPerPage] = useState(5);
   const [loading, setLoading] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -183,17 +186,21 @@ const Profil = () => {
 
   // Get game icon helper function
   const getGameIcon = (gameName) => {
-    switch (gameName) {
-      case 'FC24':
-        return fc24Image;
-      case 'FC25':
-        return fc25Image;
-      case 'NBA2K24':
-        return nba2k24Image;
-      case 'NBA2K25':
-        return nba2k25Image;
-      default:
-        return null;
+    // Normalize game name for more reliable matching
+    const normalizedName = String(gameName).toUpperCase();
+    
+    if (normalizedName.includes('FC24') || normalizedName.includes('FIFA 24') || normalizedName.includes('FIFA24')) {
+      return fc24Image;
+    } else if (normalizedName.includes('FC25') || normalizedName.includes('FIFA 25') || normalizedName.includes('FIFA25')) {
+      return fc25Image;
+    } else if (normalizedName.includes('NBA2K24') || normalizedName.includes('NBA 2K24') || normalizedName.includes('NBA24')) {
+      return nba2k24Image;
+    } else if (normalizedName.includes('NBA2K25') || normalizedName.includes('NBA 2K25') || normalizedName.includes('NBA25')) {
+      return nba2k25Image;
+    } else {
+      // Fallback to first available image if no match
+      console.log(`No matching icon found for game: ${gameName}`);
+      return fc25Image;
     }
   };
 
@@ -210,20 +217,99 @@ const Profil = () => {
         // Get user data from localStorage
         const userStr = localStorage.getItem('user');
         let currentUsername = '';
+        let userId = null;
         if (userStr) {
           try {
             const parsedData = JSON.parse(userStr);
-            if (parsedData.user) {
+            console.log('Raw localStorage user data:', parsedData);
+            
+            // Extract username consistently for all localStorage formats
+            if (parsedData.user && parsedData.user.username) {
               currentUsername = parsedData.user.username;
+              userId = parsedData.user.id;
               setUserData({
                 username: parsedData.user.username,
                 userId: parsedData.user.id,
                 balance: parsedData.balance || 0
               });
+            } else if (parsedData.username) {
+              currentUsername = parsedData.username;
+              userId = parsedData.id;
+              setUserData({
+                username: parsedData.username,
+                userId: parsedData.id,
+                balance: parsedData.balance || 0
+              });
             }
+            
+            console.log('Extracted username from localStorage:', currentUsername);
           } catch (error) {
             console.error('LocalStorage veri parse hatası:', error);
           }
+        }
+
+        // Fetch statistics from the API
+        try {
+          const statsResponse = await StatisticsService.getUserProfileStats();
+          console.log('Statistics API Response:', statsResponse);
+          
+          if (statsResponse.success) {
+            const { gameStats } = statsResponse.data;
+            
+            if (Array.isArray(gameStats) && gameStats.length > 0) {
+              // Format stats data for the Statistics component
+              const formattedStatsData = gameStats.map((gameStat, index) => {
+                // API returns challengeId, not game object with title
+                // We'll use a generic game name based on challengeId
+                const gameTitle = `Oyun ${gameStat.challengeId || index + 1}`;
+                
+                return {
+                  id: String(gameStat.challengeId || index + 1),
+                  name: gameTitle,
+                  icon: getGameIcon('FC25'), // Default to FC25 since we don't have game name
+                  stats: {
+                    wins: gameStat.wins || 0,
+                    losses: gameStat.losses || 0,
+                    draws: gameStat.draws || 0
+                  }
+                };
+              });
+              
+              console.log('Formatted Stats Data:', formattedStatsData);
+              setStatsData(formattedStatsData);
+            } else {
+              console.warn('No game stats found in API response:', statsResponse);
+              // Show default placeholder
+              setStatsData([{
+                id: "1",
+                name: "FC 25",
+                icon: fc25Image,
+                stats: {
+                  wins: 0,
+                  losses: 0,
+                  draws: 0
+                }
+              }]);
+            }
+          } else {
+            console.error('Statistics API returned an error:', statsResponse);
+            toast.error('İstatistikler yüklenemedi');
+          }
+        } catch (statsError) {
+          console.error('Error fetching statistics:', statsError);
+          toast.error('İstatistikler yüklenirken bir hata oluştu');
+          
+          // In case of error, we can still show some placeholder data
+          setStatsData([{
+            id: "1",
+            name: "FC 25",
+            icon: fc25Image,
+            stats: {
+              wins: 0,
+              losses: 0,
+              draws: 0
+            }
+          }]);
         }
 
         // Fetch recent matches
@@ -231,49 +317,377 @@ const Profil = () => {
         if (response.success) {
           const { matches } = response.data;
           console.log('API Response - Matches:', matches); // Debug için eklendi
+          console.log('Current user from localStorage:', currentUsername);
+          
+          // Log full raw match data for the first match to help debugging
+          if (matches && matches.length > 0) {
+            console.log('Full raw data structure of first match:', JSON.stringify(matches[0], null, 2));
+            console.log('Available fields on first match:', Object.keys(matches[0]));
+            
+            // Check if specific fields we're interested in exist
+            const firstMatch = matches[0];
+            console.log('Host declared exists?', 'hostDeclared' in firstMatch, firstMatch.hostDeclared);
+            console.log('Opponent declared exists?', 'opponentDeclared' in firstMatch, firstMatch.opponentDeclared);
+            console.log('Winner exists?', 'winner' in firstMatch, firstMatch.winner);
+            console.log('Result exists?', 'result' in firstMatch, firstMatch.result);
+          }
+          
+          // First get all completed matches
+          const completedMatches = matches.filter(match => match.status === 'completed');
+          
+          // Sort by timestamp (newest first)
+          completedMatches.sort((a, b) => {
+            const getTimestamp = (match) => {
+              // Tarihi önce completedAt, yoksa createdAt, yoksa updatedAt olarak al
+              const dateStr = match.completedAt || match.createdAt || match.updatedAt;
+              if (!dateStr) return 0;
+              
+              // Tarih string'i varsa Date objesine çevir
+              try {
+                return new Date(dateStr).getTime();
+              } catch (e) {
+                console.error('Date parsing error:', e);
+                return 0;
+              }
+            };
+            
+            return getTimestamp(b) - getTimestamp(a); // En yeni maçlar önce
+          });
+          
+          console.log('Raw API matches sorted by date (newest first):', 
+            completedMatches.map(m => ({
+              id: m.id, 
+              date: m.completedAt || m.createdAt || m.updatedAt
+            }))
+          );
+          
+          // İlk 10 maçı formatla (en yeni 10 maç)
+          const topTenMatches = completedMatches.slice(0, 10);
           
           // Format matches for the RecentMatches component
-          const formattedMatches = matches
-            .filter(match => match.status === 'completed')
+          const formattedMatches = topTenMatches
             .map(match => {
-              console.log('Processing match:', match); // Her maç için detayları görelim
-              console.log('Current username:', currentUsername); // Mevcut kullanıcı adını görelim
+              // Get current username from localStorage consistently
+              const userStr = localStorage.getItem('user');
+              let currentUsername = '';
               
-              const isWinner = match.winner === currentUsername;
-              console.log('Is winner?', isWinner); // Kazanan kontrolünü görelim
+              try {
+                const parsedData = JSON.parse(userStr);
+                // Handle both possible user data structures
+                currentUsername = parsedData.user?.username || parsedData.username || '';
+              } catch (error) {
+                console.error('LocalStorage parsing error:', error);
+              }
+              
+              // Comprehensive logging for debugging
+              console.log('------ Match ID:', match.id, '------');
+              console.log('Host username:', match.host.username);
+              console.log('Opponent username:', match.opponent.username);
+              console.log('Winner from API:', match.winner);
+              console.log('Match result:', match.result);
+              console.log('Match completedAt:', match.completedAt);
+              console.log('Match createdAt:', match.createdAt);
+              console.log('Current localStorage username:', currentUsername);
+              
+              // Check if the current user participated in this match
+              const isCurrentUserHost = match.host.username === currentUsername;
+              const isCurrentUserOpponent = match.opponent.username === currentUsername;
+              let isWinner = false;
+              let actualWinner = '';
+              let matchResult = 'draw'; // Default result değerini tanımla
+              
+              // First check if the API explicitly declares the winner
+              if (match.winner && typeof match.winner === 'string') {
+                actualWinner = match.winner;
+                if (actualWinner === currentUsername) {
+                  matchResult = 'win';
+                  isWinner = true;
+                } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                  matchResult = 'draw';
+                  isWinner = false;
+                } else {
+                  matchResult = 'lose';
+                  isWinner = false;
+                }
+              }
+              // If winner is undefined but we have hostDeclared and opponentDeclared fields
+              else if (match.hostDeclared && match.opponentDeclared) {
+                console.log('Host declared:', match.hostDeclared);
+                console.log('Opponent declared:', match.opponentDeclared);
+                
+                // If both players declared the same winner
+                if (match.hostDeclared === match.opponentDeclared) {
+                  actualWinner = match.hostDeclared;
+                  if (actualWinner === currentUsername) {
+                    matchResult = 'win';
+                    isWinner = true;
+                  } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                    matchResult = 'draw';
+                    isWinner = false;
+                  } else {
+                    matchResult = 'lose';
+                    isWinner = false;
+                  }
+                  console.log('Both players declared the same winner:', actualWinner);
+                }
+                // If declarations don't match, use special logic
+                else {
+                  // Use the opponent's declaration as a fallback (based on API data pattern)
+                  actualWinner = match.opponentDeclared;
+                  if (actualWinner === currentUsername) {
+                    matchResult = 'win';
+                    isWinner = true;
+                  } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                    matchResult = 'draw';
+                    isWinner = false;
+                  } else {
+                    matchResult = 'lose';
+                    isWinner = false;
+                  }
+                  console.log('Declarations differ, using opponent declared winner:', actualWinner);
+                }
+              }
+              // Use result field if available
+              else if (match.result) {
+                // The "result" field indicates if the host won or lost
+                if (match.result === 'win') {
+                  // Host won
+                  actualWinner = match.host.username;
+                  if (isCurrentUserHost) {
+                    matchResult = 'win';
+                    isWinner = true;
+                  } else {
+                    matchResult = 'lose';
+                    isWinner = false;
+                  }
+                  console.log('Using result field: host won');
+                } else if (match.result === 'lose') {
+                  // Host lost, opponent won
+                  actualWinner = match.opponent.username;
+                  if (isCurrentUserOpponent) {
+                    matchResult = 'win';
+                    isWinner = true;
+                  } else {
+                    matchResult = 'lose';
+                    isWinner = false;
+                  }
+                  console.log('Using result field: opponent won');
+                } else {
+                  // Draw or other result
+                  actualWinner = 'Draw';
+                  matchResult = 'draw';
+                  isWinner = false;
+                  console.log('Using result field: match was a draw');
+                }
+              }
+              // If all else fails, check for results in the match
+              else if (match.results) {
+                console.log('Found results field:', match.results);
+                // Use the winner field from results if it exists
+                if (match.results.winner) {
+                  actualWinner = match.results.winner;
+                  if (actualWinner === currentUsername) {
+                    matchResult = 'win';
+                    isWinner = true;
+                  } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                    matchResult = 'draw';
+                    isWinner = false;
+                  } else {
+                    matchResult = 'lose';
+                    isWinner = false;
+                  }
+                  console.log('Using winner from results field:', actualWinner);
+                }
+                // If no winner in results, check hostDeclared and opponentDeclared
+                else if (match.results.hostDeclared && match.results.opponentDeclared) {
+                  if (match.results.hostDeclared === match.results.opponentDeclared) {
+                    actualWinner = match.results.hostDeclared;
+                    if (actualWinner === currentUsername) {
+                      matchResult = 'win';
+                      isWinner = true;
+                    } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                      matchResult = 'draw';
+                      isWinner = false;
+                    } else {
+                      matchResult = 'lose';
+                      isWinner = false;
+                    }
+                    console.log('Using declared winner from results field:', actualWinner);
+                  }
+                }
+              } 
+              // If no winner can be determined, just mark as unknown/draw
+              else {
+                actualWinner = 'Unknown';
+                matchResult = 'draw';
+                isWinner = false;
+                console.log('Could not determine winner, marking as unknown');
+              }
+              
+              console.log('Determined winner:', actualWinner || 'Unknown');
+              console.log('Is current user the winner?', matchResult === 'win');
+              console.log('---------------------------');
+              
+              // Always set the current user as player1 and the opponent as player2 for clearer UI
+              // This ensures the current user always appears on the left in the match display
+              const isUserHost = match.host.username === currentUsername;
               
               return {
                 id: match.id,
-                result: isWinner ? 'win' : 'lose',
+                result: matchResult,
                 player1: {
-                  username: match.host.username,
-                  console: match.host.platform,
-                  avatar: match.host.avatarUrl || '/avatar.png'
+                  username: isUserHost ? match.host.username : match.opponent.username,
+                  console: isUserHost ? match.host.platform : match.opponent.platform,
+                  avatar: isUserHost ? (match.host.avatarUrl || '/avatar.png') : (match.opponent.avatarUrl || '/avatar.png')
                 },
                 player2: {
-                  username: match.opponent.username,
-                  console: match.opponent.platform,
-                  avatar: match.opponent.avatarUrl || '/avatar.png'
+                  username: isUserHost ? match.opponent.username : match.host.username,
+                  console: isUserHost ? match.opponent.platform : match.host.platform,
+                  avatar: isUserHost ? (match.opponent.avatarUrl || '/avatar.png') : (match.host.avatarUrl || '/avatar.png')
                 },
                 game: {
                   name: match.game,
                   icon: getGameIcon(match.game)
                 },
-                prize: match.prize
+                prize: match.prize,
+                isWinner: matchResult === 'win',
+                winnerUsername: actualWinner || '',
+                isDraw: matchResult === 'draw',
+                winner: match.winner
               };
-            })
-            .slice(0, 10); // Get only the last 10 matches
+            });
 
-          // Sort matches by completedAt date if available
-          formattedMatches.sort((a, b) => {
-            if (a.completedAt && b.completedAt) {
-              return new Date(b.completedAt) - new Date(a.completedAt);
-            }
-            return 0;
-          });
-
-          console.log('Formatted Matches:', formattedMatches); // Son formatlanmış veriyi görelim
+          // Son 10 maç zaten sıralanmış durumda
+          console.log('Recent 10 matches (newest first):', formattedMatches);
           setMatchesData(formattedMatches);
+          
+          // Format the same match data for history view - use the already sorted completedMatches
+          const formattedHistoryData = completedMatches
+            .map(match => {
+              // Get current username from localStorage
+              const userStr = localStorage.getItem('user');
+              let currentUsername = '';
+              
+              try {
+                const parsedData = JSON.parse(userStr);
+                // Handle both possible user data structures
+                currentUsername = parsedData.user?.username || parsedData.username || '';
+              } catch (error) {
+                console.error('LocalStorage parsing error:', error);
+              }
+              
+              // Determine if current user is host or opponent
+              const isCurrentUserHost = match.host.username === currentUsername;
+              const isCurrentUserOpponent = match.opponent.username === currentUsername;
+              
+              // Set opponent as the other user (not the current user)
+              const opponent = isCurrentUserHost ? match.opponent.username : match.host.username;
+              
+              let actualWinner = '';
+              let result = 'draw'; // Default to draw
+              
+              // First check if the API explicitly declares the winner
+              if (match.winner && typeof match.winner === 'string') {
+                actualWinner = match.winner;
+                if (actualWinner === currentUsername) {
+                  result = 'win';
+                } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                  result = 'draw';
+                } else {
+                  result = 'lose';
+                }
+              }
+              // If winner is undefined but we have hostDeclared and opponentDeclared fields
+              else if (match.hostDeclared && match.opponentDeclared) {
+                // If both players declared the same winner
+                if (match.hostDeclared === match.opponentDeclared) {
+                  actualWinner = match.hostDeclared;
+                  if (actualWinner === currentUsername) {
+                    result = 'win';
+                  } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                    result = 'draw';
+                  } else {
+                    result = 'lose';
+                  }
+                }
+              }
+              // Check for results field that contains winner information
+              else if (match.results) {
+                console.log('History: Found results field:', match.results);
+                // Use the winner field from results if it exists
+                if (match.results.winner) {
+                  actualWinner = match.results.winner;
+                  if (actualWinner === currentUsername) {
+                    result = 'win';
+                  } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                    result = 'draw';
+                  } else {
+                    result = 'lose';
+                  }
+                  console.log('History: Using winner from results field:', actualWinner);
+                }
+                // If no winner in results, check hostDeclared and opponentDeclared
+                else if (match.results.hostDeclared && match.results.opponentDeclared) {
+                  if (match.results.hostDeclared === match.results.opponentDeclared) {
+                    actualWinner = match.results.hostDeclared;
+                    if (actualWinner === currentUsername) {
+                      result = 'win';
+                    } else if (actualWinner === 'Draw' || actualWinner.toLowerCase() === 'draw') {
+                      result = 'draw';
+                    } else {
+                      result = 'lose';
+                    }
+                    console.log('History: Using declared winner from results field:', actualWinner);
+                  }
+                }
+              }
+              // Use result field if available
+              else if (match.result) {
+                if (match.result === 'win') {
+                  // Host won
+                  actualWinner = match.host.username;
+                  result = isCurrentUserHost ? 'win' : 'lose';
+                  console.log('History: Using result field - host won');
+                } else if (match.result === 'lose') {
+                  // Host lost
+                  actualWinner = match.opponent.username;
+                  result = isCurrentUserOpponent ? 'win' : 'lose';
+                  console.log('History: Using result field - opponent won');
+                } else {
+                  // Draw
+                  result = 'draw';
+                  console.log('History: Using result field - draw');
+                }
+              }
+              
+              console.log(`History: Match ${match.id} - Winner: ${actualWinner}, Result for ${currentUsername}: ${result}`);
+              
+              // Format date (assuming completedAt or createdAt exists in the API response)
+              const date = match.completedAt ? new Date(match.completedAt) : new Date(match.createdAt || Date.now());
+              const formattedDate = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()} - ${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
+              
+              return {
+                id: match.id,
+                date: formattedDate,
+                game: match.game,
+                opponent: opponent,
+                prize: match.prize,
+                result: result
+              };
+            });
+          
+          // History data already sorted by the API data sorting
+          console.log('Formatted History Data (newest first):', formattedHistoryData);
+          setAllHistoryData(formattedHistoryData);
+          
+          // Calculate total pages
+          const calculatedTotalPages = Math.ceil(formattedHistoryData.length / itemsPerPage);
+          setTotalPages(calculatedTotalPages > 0 ? calculatedTotalPages : 1);
+          
+          // Set initial page data
+          const startIndex = (currentPage - 1) * itemsPerPage;
+          const endIndex = startIndex + itemsPerPage;
+          setHistoryData(formattedHistoryData.slice(startIndex, endIndex));
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -286,12 +700,15 @@ const Profil = () => {
     fetchData();
   }, []);
   
-  // Sayfa değiştiğinde yeni verileri çek
+  // Update page data when page changes
   const handlePageChange = useCallback((page) => {
     setCurrentPage(page);
-    // Gerçek API kullanımında:
-    // fetchHistoryData(page);
-  }, []);
+    
+    // Update displayed history data based on selected page
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    setHistoryData(allHistoryData.slice(startIndex, endIndex));
+  }, [allHistoryData, itemsPerPage]);
   
   const onButonContainerClick = useCallback(() => {
     // Add your code here

@@ -15,62 +15,67 @@ import HizliMeydanOkuPage from './Pages/HizliMeydanOkuPage/HizliMeydanOku';
 import RulesAndFAQPage from './Pages/RulesAndFAQPage/RulesAndFAQPage';
 import WalletPage from './Pages/WalletPage/WalletPage';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
+import Footer from './components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 function App() {
   // Google Cloud Console'dan aldığınız Client ID'yi buraya ekleyin
   const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID";
 
   return (
-    <div>
+    <div className="app-container">
       <ToastContainer position="top-right" autoClose={3000} />
       <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
         <Router>
-          <Routes>
-            {/* Ana sayfa yönlendirmesi */}
-            <Route path="/" element={<LandingPage/>} />
-            <Route path="/salon" element={<SalonPage/>} />
-            
-            {/* Diğer sayfalar */}
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-            <Route path="/reset-password" element={<SetNewPasswordPage />} />
-            <Route path="/reset-success" element={<PasswordResetSuccesfulPage />} />
-            <Route path="/email-confirmation" element={<EmailConfirmationPage />} />
-            <Route path="/dashboard" element={<MainDashboard />} />
-            <Route path="/profile" element={
-              <PrivateRoute>
-                <ProfilePage />
-              </PrivateRoute>
-            } />
-            <Route path="/meydanokumalar" element={
-              <PrivateRoute>
-                <MeydanOkumalar />
-              </PrivateRoute>
-            } />
-            <Route path="/matches" element={
-              <PrivateRoute>
-                <MatchesPage />
-              </PrivateRoute>
-            } />
-            <Route path="/salon/:matchId" element={
-              <PrivateRoute>
-                <SalonPage />
-              </PrivateRoute>
-            } />
-            <Route path="/hizlimeydanoku" element={
-              <PrivateRoute>
-                <HizliMeydanOkuPage />
-              </PrivateRoute>
-            } />
-            <Route path="/kurallar-ve-sss" element={<RulesAndFAQPage />} />
-            <Route path="/cuzdan" element={
-              <PrivateRoute>
-                <WalletPage />
-              </PrivateRoute>
-            } />
-          </Routes>
+          <div className="content-wrapper">
+            <Routes>
+              {/* Ana sayfa yönlendirmesi */}
+              <Route path="/" element={<LandingPage/>} />
+              <Route path="/salon" element={<SalonPage/>} />
+              
+              {/* Diğer sayfalar */}
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+              <Route path="/reset-password" element={<SetNewPasswordPage />} />
+              <Route path="/reset-success" element={<PasswordResetSuccesfulPage />} />
+              <Route path="/email-confirmation" element={<EmailConfirmationPage />} />
+              <Route path="/dashboard" element={<MainDashboard />} />
+              <Route path="/profile" element={
+                <PrivateRoute>
+                  <ProfilePage />
+                </PrivateRoute>
+              } />
+              <Route path="/meydanokumalar" element={
+                <PrivateRoute>
+                  <MeydanOkumalar />
+                </PrivateRoute>
+              } />
+              <Route path="/matches" element={
+                <PrivateRoute>
+                  <MatchesPage />
+                </PrivateRoute>
+              } />
+              <Route path="/salon/:matchId" element={
+                <PrivateRoute>
+                  <SalonPage />
+                </PrivateRoute>
+              } />
+              <Route path="/hizlimeydanoku" element={
+                <PrivateRoute>
+                  <HizliMeydanOkuPage />
+                </PrivateRoute>
+              } />
+              <Route path="/kurallar-ve-sss" element={<RulesAndFAQPage />} />
+              <Route path="/cuzdan" element={
+                <PrivateRoute>
+                  <WalletPage />
+                </PrivateRoute>
+              } />
+            </Routes>
+          </div>
+          <Footer />
         </Router>
       </GoogleOAuthProvider>
     </div>

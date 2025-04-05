@@ -333,10 +333,12 @@
 .frameGroup {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: flex-start;
-	gap: 16px;
+	width: 100%;
 	overflow-x: auto;
+	padding: 20px 0;
+	gap: 15px;
 }
 .containerInner {
 	align-self: stretch;
@@ -1007,43 +1009,81 @@
 
 .filterContainer {
 	display: flex;
-	gap: calc(0.8rem + 0.5vw);
-	margin-bottom: calc(0.5rem + 0.2vw);
-	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+	justify-content: flex-start;
 }
+
+.filter {
+	flex: 1;
+}
+
 .inputDropdownBase {
-	padding: calc(0.3rem + 0.2vw) calc(0.5rem + 0.3vw);
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	background-color: #222;
-	color: white;
-	font-size: calc(0.7rem + 0.1vw);
-	cursor: pointer;
 	width: 100%;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23CCCCCC%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-	background-repeat: no-repeat;
-	background-position: right 10px center;
-	background-size: 12px;
-	padding-right: 30px;
-}
-.inputDropdownBase:focus {
+	height: 40px;
+	padding: 8px 12px;
+	border-radius: 6px;
+	background-color: #1e2024;
+	color: #fff;
+	border: 1px solid #323339;
+	font-size: 14px;
 	outline: none;
-	border-color: #325feb;
+	cursor: pointer;
 }
-.inputDropdownBase option {
-	background-color: #222;
-	color: white;
-	padding: 12px;
-	font-size: calc(0.8rem + 0.2vw);
+
+@media screen and (max-width: 768px) {
+	.filterContainer {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		gap: 5px;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+	}
+	
+	.filter {
+		flex: 1;
+	}
+	
+	.headerMaTekliflerim {
+		flex-direction: column;
+		align-items: flex-start; 
+		gap: 10px;
+	}
+	
+	/* Oyun kartları için 2x2 grid */
+	.gamesGrid {
+		display: grid !important;
+		grid-template-columns: repeat(2, 1fr) !important;
+		grid-template-rows: repeat(2, auto) !important;
+		gap: 16px !important;
+		width: 100% !important;
+	}
+	
+	.frameGroup {
+		display: grid !important;
+		grid-template-columns: repeat(2, 1fr) !important;
+		grid-gap: 16px !important;
+		width: 100% !important;
+		overflow-x: visible !important;
+		padding: 16px !important;
+	}
+	
+	.frameWrapper {
+		padding: 16px;
+		box-sizing: border-box;
+		width: 100%;
+		overflow-x: hidden;
+	}
+	
+	.containerInner {
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+	}
 }
-/* Fix for Firefox */
-.inputDropdownBase:-moz-focusring {
-	color: transparent;
-	text-shadow: 0 0 0 #fff;
-}
+
 .pagination {
 	display: flex;
 	align-items: center;
@@ -1196,120 +1236,28 @@
 	padding: 2px;
 }
 .gamesGrid {
-	/* Default row layout for desktop */
 	display: flex;
-	flex-direction: row;
 	flex-wrap: nowrap;
+	gap: 15px;
 }
-@media screen and (max-width: 768px) {
-	.headerMaTekliflerim {
-		flex-direction: column;
-		gap: 10px;
-		align-items: flex-start;
-		padding: 0 10px 10px 10px;
-	}
-	
-	.filterParent {
-		width: 100%;
-	}
-	
-	.filterContainer {
-		width: 100%;
-		justify-content: space-between;
-	}
-	
-	.filter {
-		width: 48%;
-	}
-	
-	.inputDropdownBase {
-		width: 100%;
-	}
-	
-	.meydanOkumalar .cell img,
-	.avatarIcon1,
-	.avatarIcon2,
-	.avatarIcon3,
-	.avatarIcon6 {
-		display: none;
-	}
-	
-	.tableuser,
-	.frameParent1 {
-		justify-content: center;
-	}
-	
-	.username2 {
-		margin-left: 0;
-	}
-	
-	.frameWrapper {
-		padding: 16px;
-		box-sizing: border-box;
-		width: 100%;
-		overflow-x: hidden;
-	}
-	
-	.frameGroup {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 16px;
-		width: 100%;
-		overflow-x: visible;
-		padding: 0;
-	}
-	
-	.gamesGrid {
-		/* 2x2 grid layout for mobile */
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, auto);
-		gap: 16px;
-	}
-	
-	.containerChild {
-		padding: 0 15px;
-	}
-	
-	.container {
-		gap: 16px;
-	}
-	
-	.containerInner {
-		width: 100%;
-		padding: 0;
-		background-color: rgba(30, 32, 36, 0.4);
-		border-radius: 10px;
-		margin: 0 auto;
-		max-width: 350px;
-	}
-}
-
-/* Add additional media queries for smaller screens */
 @media screen and (max-width: 480px) {
 	.filterContainer {
-		width: 100%;
+		display: flex;
 		flex-direction: row;
+		width: 100%;
+		gap: 3px;
 		justify-content: space-between;
-		gap: 8px;
 	}
 	
 	.filter {
-		width: 48%;
-		min-width: 0;
-	}
-
-	.inputDropdownBase {
-		padding: 8px 30px 8px 10px;
-		font-size: 13px;
-		width: 100%;
+		flex: 1;
+		margin-bottom: 0;
 	}
 	
-	.inputDropdownBase option {
-		padding: 12px 8px;
-		font-size: 16px;
-		min-height: 36px;
-		line-height: 1.2;
+	.inputDropdownBase {
+		font-size: 11px;
+		padding: 6px 4px;
+		height: 36px;
 	}
 	
 	.meydanOkumalar2 {
@@ -1345,7 +1293,7 @@
 	
 	.inputDropdownBase option {
 		padding: 12px 8px;
-		font-size: 16px;
+		font-size: 13px;
 		min-height: 36px;
 		line-height: 1.2;
 	}
@@ -1483,6 +1431,178 @@ select.inputDropdownBase:hover {
 	color: #c4c5d0;
 	font-size: 16px;
 	font-weight: 500;
+}
+
+/* Oyun kartları grid düzeni */
+.frameGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0;
+  gap: 15px;
+}
+
+.gamesGrid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+/* Filtre stilleri */
+.filterContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filter {
+  flex: 1;
+}
+
+.inputDropdownBase {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #1e2024;
+  color: #fff;
+  border: 1px solid #323339;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Mobil görünüm için düzenlemeler */
+@media screen and (max-width: 768px) {
+  /* Filtre düzenlemeleri */
+  .headerMaTekliflerim {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .filterParent {
+    width: 100%;
+  }
+  
+  .filterContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  
+  .filter {
+    flex: 1;
+  }
+  
+  .inputDropdownBase {
+    width: 100%;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  /* Oyun kartları için 2x2 grid düzeni */
+  .frameWrapper {
+    padding: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .frameGroup {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow-x: visible !important;
+  }
+  
+  .gamesGrid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+  
+  .containerInner {
+    width: 100%;
+    padding: 0;
+    background-color: rgba(30, 32, 36, 0.4);
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  
+  .containerChild {
+    padding: 0 15px;
+  }
+  
+  .container {
+    gap: 16px;
+  }
+}
+
+/* Daha küçük ekranlar için ek düzenlemeler */
+@media screen and (max-width: 480px) {
+  .filterContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 3px;
+    justify-content: space-between;
+  }
+  
+  .filter {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  
+  .inputDropdownBase {
+    font-size: 11px;
+    padding: 6px 4px;
+    height: 36px;
+  }
+  
+  .meydanOkumalar2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .containerChild {
+    padding: 0 8px;
+  }
+  
+  .container {
+    gap: 12px;
+  }
+  
+  .headerMaTekliflerim {
+    padding: 0 5px 8px 5px;
+  }
+  
+  .filterParent {
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .containerInner {
+    padding: 0 5px;
+    max-width: 100%;
+  }
+  
+  /* Oyun kartları için daha küçük boşluklar */
+  .frameGroup, .gamesGrid {
+    gap: 10px !important;
+  }
 }
 
 

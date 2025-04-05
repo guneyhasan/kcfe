@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* Footer layout styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.content-wrapper {
+  flex: 1 0 auto;
+}

@@ -305,6 +305,11 @@
     .navLinks2 {
         width: 208px;
     }
+    
+    /* Move WhatsApp Canlı Yardım, Ayarlar, and Profile sections 30px upward in mobile sidebar */
+    .navLinksParent {
+        margin-top: -30px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -319,5 +324,10 @@
     
     .logo {
         font-size: 20px;
+    }
+    
+    /* Keep WhatsApp Canlı Yardım, Ayarlar, and Profile sections 30px upward in smaller mobile screens */
+    .navLinksParent {
+        margin-top: -30px;
     }
 }
