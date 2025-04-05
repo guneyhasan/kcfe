@@ -118,6 +118,7 @@
     align-items: center;
 }
 .headerLogo {
+    margin-left: 20px;
     font-size: 22px;
     color: #ffffff;
     font-weight: 600;
