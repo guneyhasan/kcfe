@@ -675,6 +675,11 @@
 .stekler {
     position: relative;
     line-height: 140%;
+    font-weight: 600;
+    font-size: calc(1rem + 0.5vw);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 .headerMaTekliflerimChild {
     width: 633.5px;
@@ -1501,6 +1506,9 @@
     line-height: 140%;
     font-weight: 600;
     font-size: calc(1rem + 0.5vw);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .headMeydanOkumalar {
@@ -2215,5 +2223,116 @@
 .lowTime {
     color: #ff6b6b !important;
     animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Update indicator - pulsing green dot */
+.updateIndicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #3fb950;
+    position: relative;
+    animation: pulse 1.5s infinite;
+    margin-left: 8px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.7);
+    }
+    
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(63, 185, 80, 0);
+    }
+    
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(63, 185, 80, 0);
+    }
+}
+
+/* Refresh Button */
+.refreshButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    height: 40px;
+    background-color: #325feb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: 10px;
+    box-sizing: border-box;
+}
+
+.refreshButton:hover {
+    background-color: #2749c4;
+}
+
+.refreshButton:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .refreshButton {
+        padding: 6px 12px;
+        height: 34px;
+        font-size: 13px;
+    }
+    
+    .updateIndicator {
+        width: 8px;
+        height: 8px;
+        margin-left: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .refreshButton {
+        padding: 4px 10px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .updateIndicator {
+        width: 7px;
+        height: 7px;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .refreshButton {
+        padding: 3px 8px;
+        height: 30px;
+        font-size: 11px;
+    }
+    
+    .updateIndicator {
+        width: 6px;
+        height: 6px;
+        margin-left: 4px;
+    }
 }
 

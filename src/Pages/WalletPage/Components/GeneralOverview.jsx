@@ -77,7 +77,7 @@ const GeneralOverview = ({ walletData, isLoading }) => {
                 {isLoading ? (
                   <span className={styles.loadingIndicator}>Yükleniyor...</span>
                 ) : (
-                  `${totalBalance}₺`
+                  `${totalBalance+reservedBalance}₺`
                 )}
               </div>
             </div>

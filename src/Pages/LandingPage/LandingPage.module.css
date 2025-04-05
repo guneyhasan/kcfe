@@ -118,7 +118,7 @@
     align-items: center;
 }
 .headerLogo {
-    height: 25px;
+    height: 40px;
     width: auto;
     margin-left: 20px;
 }
@@ -146,12 +146,13 @@
     color: #f5f5f5;
 }
 .contentIcon1 {
-    width: 74px;
+    width: auto;
+    height: 74px;
     position: relative;
     border-radius: 12px;
-    height: 74px;
     overflow: hidden;
     flex-shrink: 0;
+    object-fit: contain;
 }
 .text2 {
     align-self: stretch;
@@ -1053,9 +1054,10 @@
     font-size: 16px;
 }
 .pagedoneLogoIcon {
-    width: 168px;
-    position: relative;
-    height: 44px;
+    width: auto;
+    height: 40px;
+    margin-bottom: 15px;
+    object-fit: contain;
 }
 .vectorIcon {
     width: 0px;

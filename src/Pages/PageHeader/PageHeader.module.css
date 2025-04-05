@@ -143,6 +143,7 @@
   transition: left 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   overflow-y: auto; /* Enable scrolling for content */
+  padding: 0; /* Default padding */
 }
 
 .mobileSidebar.open {
@@ -168,6 +169,7 @@
 .sidebarContainer {
   width: 100%;
   height: 100%;
+  padding: 0;
 }
 
 .sidebarContainer > div {
@@ -203,6 +205,11 @@
   
   .menuIcon {
     display: block;
+  }
+  
+  /* Adjust mobile sidebar container for better spacing */
+  .sidebarContainer {
+    padding: 0;
   }
 }
 

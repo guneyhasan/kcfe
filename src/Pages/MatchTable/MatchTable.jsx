@@ -76,10 +76,29 @@ const MatchTable = ({ matches, loading }) => {
                             <div className={styles.odul}>{match.prize}₺</div>
                             <div className={styles.aksiyon}>
                                 <button 
-                                    className={`${match.isCreator ? styles.iptalEt : styles.istekGonder} ${isMobile ? (match.isCreator ? styles.iptalEtMobile : styles.istekGonderMobile) : ''}`}
+                                    className={`${
+                                        match.isCreator 
+                                            ? styles.iptalEt 
+                                            : match.hasPendingRequest 
+                                                ? styles.bekleniyor 
+                                                : styles.istekGonder
+                                    } ${
+                                        isMobile 
+                                            ? (match.isCreator 
+                                                ? styles.iptalEtMobile 
+                                                : match.hasPendingRequest 
+                                                    ? styles.bekleniyorMobile 
+                                                    : styles.istekGonderMobile) 
+                                            : ''
+                                    }`}
                                     onClick={match.onRequestClick}
                                 >
-                                    {match.isCreator ? 'İptal Et' : 'İstek Gönder'}
+                                    {match.isCreator 
+                                        ? 'İptal Et' 
+                                        : match.hasPendingRequest 
+                                            ? 'Bekleniyor' 
+                                            : 'İstek Gönder'
+                                    }
                                 </button>
                             </div>
                         </div>

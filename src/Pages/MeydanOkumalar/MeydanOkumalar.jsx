@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './MeydanOkumalar.module.css';
 import Sidebar from '../SideBar/Sidebar';
 import PageHeader from '../PageHeader/PageHeader';
@@ -7,6 +7,7 @@ import GameCard from '../../components/GameCard/GameCard';
 import { challengeService } from '../../services/api';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet';
+import { FaSync, FaClock } from 'react-icons/fa';
 
 // Import game images
 import fc24Image from '../../images/Games/fc24.jpeg';
@@ -30,6 +31,12 @@ const MeydanOkumalar = () => {
 		search: ''
 	});
 
+	// Add state for update indicator
+	const [hasUpdates, setHasUpdates] = useState(false);
+	
+	// Add state to track pending requests
+	const [pendingRequestChallenges, setPendingRequestChallenges] = useState([]);
+
 	const [pagination, setPagination] = useState({
 		currentPage: 1,
 		totalPages: 1,
@@ -39,6 +46,10 @@ const MeydanOkumalar = () => {
 
 	// Sadece kendi meydan okumalarını görüntülemek için bir state
 	const [filterType, setFilterType] = useState('all'); // 'all', 'mine', 'opponents'
+	
+	// Keep polling reference but remove UI controls
+	const pollingTimerRef = useRef(null);
+	const pollingInterval = 10000; // 10 seconds default
 
 	// Game images data
 	const [gameImages, setGameImages] = useState([
@@ -50,12 +61,55 @@ const MeydanOkumalar = () => {
 
 
 	useEffect(() => {
+		// Clear previous interval if exists
+		if (pollingTimerRef.current) {
+			clearInterval(pollingTimerRef.current);
+			pollingTimerRef.current = null;
+		}
+		
+		// Initial fetch
 		fetchChallenges();
+		
+		// Setup polling mechanism (always enabled)
+		pollingTimerRef.current = setInterval(() => {
+			fetchChallenges(true); // Pass true to indicate this is a background refresh
+		}, pollingInterval);
+		
+		// Cleanup interval on component unmount
+		return () => {
+			if (pollingTimerRef.current) {
+				clearInterval(pollingTimerRef.current);
+				pollingTimerRef.current = null;
+			}
+		};
 	}, [filters, filterType]);
 
-	const fetchChallenges = async () => {
+	const fetchChallenges = async (isBackgroundRefresh = false) => {
 		try {
-			setLoading(true);
+			// Only show loading indicator for initial loads, not background refreshes
+			if (!isBackgroundRefresh) {
+				setLoading(true);
+			}
+			
+			// Fetch user's sent requests first to know which challenges have pending requests
+			try {
+				const sentRequestsResponse = await challengeService.getSentRequests();
+				if (sentRequestsResponse.success) {
+					// Extract challenge IDs that have pending requests
+					const pendingChallengeIds = sentRequestsResponse.data.challenges
+						.flatMap(item => 
+							item.requests
+								.filter(req => req.status === 'pending')
+								.map(() => item.challenge.id)
+						);
+					
+					console.log("Pending request challenge IDs:", pendingChallengeIds);
+					setPendingRequestChallenges(pendingChallengeIds);
+				}
+			} catch (error) {
+				console.error('Sent requests could not be fetched:', error);
+				// Continue with challenges fetch even if this fails
+			}
 			
 			let response;
 			
@@ -132,14 +186,23 @@ const MeydanOkumalar = () => {
 			}
 			
 			if (response && response.success) {
+				// If this was a background refresh and there are changes, show update indicator instead of toast
+				if (isBackgroundRefresh && JSON.stringify(challenges) !== JSON.stringify(response.data.challenges)) {
+					setHasUpdates(true);
+				}
+				
 				setChallenges(response.data.challenges);
 				setPagination(response.data.pagination);
 			}
 		} catch (error) {
 			console.error('Meydan okumalar yüklenemedi:', error);
-			toast.error('Meydan okumalar yüklenirken bir hata oluştu');
+			if (!isBackgroundRefresh) {
+				toast.error('Meydan okumalar yüklenirken bir hata oluştu');
+			}
 		} finally {
-			setLoading(false);
+			if (!isBackgroundRefresh) {
+				setLoading(false);
+			}
 		}
 	};
 
@@ -159,6 +222,9 @@ const MeydanOkumalar = () => {
 			);
 
 			if (request.success) {
+				// Update pending requests state by adding this challenge ID
+				setPendingRequestChallenges(prev => [...prev, challenge.id]);
+				
 				toast.success(
 					'İstek başarıyla gönderildi!',
 					{
@@ -170,7 +236,11 @@ const MeydanOkumalar = () => {
 					}
 				);
 
+				// Immediately refresh the challenges
 				fetchChallenges();
+				
+				// Reset the update indicator since we're refreshing manually
+				setHasUpdates(false);
 			}
 		} catch (error) {
 			console.error('Meydan okuma isteği gönderilemedi:', error.message);
@@ -200,6 +270,9 @@ const MeydanOkumalar = () => {
 		// Meydan okumanın yaratıcısının username'i ile giriş yapmış kullanıcının username'ini karşılaştırıyoruz
 		const isCreator = currentUsername && challenge.creator && challenge.creator.username === currentUsername;
 		
+		// Check if this challenge has a pending request from the user
+		const hasPendingRequest = pendingRequestChallenges.includes(challenge.id);
+		
 		return {
 			id: challenge.id,
 			username: challenge.creator.username,
@@ -214,6 +287,7 @@ const MeydanOkumalar = () => {
 			participantCount: challenge.participantCount,
 			// Kullanıcı meydan okumanın yaratıcısı ise "İptal Et" butonu göster, değilse "İstek Gönder" butonu göster
 			isCreator: isCreator,
+			hasPendingRequest: hasPendingRequest,
 			onRequestClick: isCreator 
 				? () => handleCancelChallenge(challenge.id)
 				: () => handleSendChallengeRequest({
@@ -273,6 +347,12 @@ const MeydanOkumalar = () => {
 			page: newPage
 		}));
 	};
+	
+	// Reset update indicator when manual refresh is done
+	const handleManualRefresh = () => {
+		setHasUpdates(false);
+		fetchChallenges();
+	};
 
 	return (
 		<div className={styles.meydanOkumalar}>
@@ -304,8 +384,10 @@ const MeydanOkumalar = () => {
 							<div className={styles.headerMaTekliflerim}>
 								<div className={styles.meydanOkumalar2}>
 									Meydan Okumalar
+									{hasUpdates && <span className={styles.updateIndicator}></span>}
 								</div>
 								<div className={styles.filterParent}>
+									{/* Refresh and Real-time Controls */}
 									<div className={styles.filterContainer}>
 										<div className={styles.filter}>
 											<select 
@@ -345,6 +427,13 @@ const MeydanOkumalar = () => {
 												<option value="opponents">Rakipler</option>
 											</select>
 										</div>
+										<button 
+											className={styles.refreshButton} 
+											onClick={handleManualRefresh}
+											disabled={loading}
+										>
+											<FaSync className={loading ? styles.spinning : ''} /> Yenile
+										</button>
 									</div>
 								</div>
 							</div>

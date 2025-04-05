@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './Matches.module.css';
 import Sidebar from '../SideBar/Sidebar';
 import PageHeader from '../PageHeader/PageHeader';
@@ -8,6 +8,7 @@ import { challengeService } from '../../services/api';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { FaSync } from 'react-icons/fa';
 
 //import consol logos
 import PSLogo from '../../images/konsolLogoları/PSlogo.png';
@@ -29,6 +30,10 @@ const Matches = () => {
     const [activeMatches, setActiveMatches] = useState([]);
     const [completedMatches, setCompletedMatches] = useState([]);
     const [processingRequests, setProcessingRequests] = useState({});
+    const [hasUpdates, setHasUpdates] = useState(false);
+    const pollingTimerRef = useRef(null);
+    const pollingInterval = 10000;
+    
     const navigate = useNavigate();
 
     // İstek iptal etme fonksiyonu
@@ -91,9 +96,11 @@ const Matches = () => {
     };
 
     // İstekleri yükleme fonksiyonu
-    const loadRequests = async () => {
+    const loadRequests = async (isBackgroundRefresh = false) => {
         try {
-            setLoading(true);
+            if (!isBackgroundRefresh) {
+                setLoading(true);
+            }
             console.log('İstekler yükleniyor... Tab:', selectedTab);
 
             if (selectedTab === 'gelen') {
@@ -147,6 +154,12 @@ const Matches = () => {
                     }, []);
 
                     console.log('İşlenmiş gelen istekler:', allRequests);
+                    
+                    // Check if there are updates
+                    if (isBackgroundRefresh && JSON.stringify(gelenIstekler) !== JSON.stringify(allRequests)) {
+                        setHasUpdates(true);
+                    }
+                    
                     setGelenIstekler(allRequests);
                 }
             } else if (selectedTab === 'giden') {
@@ -196,14 +209,24 @@ const Matches = () => {
                     }, []);
 
                     console.log('İşlenmiş giden istekler:', allRequests);
+                    
+                    // Check if there are updates
+                    if (isBackgroundRefresh && JSON.stringify(gidenIstekler) !== JSON.stringify(allRequests)) {
+                        setHasUpdates(true);
+                    }
+                    
                     setGidenIstekler(allRequests);
                 }
             }
         } catch (error) {
             console.error('İstekler yüklenirken hata:', error);
-            toast.error('İstekler yüklenirken bir hata oluştu');
+            if (!isBackgroundRefresh) {
+                toast.error('İstekler yüklenirken bir hata oluştu');
+            }
         } finally {
-            setLoading(false);
+            if (!isBackgroundRefresh) {
+                setLoading(false);
+            }
         }
     };
 
@@ -372,10 +395,43 @@ const Matches = () => {
         }
     }, [processingRequests]);
 
-    // Tab değiştirme fonksiyonu
+    // Add polling effect for real-time updates
+    useEffect(() => {
+        // Clear previous interval if exists
+        if (pollingTimerRef.current) {
+            clearInterval(pollingTimerRef.current);
+            pollingTimerRef.current = null;
+        }
+        
+        // Initial fetch
+        loadRequests();
+        loadActiveMatches();
+        
+        // Setup polling mechanism
+        pollingTimerRef.current = setInterval(() => {
+            loadRequests(true); // Pass true to indicate this is a background refresh
+        }, pollingInterval);
+        
+        // Cleanup interval on component unmount or tab change
+        return () => {
+            if (pollingTimerRef.current) {
+                clearInterval(pollingTimerRef.current);
+                pollingTimerRef.current = null;
+            }
+        };
+    }, [selectedTab]);
+
+    // Reset update indicator and manually refresh
+    const handleManualRefresh = () => {
+        setHasUpdates(false);
+        loadRequests();
+        loadActiveMatches();
+    };
+
+    // Handle tab change with update indicator reset
     const handleTabChange = (tab) => {
-        console.log('Tab değişti:', tab);
         setSelectedTab(tab);
+        setHasUpdates(false);
     };
 
     // Meydan okuma seçme fonksiyonu
@@ -693,7 +749,10 @@ const Matches = () => {
             <div className={styles.frameContainer}>
               <div className={styles.headerMaTekliflerimParent}>
                 <div className={styles.headerMaTekliflerim}>
-                  <div className={styles.stekler}>İstekler</div>
+                  <div className={styles.stekler}>
+                    İstekler
+                    {hasUpdates && <span className={styles.updateIndicator}></span>}
+                  </div>
                   <div className={styles.frameGroup}>
                     <div 
                       className={`${styles.gelenIsteklerWrapper} ${selectedTab === 'gelen' ? styles.activeTab : ''}`} 
@@ -707,6 +766,13 @@ const Matches = () => {
                     >
                       <div className={styles.gelenIstekler}>Giden istekler</div>
                     </div>
+                    <button 
+                      className={styles.refreshButton} 
+                      onClick={handleManualRefresh}
+                      disabled={loading}
+                    >
+                      <FaSync className={loading ? styles.spinning : ''} /> Yenile
+                    </button>
                   </div>
                 </div>
                 {loading ? (

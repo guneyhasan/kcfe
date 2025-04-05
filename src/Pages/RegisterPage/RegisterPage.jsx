@@ -33,12 +33,35 @@ const RegisterPage = () => {
 		navigate('/landing');
 	};
 
+	const formatPhoneNumber = (phoneDigits) => {
+		// Format the phone number as "555 555 55 55"
+		let formatted = '';
+		if (phoneDigits.length > 0) formatted = phoneDigits.substring(0, 3);
+		if (phoneDigits.length > 3) formatted += ' ' + phoneDigits.substring(3, 6);
+		if (phoneDigits.length > 6) formatted += ' ' + phoneDigits.substring(6, 8);
+		if (phoneDigits.length > 8) formatted += ' ' + phoneDigits.substring(8, 10);
+		return formatted;
+	};
+
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
-		setFormData(prev => ({
-			...prev,
-			[name]: value
-		}));
+		
+		if (name === 'phoneNumber') {
+			// Remove all non-digit characters
+			const digits = value.replace(/\D/g, '').substring(0, 10); // Limit to 10 digits
+			
+			// Update the form data with raw digits
+			setFormData(prev => ({
+				...prev,
+				[name]: digits // Store only digits for API submission
+			}));
+		} else {
+			// For non-phone fields, just update normally
+			setFormData(prev => ({
+				...prev,
+				[name]: value
+			}));
+		}
 	};
 
 	const handleSubmit = async (e) => {
@@ -105,7 +128,7 @@ const RegisterPage = () => {
 								className={styles.text}
 								onClick={handleNavLoginClick}
 							>
-								Log in
+								Giriş Yap
 							</div>
 						</div>
 					</div>
@@ -115,7 +138,7 @@ const RegisterPage = () => {
 								className={styles.text}
 								onClick={handleNavSignupClick}
 							>
-								Sign up
+								Kayıt Ol
 							</div>
 						</div>
 					</div>
@@ -185,9 +208,9 @@ const RegisterPage = () => {
 										<input
 											type="tel"
 											name="phoneNumber"
-											value={formData.phoneNumber}
+											value={formatPhoneNumber(formData.phoneNumber)}
 											onChange={handleInputChange}
-											placeholder="+90 (512) 345 67 89"
+											placeholder="555 555 55 55"
 											className={styles.inputField}
 										/>
 									</div>

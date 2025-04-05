@@ -306,9 +306,23 @@
         width: 208px;
     }
     
-    /* Move WhatsApp Canlı Yardım, Ayarlar, and Profile sections 30px upward in mobile sidebar */
+    /* Move WhatsApp Canlı Yardım, Ayarlar, and Profile sections downward in mobile sidebar */
     .navLinksParent {
-        margin-top: -30px;
+        margin-top: 30px;
+        position: relative;
+        bottom: 0;
+        margin-bottom: 70px;
+    }
+    
+    /* Adjust the top content parent to have better spacing in mobile */
+    .topContentParent {
+        justify-content: flex-start;
+        gap: 40px;
+        padding: 20px 0 10px 0;
+    }
+    
+    .topContent {
+        gap: 25px;
     }
 }
 
@@ -326,8 +340,21 @@
         font-size: 20px;
     }
     
-    /* Keep WhatsApp Canlı Yardım, Ayarlar, and Profile sections 30px upward in smaller mobile screens */
+    /* Keep WhatsApp Canlı Yardım, Ayarlar, and Profile sections spacing in smaller screens */
     .navLinksParent {
-        margin-top: -30px;
+        margin-top: 30px;
+        position: relative;
+        bottom: 0;
+        margin-bottom: 70px;
+    }
+    
+    /* Further adjust spacing for smaller screens */
+    .topContentParent {
+        padding: 15px 0 5px 0;
+        gap: 30px;
+    }
+    
+    .topContent {
+        gap: 20px;
     }
 }
