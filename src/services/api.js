@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { compressImage } from '../utils/imageCompression';
 
-//const API_URL = 'http://62.171.189.135:8090';
-const API_URL = 'http://localhost:8090';
+const API_URL = 'http://62.171.189.135:8090';
+//const API_URL = 'http://localhost:8090';
 
 const api = axios.create({
     baseURL: API_URL,
